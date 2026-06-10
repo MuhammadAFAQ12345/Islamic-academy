@@ -1,248 +1,559 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hafiz Muhammad AFAQ Attari - Quran Pak</title>
+    <title>Islamic Learning Academy - Quran, Tajweed & Tafseer Online</title>
     <style>
-        /* --- CSS STYLING START --- */
-        body {
+        * {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000;
-            color: white;
-            overflow-x: hidden;
+            box-sizing: border-box;
         }
 
-        /* Ragistan (Night) Background with Stars */
-        .stars-container {
+        :root {
+            --primary-green: #1a472a;
+            --secondary-green: #2d5a3f;
+            --gold: #d4af37;
+            --light-gold: #f0d875;
+            --dark: #0d1f12;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(to bottom, var(--primary-green), var(--secondary-green));
+            color: var(--white);
+            line-height: 1.8;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
             position: fixed;
+            width: 100%;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-            z-index: -1;
+            z-index: 1000;
+            border-bottom: 3px solid var(--gold);
         }
 
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 2s infinite;
-        }
-
-        @keyframes twinkle {
-            0% { opacity: 0.3; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
-            100% { opacity: 0.3; transform: scale(0.8); }
-        }
-
-        /* Main Layout (Flexbox) */
-        .container {
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            flex-wrap: wrap;
-            min-height: 100vh;
-            box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
-        }
-
-        /* Left Side (Madina Image) */
-        .left-side {
-            flex: 1;
-            min-width: 300px;
-            background-image: url('https://source.unsplash.com/1600x900/?madina,masjid'); /* Yahan Madina ki Photo Lagayen */
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding-bottom: 50px;
-        }
-
-        .madina-overlay {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            text-align: center;
-            border-top: 3px solid #ffd700; /* Gold Color */
-            backdrop-filter: blur(5px);
-            width: 100%;
-        }
-
-        .madina-title {
-            font-size: 24px;
-            color: #ffd700;
-            margin: 0;
-            font-family: 'Traditional Arabic', serif;
-        }
-
-        /* Right Side (Profile Dashboard) */
-        .right-side {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            text-align: center;
+            padding: 0 20px;
         }
 
-        /* Profile Picture */
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 5px solid #ffd700;
-            object-fit: cover;
-            margin-bottom: 20px;
-            background-color: #333; /* Placeholder color */
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-        }
-
-        h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #ffd700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .role {
-            font-size: 18px;
-            color: #ddd;
-            margin-bottom: 30px;
-        }
-
-        /* Contact Details */
-        .contact-info {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 350px;
-            text-align: left;
-            margin-bottom: 20px;
-            border: 1px solid #ffd700;
-        }
-
-        .contact-item {
-            margin: 10px 0;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-label {
-            color: #ffd700;
+        .logo {
+            font-size: 1.8rem;
+            color: var(--gold);
             font-weight: bold;
-            margin-right: 10px;
-            width: 60px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 20px 100px;
+            text-align: center;
+            background: linear-gradient(rgba(26, 71, 42, 0.9), rgba(45, 90, 63, 0.9));
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        .btn-gold:hover {
+            background: var(--light-gold);
+            transform: scale(1.05);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-green);
+        }
+
+        /* All Sections */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 50px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.1);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Features */
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--gold);
+        }
+
+        .feature-item h4 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Courses */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--gold);
+        }
+
+        .course-header {
+            background: var(--gold);
+            color: var(--dark);
+            padding: 25px;
+            text-align: center;
+        }
+
+        .course-body {
+            padding: 30px;
+        }
+
+        .course-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .course-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .course-price {
+            font-size: 2rem;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* Contact Cards */
+        .contact-section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .phone-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .phone-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px 50px;
+            border-radius: 20px;
+            border: 3px solid var(--gold);
+            transition: all 0.3s;
+        }
+
+        .phone-card:hover {
+            transform: scale(1.05);
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .phone-card h3 {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .phone-card a {
+            font-size: 1.8rem;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .phone-card a:hover {
+            color: var(--gold);
         }
 
         /* WhatsApp Button */
+        .whatsapp-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
         .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            padding: 15px 30px;
-            font-size: 20px;
-            border-radius: 50px;
-            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            gap: 15px;
+            background: #25D366;
+            color: white;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.5rem;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            margin-top: 10px;
-            width: 80%;
-            justify-content: center;
+            transition: all 0.3s;
         }
 
         .whatsapp-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            background: #20BD5A;
+            transform: scale(1.1);
         }
 
-        /* Responsive Mobile */
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            border-right: 4px solid var(--gold);
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255,255,255,0.1);
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .faq-answer {
+            padding: 0 25px 20px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 50px 20px 20px;
+            margin-top: 50px;
+            border-top: 4px solid var(--gold);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--white);
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            .left-side {
-                min-height: 300px;
-            }
+            nav { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .phone-cards { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">☨ Islamic Academy</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <!-- Star Background Effect -->
-    <div class="stars-container" id="stars"></div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>🕌 Quran Pak, Tajweed & Tafseer Academy</h1>
+        <p>
+            Assalamu Alaikum! Aap is website par Quran Pak, Tajweed aur Tafseer 
+            online seekh sakte hain. Hamare qualified teachers aapko Urdu, Hindi 
+            aur English mein taalim denge. Ab ghar par baith kar Quran seekhein!
+        </p>
+        <div class="hero-buttons">
+            <a href="tel:+923411472338" class="btn btn-gold">📱 Call Now</a>
+            <a href="https://wa.me/923411472338" class="btn btn-outline">💬 WhatsApp</a>
+        </div>
+    </section>
 
-    <div class="container">
-        <!-- LEFT SIDE: MADINA -->
-        <div class="left-side">
-            <div class="madina-overlay">
-                <h2 class="madina-title">Madina Sharif</h2>
-                <p>Masjid al-Nabawi</p>
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">ہماری خدمات / Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📖</div>
+                <h3>قرآن پاک تعلیم</h3>
+                <p>Quran Pak ki complete taalim. Har Alfaaz ko theek taur par 
+                pronounce karna sikhana.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎤</div>
+                <h3>تجوید learning</h3>
+                <p>Tajweed ke Rules ki taalim. Makharij al-Huruf aur Sifat 
+                al-Huruf seekhein.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📚</div>
+                <h3>تفسیر Quran</h3>
+                <p>Tafseer-e-Quran Pak ki taalim. Ayat ki tafseer samjhayen gay.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🕌</div>
+                <h3>نماز کی تعلیم</h3>
+                <p>Namaz (Salah) ki sahi tareh taalim. Wazu aur Roza ke laws.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤲</div>
+                <h3>نماز کی ادائیگی</h3>
+                <p>Namaz ki complete tarbiyat. Har rakaat theek寻求 seekhein.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>اسلامی تعلیم</h3>
+                <p> Islamic education for beginners. Islam ke basic rules aur rula.</p>
             </div>
         </div>
+    </section>
 
-        <!-- RIGHT SIDE: DASHBOARD / PROFILE -->
-        <div class="right-side">
-            <!-- Yahan Aapki Photo Lagayen (src mein aapki file ka naam) -->
-            <img src="https://via.placeholder.com/200" alt="Profile Picture" class="profile-pic">
-
-            <h1>Hafiz Muhammad AFAQ Attari</h1>
-            <p class="role">Quran Pak Reciter & Teacher</p>
-
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span class="contact-label">UAE:</span>
-                    <span>+971 505859816</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">PK:</span>
-                    <span>+92 3411472338</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Email:</span>
-                    <span>sardarafaqqds@gmail.com</span>
+    <!-- Features Section -->
+    <section id="features">
+        <h2 class="section-title">ہماری خصوصیات / Why Choose Us</h2>
+        <div class="features-list">
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div>
+                    <h4>Qualified Teachers</h4>
+                    <p>Hamare teachers Quran aur Tajweed mein expert hain.</p>
                 </div>
             </div>
-
-            <!-- WhatsApp Direct Link -->
-            <a href="https://wa.me/971505859816?text=Assalamu Alaikum Hafiz Sb, I need Quran recitation." target="_blank" class="whatsapp-btn">
-                💬 Message on WhatsApp
-            </a>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div>
+                    <h4>Online Classes</h4>
+                    <p>WhatsApp aur Zoom par classes len.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div>
+                    <h4>Urdu/Hindi/English</h4>
+                    <p>Aap ki language mein taalim milegi.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div>
+                    <h4>Flexible Timing</h4>
+                    <p>Morning aur Evening classes available hain.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div>
+                    <h4>Free Trial Class</h4>
+                    <p>Ek free trial class len rahe免费的 taalim dekhein.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <div>
+                    <h4>Individual Attention</h4>
+                    <p>Har student ko khud ka time milta hai.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        // Automatic Star Generation Script
-        const starsContainer = document.getElementById('stars');
-        const starCount = 100; // Number of stars
-
-        for (let i = 0; i < starCount; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            
-            // Random position and size
-            const xy = Math.random() * 100;
-            const size = Math.random() * 2 + 1;
-            
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            
-            // Random animation delay
-            star.style.animationDelay = `${Math.random() * 2}s`;
-            
-            starsContainer.appendChild(star);
-        }
-    </script>
-</body>
-</html>
+    <!-- Courses Section -->
+    <section id="courses">
+        <h2 class="section-title">ہمارے کورس / Our Courses</h2>
+        <div class="courses-grid">
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>📖 Quran Pak Course</h3>
+                </div>
+                <div class="course-body">
+                    <ul class="course-features">
+                        <li>Complete Quran reading</li>
+                        <li>Har harf ki pronunciation</li>
+                        <li>Tarveem (melody) seekhein</li>
+                        <li>30 Juz complete karein</li>
+                        <li>Online classes</li>
+                        <li>Certificate available</li>
+                    </ul>
+                    <div class="course-price">Rs. 5000/month</div>
+                    <a href="tel:+923411472338" class="btn btn-gold" style="width:100%; display:block;">Enroll Now</a>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>🎤 Tajweed Course</h3>
+                </div>
+                <div class="course-body">
+                    <ul class="course-features">
+                        <
