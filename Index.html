@@ -1,14 +1,12 @@
-Done! I've added your name Hafiz Muhammad AFAQ Attari prominently in the floating profile card, and enhanced the website with missing professional elements like a "Why Choose Us" section, student testimonials, a live demo booking notice, and trust badges to make it more complete and credible.
-
-Now when anyone opens the website, your profile picture (which can be clicked to upload your real photo) and your name will appear in the corner, along with all the premium features of a professional Islamic academy.
+Here is the complete HTML document with the name changed to Dawat-e-Islami, and new sections added for Madani Qaida, Quran Tarjuma/Tafseer, and Masail (Islamic rulings).
 
 ```html
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hafiz Muhammad AFAQ Attari | Al-Noor Islamic Academy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Dawat-e-Islami | Madani Qaida | Quran Tafseer | Masail</title>
     <style>
         * {
             margin: 0;
@@ -34,9 +32,9 @@ Now when anyone opens the website, your profile picture (which can be clicked to
             background: linear-gradient(145deg, var(--royal-navy) 0%, var(--deep-maroon) 100%);
             color: var(--sand-stone);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        /* Header */
         header {
             background: rgba(11, 18, 34, 0.92);
             backdrop-filter: blur(10px);
@@ -56,45 +54,45 @@ Now when anyone opens the website, your profile picture (which can be clicked to
             justify-content: space-between;
             align-items: center;
             padding: 0 30px;
+            flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 1.9rem;
+            font-size: 1.6rem;
             background: linear-gradient(135deg, var(--golden-noor), var(--soft-copper));
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             font-weight: 800;
-            letter-spacing: 1px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 25px;
+            flex-wrap: wrap;
         }
 
         nav a {
             color: var(--sand-stone);
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 500;
             transition: all 0.3s;
-            position: relative;
         }
 
         nav a:hover {
             color: var(--golden-noor);
         }
 
-        /* Floating Profile Card - Your Name & Picture */
+        /* Floating Profile */
         .floating-profile {
             position: fixed;
             left: 20px;
             bottom: 20px;
             z-index: 999;
-            width: 90px;
-            height: 90px;
+            width: 85px;
+            height: 85px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--golden-noor), var(--soft-copper));
             padding: 3px;
@@ -106,7 +104,6 @@ Now when anyone opens the website, your profile picture (which can be clicked to
 
         .floating-profile:hover {
             transform: scale(1.1);
-            box-shadow: 0 12px 30px rgba(228, 179, 99, 0.5);
         }
 
         .floating-profile img {
@@ -118,16 +115,15 @@ Now when anyone opens the website, your profile picture (which can be clicked to
             background: var(--royal-navy);
         }
 
-        /* Expanded Profile Card */
         .profile-expanded {
             position: fixed;
             left: 20px;
-            bottom: 120px;
-            background: rgba(27, 42, 74, 0.95);
+            bottom: 115px;
+            background: rgba(27, 42, 74, 0.97);
             backdrop-filter: blur(12px);
             border-radius: 25px;
             padding: 18px 20px;
-            width: 280px;
+            width: 290px;
             z-index: 998;
             border: 1px solid var(--golden-noor);
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
@@ -151,8 +147,8 @@ Now when anyone opens the website, your profile picture (which can be clicked to
         }
 
         .profile-expanded-img {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--golden-noor);
@@ -160,17 +156,11 @@ Now when anyone opens the website, your profile picture (which can be clicked to
 
         .profile-expanded-header h4 {
             color: var(--golden-noor);
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .profile-expanded-header p {
-            font-size: 0.75rem;
-            color: var(--sand-stone);
+            font-size: 1.1rem;
         }
 
         .profile-bio {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             margin: 10px 0;
             line-height: 1.5;
         }
@@ -182,15 +172,7 @@ Now when anyone opens the website, your profile picture (which can be clicked to
             padding: 6px 12px;
             border-radius: 30px;
             cursor: pointer;
-            font-size: 0.8rem;
-            margin-top: 8px;
             width: 100%;
-            transition: 0.2s;
-        }
-
-        .close-profile:hover {
-            background: var(--golden-noor);
-            color: var(--royal-navy);
         }
 
         @keyframes floatGlow {
@@ -199,16 +181,14 @@ Now when anyone opens the website, your profile picture (which can be clicked to
             100% { box-shadow: 0 8px 20px rgba(228,179,99,0.3); transform: translateY(0px);}
         }
 
-        /* Hero Section */
         .hero {
-            padding: 200px 20px 120px;
+            padding: 180px 20px 100px;
             text-align: center;
             background: radial-gradient(circle at 10% 20%, rgba(30, 95, 107, 0.3), rgba(74, 26, 44, 0.7));
-            background-size: cover;
         }
 
         .hero h1 {
-            font-size: 3.4rem;
+            font-size: 2.8rem;
             background: linear-gradient(to right, var(--golden-noor), #F7D98C);
             background-clip: text;
             -webkit-background-clip: text;
@@ -217,34 +197,28 @@ Now when anyone opens the website, your profile picture (which can be clicked to
         }
 
         .hero p {
-            font-size: 1.4rem;
-            max-width: 850px;
-            margin: 0 auto 35px;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
             background: rgba(0,0,0,0.4);
-            padding: 15px 25px;
-            border-radius: 70px;
-            backdrop-filter: blur(4px);
+            padding: 12px 20px;
+            border-radius: 50px;
         }
 
         .btn {
-            padding: 14px 38px;
-            font-size: 1.2rem;
+            padding: 12px 30px;
+            font-size: 1.1rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             display: inline-block;
+            margin: 5px;
         }
 
         .btn-gold {
             background: var(--golden-noor);
             color: var(--royal-navy);
-            box-shadow: 0 8px 18px rgba(228, 179, 99, 0.3);
-        }
-
-        .btn-gold:hover {
-            background: #f0ca7a;
-            transform: translateY(-3px);
         }
 
         .btn-outline {
@@ -253,127 +227,125 @@ Now when anyone opens the website, your profile picture (which can be clicked to
             border: 2px solid var(--golden-noor);
         }
 
-        .btn-outline:hover {
-            background: var(--golden-noor);
-            color: var(--deep-maroon);
-        }
-
         section {
-            padding: 80px 25px;
+            padding: 70px 20px;
             max-width: 1300px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 2.3rem;
             color: var(--golden-noor);
-            margin-bottom: 50px;
-            position: relative;
+            margin-bottom: 45px;
         }
 
         .section-title:after {
             content: '﴿';
-            font-family: serif;
             display: block;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--soft-copper);
+        }
+
+        .quran-verse {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--golden-noor);
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(228,179,99,0.1);
+            border-radius: 40px;
+            font-family: 'Amiri', serif;
         }
 
         .about {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 40px;
             align-items: center;
             background: var(--card-bg);
-            border-radius: 50px;
-            padding: 40px;
-            border: 1px solid var(--border-light);
+            border-radius: 40px;
+            padding: 35px;
         }
 
         .pricing-global {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
         }
 
         .price-card {
             background: rgba(27, 42, 74, 0.7);
             backdrop-filter: blur(8px);
-            border-radius: 35px;
-            padding: 25px 20px;
+            border-radius: 30px;
+            padding: 20px;
             border: 1px solid var(--golden-noor);
-            transition: 0.25s;
             text-align: center;
         }
 
-        .price-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--soft-copper);
-        }
-
         .country-name {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: var(--golden-noor);
-            margin-bottom: 15px;
         }
 
         .price-amount {
             font-weight: 800;
             color: #F7E05E;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
 
         .grid-3cols {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .feature-card, .testimonial-card, .teacher-card, .course-card {
             background: rgba(30, 45, 60, 0.65);
             backdrop-filter: blur(5px);
-            border-radius: 32px;
-            padding: 30px;
+            border-radius: 28px;
+            padding: 25px;
             border: 1px solid var(--border-light);
             text-align: center;
             transition: 0.2s;
         }
-        .feature-card:hover, .testimonial-card:hover {
+        .feature-card:hover, .course-card:hover {
             transform: translateY(-5px);
             border-color: var(--golden-noor);
         }
+
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 40px;
         }
 
         .whatsapp-btn {
             background: #25D366;
             color: white;
-            padding: 12px 28px;
+            padding: 10px 22px;
             border-radius: 40px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            margin-top: 10px;
         }
 
         .faq-question {
             background: rgba(228,179,99,0.1);
-            padding: 16px 22px;
-            border-radius: 60px;
+            padding: 14px 20px;
+            border-radius: 50px;
             cursor: pointer;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
         }
 
         .faq-answer {
-            padding: 0 20px 15px;
+            padding: 0 18px 15px;
             display: none;
         }
         .faq-item.active .faq-answer { display: block; }
@@ -381,200 +353,248 @@ Now when anyone opens the website, your profile picture (which can be clicked to
         footer {
             background: #0A1120;
             border-top: 2px solid var(--golden-noor);
-            padding: 40px 30px 20px;
+            padding: 40px 20px 20px;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-            gap: 35px;
-        }
-        .live-badge {
-            background: #dc3545;
-            padding: 6px 15px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            display: inline-block;
-            animation: pulseRed 1s infinite;
-        }
-        @keyframes pulseRed {
-            0% { opacity: 0.6; }
-            100% { opacity: 1; background: #b52b3a; }
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            gap: 30px;
         }
 
-        @media (max-width: 850px) {
+        @media (max-width: 768px) {
             nav { display: none; }
             .hero h1 { font-size: 2rem; }
             .about { grid-template-columns: 1fr; }
             .contact-container { grid-template-columns: 1fr; }
             .floating-profile { width: 70px; height: 70px; left: 12px; bottom: 12px; }
-            .profile-expanded { width: 240px; left: 12px; bottom: 95px; }
+            .profile-expanded { width: 250px; left: 12px; bottom: 95px; }
+            .section-title { font-size: 1.8rem; }
+            .quran-verse { font-size: 1.2rem; }
+        }
+        .contact-item {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .contact-item a {
+            color: var(--sand-stone);
+            text-decoration: none;
+        }
+        .contact-item a:hover {
+            color: var(--golden-noor);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 30px;
+            border: none;
+            margin-top: 5px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .masail-list {
+            text-align: right;
+            padding-right: 20px;
+        }
+        .masail-list li {
+            margin: 12px 0;
+            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <div class="logo">⭐ Al-Noor Islamic Academy | Hafiz M. AFAQ Attari</div>
+            <div class="logo">⭐ Dawat-e-Islami | Hafiz M. AFAQ Attari</div>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#pricing">Fees</a></li>
                     <li><a href="#courses">Courses</a></li>
-                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#masail">Masail</a></li>
+                    <li><a href="#pricing">Fees</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Floating Profile with your name & picture -->
+    <!-- Floating Profile -->
     <div class="floating-profile" id="profileToggle">
-        <img id="profileImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234A1A2C'/%3E%3Ctext x='50' y='67' font-size='32' text-anchor='middle' fill='%23E4B363' font-weight='bold'%3Eح%3C/text%3E%3C/svg%3E" alt="Hafiz Muhammad AFAQ Attari">
+        <img id="profileImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234A1A2C'/%3E%3Ctext x='50' y='67' font-size='34' text-anchor='middle' fill='%23E4B363'%3Eح%3C/text%3E%3C/svg%3E" alt="Hafiz Muhammad AFAQ Attari">
     </div>
-
     <div class="profile-expanded" id="profileExpanded">
         <div class="profile-expanded-header">
-            <img class="profile-expanded-img" id="expandedImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234A1A2C'/%3E%3Ctext x='50' y='67' font-size='32' text-anchor='middle' fill='%23E4B363'%3Eح%3C/text%3E%3C/svg%3E" alt="Profile">
-            <div><h4>Hafiz Muhammad AFAQ Attari</h4><p>Founder & Head Qari | Ijazah Certified</p></div>
+            <img class="profile-expanded-img" id="expandedImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234A1A2C'/%3E%3Ctext x='50' y='67' font-size='34' text-anchor='middle' fill='%23E4B363'%3Eح%3C/text%3E%3C/svg%3E" alt="Profile">
+            <div><h4>Hafiz Muhammad AFAQ Attari</h4><p>Founder | Dawat-e-Islami Online</p></div>
         </div>
-        <div class="profile-bio">
-            ✨ 15+ years experience in Quran, Tajweed & Tafseer.<br>
-            🎓 Specialized in Qira'at & Islamic Sciences. Dedicated to spreading Quranic Noor globally.<br>
-            📞 Direct Contact for Free Trial: +44 7700 123456
-        </div>
+        <div class="profile-bio">✨ Madani Qaida | Quran Tafseer | Masail <br>📞 UAE: +971505859816<br>📞 PK WhatsApp: +923411472338<br>📧 sardarafaqqds@gmail.com</div>
         <button class="close-profile" id="closeProfile">Close</button>
     </div>
 
     <section id="home" class="hero">
-        <h1>🕋 Quran Majeed • Tajweed • Tafseer</h1>
-        <p>🌟 Assalamu Alaikum! Online Quran Learning under the guidance of <strong>Hafiz Muhammad AFAQ Attari</strong> and qualified Huffaz. Flexible timings, one-to-one classes for all ages. 🌟</p>
+        <h1>🕌 Dawat-e-Islami | Madani Qaida • Quran • Tafseer • Masail</h1>
+        <p>🌟 Assalamu Alaikum! Learn Madani Qaida, Quran with Tarjuma & Tafseer, and daily Masail from authentic Islamic scholars. Online classes by Hafiz Muhammad AFAQ Attari. 🌟</p>
+        <div class="quran-verse">" وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا " (المزمل: 4)</div>
         <div class="hero-buttons">
-            <a href="#pricing" class="btn btn-gold">View Packages</a>
+            <a href="#courses" class="btn btn-gold">View Courses</a>
             <a href="#contact" class="btn btn-outline">Free Trial ⚡</a>
         </div>
-        <div class="live-badge" style="margin-top: 25px;">🔴 Live Demo Classes Available Now</div>
     </section>
 
     <section id="about">
-        <h2 class="section-title">About Us</h2>
+        <h2 class="section-title">About Dawat-e-Islami Online Platform</h2>
         <div class="about">
             <div class="about-text">
-                <h3>🎓 By Hafiz Muhammad AFAQ Attari & Team</h3>
-                <p>Al-Noor Islamic Academy, founded by Hafiz Muhammad AFAQ Attari, is a premier online institute offering authentic Quranic education with Tajweed & Tafseer. Our Ijazah-certified teachers provide personalized attention in Urdu, Hindi, English, and Arabic.</p>
-                <p>We have successfully taught 2500+ students across UK, USA, UAE, Europe, and Pakistan. Whether you are a beginner (Qaida) or want to master Quranic recitation, we have structured courses for everyone.</p>
-                <p><strong>📢 Special Offer:</strong> First 3 days FREE trial. Register today!</p>
+                <h3>🎓 By Hafiz Muhammad AFAQ Attari</h3>
+                <p>Dawat-e-Islami Online Academy is a new and authentic platform dedicated to spreading the teachings of Quran and Sunnah. We offer courses like <strong>Madani Qaida, Quran Pak with Tarjuma & Tafseer, and comprehensive Masail (Islamic rulings)</strong> based on Hanafi Fiqh. Our aim is to provide easy access to religious education for every Muslim.</p>
+                <p>✅ 1-on-1 Live Classes | ✅ Qualified Ijazah Teachers | ✅ Flexible Timings | ✅ Male & Female Instructors</p>
+                <div class="quran-verse" style="font-size:1.2rem">" يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ " (المجادلة: 11)</div>
             </div>
             <div class="about-image">
-                <span>📖 ﴿ وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا ﴾</span>
-                <p style="margin-top:15px">"and recite the Quran with measured recitation" — guided by Hafiz AFAQ Attari</p>
+                <span style="font-size:5rem;">📚</span>
+                <p>Madani Qaida | Tafseer | Masail</p>
             </div>
         </div>
     </section>
 
-    <!-- Why choose us section (additional) -->
-    <section>
-        <h2 class="section-title">🌟 Why Choose Hafiz AFAQ Attari Academy?</h2>
+    <!-- New Courses Section with Madani Qaida, Quran Tafseer, Masail -->
+    <section id="courses">
+        <h2 class="section-title">📚 Our Courses (Dawat-e-Islami Special)</h2>
         <div class="grid-3cols">
-            <div class="feature-card">✅ Ijazah Certified & Sanad</div>
-            <div class="feature-card">✅ 1-on-1 Live Sessions</div>
+            <div class="course-card"><h3>📖 Madani Qaida</h3><p>Complete basic course for learning Arabic letters, Makharij, and Tajweed rules. Perfect for beginners & children.</p></div>
+            <div class="course-card"><h3>🕋 Quran Pak with Tarjuma</h3><p>Word-by-word Urdu/English translation, understanding the meaning of each verse.</p></div>
+            <div class="course-card"><h3>🧠 Tafseer ul Quran</h3><p>Detailed explanation of Quranic verses, background (Shan-e-Nuzool), and Islamic guidance.</p></div>
+            <div class="course-card"><h3>📜 Masail (Islamic Rulings)</h3><p>Daily life masail according to Hanafi Fiqh: Salah, Wudu, Zakat, Hajj, Business, Family issues.</p></div>
+            <div class="course-card"><h3>🎙️ Tajweed & Qira'at</h3><p>Master perfect recitation with practical Tajweed and Qira'at sab'a.</p></div>
+            <div class="course-card"><h3>👶 Kids Islamic Program</h3><p>Madani Qaida, Duas, Seerah, and basic Aqaid for children.</p></div>
+        </div>
+        <div class="quran-verse">" وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا " (البقرة: 31)</div>
+    </section>
+
+    <!-- New Masail Section (Fiqh rulings) -->
+    <section id="masail">
+        <h2 class="section-title">📜 Masail (Islamic Rulings) - فقہی مسائل</h2>
+        <div class="grid-3cols">
+            <div class="feature-card">
+                <h3>🧼 طہارت (Purification)</h3>
+                <p>Complete masail of Wudu, Ghusl, Tayammum, and cleanliness according to Hanafi Fiqh.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🕌 نماز (Salah)</h3>
+                <p>Masail of Namaz, timings, Qira'at, Sajda Sahv, and rulings for travelers.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💰 زکاۃ (Zakat)</h3>
+                <p>Nisab, calculation, recipients, and modern Zakat rulings on cash/gold.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌙 روزہ (Fasting)</h3>
+                <p>Fasting rules, exemptions, Kaffarah, and Sunnah acts of Ramadan.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🕋 حج و عمرہ (Hajj & Umrah)</h3>
+                <p>Complete guide with masail, Meeqat, rituals, and common mistakes.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💍 معاشرتی مسائل (Social Issues)</h3>
+                <p>Nikah, divorce, inheritance, business dealings, and Halal/Haram.</p>
+            </div>
+        </div>
+        <div class="quran-verse">" فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ " (النحل: 43)</div>
+        <p style="text-align:center; margin-top:15px;">🌟 Weekly Q&A sessions with Hafiz AFAQ Attari on live Masail 🌟</p>
+    </section>
+
+    <section id="pricing">
+        <h2 class="section-title">📌 Monthly Fees (International)</h2>
+        <div class="pricing-global">
+            <div class="price-card"><div class="country-name">🇬🇧 United Kingdom</div><p>📘 Madani Qaida: <span class="price-amount">£25</span></p><p>📖 Quran & Tafseer: <span class="price-amount">£60</span></p><p>📜 Masail Course: £40</p></div>
+            <div class="price-card"><div class="country-name">🇺🇸 United States</div><p>📘 Madani Qaida: <span class="price-amount">$30</span></p><p>📖 Quran & Tafseer: <span class="price-amount">$70</span></p></div>
+            <div class="price-card"><div class="country-name">🇦🇪 UAE</div><p>📘 Qaida: <span class="price-amount">120 AED</span></p><p>📖 Quran & Tafseer: <span class="price-amount">300 AED</span></p></div>
+            <div class="price-card"><div class="country-name">🇪🇺 Europe (EUR)</div><p>📘 Qaida: <span class="price-amount">€25</span></p><p>📖 Quran & Tafseer: <span class="price-amount">€70</span></p></div>
+            <div class="price-card"><div class="country-name">🇵🇰 Pakistan</div><p>📘 Madani Qaida: <span class="price-amount">2,000 PKR</span></p><p>📖 Quran & Tafseer: <span class="price-amount">8,000 PKR</span></p><p>📜 Masail: 4,000 PKR</p></div>
+        </div>
+        <p style="text-align:center; margin-top:20px;">✨ Family discount 15% | Monthly installment available ✨</p>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section>
+        <h2 class="section-title">Why Choose Dawat-e-Islami Online?</h2>
+        <div class="grid-3cols">
+            <div class="feature-card">✅ Ijazah Certified Scholars</div>
+            <div class="feature-card">✅ Live Madani Qaida Classes</div>
+            <div class="feature-card">✅ Quran Tarjuma & Tafseer</div>
+            <div class="feature-card">✅ Weekly Masail Session</div>
             <div class="feature-card">✅ Flexible Timings 24/7</div>
-            <div class="feature-card">✅ Monthly Progress Report</div>
-            <div class="feature-card">✅ Male & Female Instructors</div>
             <div class="feature-card">✅ Free Trial Classes</div>
         </div>
     </section>
 
-    <section id="pricing">
-        <h2 class="section-title">📌 Monthly Tuition Fees (by Hafiz AFAQ Attari Academy)</h2>
-        <div class="pricing-global">
-            <div class="price-card"><div class="country-name">🇬🇧 United Kingdom</div><p>📘 Qaida ➜ <span class="price-amount">£25/month</span></p><p>📖 Quran & Tajweed ➜ <span class="price-amount">£60/month</span></p><p>🧕 Tafseer ➜ £70</p></div>
-            <div class="price-card"><div class="country-name">🇺🇸 United States</div><p>📘 Qaida ➜ <span class="price-amount">$30/month</span></p><p>📖 Quran & Tajweed ➜ <span class="price-amount">$70/month</span></p><p>🧕 Tafseer ➜ $85</p></div>
-            <div class="price-card"><div class="country-name">🇦🇪 UAE</div><p>📘 Qaida ➜ <span class="price-amount">120 AED/month</span></p><p>📖 Quran & Tajweed ➜ <span class="price-amount">300 AED/month</span></p></div>
-            <div class="price-card"><div class="country-name">🇪🇺 Europe (EUR)</div><p>📘 Qaida ➜ <span class="price-amount">€25/month</span></p><p>📖 Quran & Tajweed ➜ <span class="price-amount">€70/month</span></p></div>
-            <div class="price-card"><div class="country-name">🇵🇰 Pakistan</div><p>📘 Qaida ➜ <span class="price-amount">2,000 PKR/month</span></p><p>📖 Quran & Tajweed ➜ <span class="price-amount">8,000 PKR/month</span></p><p>🎓 Hifz Program ➜ 10,000 PKR</p></div>
-        </div>
-        <p style="text-align:center; margin-top:25px;">✨ Siblings discount 15% | Group classes available. Enroll Now with Hafiz AFAQ Attari ✨</p>
-    </section>
-
-    <section id="courses">
-        <h2 class="section-title">📚 Our Courses (Taught by Hafiz AFAQ Attari & Team)</h2>
-        <div class="grid-3cols">
-            <div class="course-card"><h3>🎓 Noorani Qaida</h3><p>Perfect for beginners: Arabic letters, Makharij, basic rules.</p></div>
-            <div class="course-card"><h3>📖 Quran with Tajweed</h3><p>Master recitation, practical Tajweed rules, Sifaat, fluency.</p></div>
-            <div class="course-card"><h3>🧠 Tafseer ul Quran</h3><p>Understand Quranic verses, context, spirituality & reflection.</p></div>
-            <div class="course-card"><h3>🗣 Arabic & Islamic Studies</h3><p>Arabic grammar, Seerah, Fiqh, Duas for children & adults.</p></div>
-            <div class="course-card"><h3>🎙️ Qira'at & Ijazah</h3><p>Advanced Sanad program for serious students.</p></div>
-            <div class="course-card"><h3>👶 Kids Special Program</h3><p>Fun & engaging Islamic learning with certified teachers.</p></div>
-        </div>
-    </section>
-
-    <!-- Testimonials (Missing but added) -->
     <section id="testimonials">
-        <h2 class="section-title">💬 What Our Students Say</h2>
+        <h2 class="section-title">💬 Student Reviews</h2>
         <div class="grid-3cols">
-            <div class="testimonial-card">"Hafiz AFAQ Attari's teaching method is outstanding. My kids learned Tajweed within months. Highly recommended!" — Sarah, UK</div>
-            <div class="testimonial-card">"I was struggling with Quran recitation but under the guidance of Al-Noor Academy, I feel confident now. JazakAllah!" — Ahmed, USA</div>
-            <div class="testimonial-card">"Best online academy with affordable fees and professional Ijazah teachers. Free trial was very helpful." — Fatima, UAE</div>
+            <div class="testimonial-card">"Excellent platform for Madani Qaida. My children learned quickly with Hafiz AFAQ Attari." — Ayesha, UK</div>
+            <div class="testimonial-card">"The Tafseer course changed my understanding of Quran. Highly recommended!" — Bilal, USA</div>
+            <div class="testimonial-card">"I love the Masail section. Every Muslim should join this academy." — Fatima, UAE</div>
         </div>
     </section>
 
     <section>
-        <h2 class="section-title">❓ Frequent Questions</h2>
+        <h2 class="section-title">❓ Frequently Asked Questions</h2>
         <div class="faq-container">
-            <div class="faq-item"><div class="faq-question">How to start free trial with Hafiz AFAQ Attari?</div><div class="faq-answer">Fill the contact form or WhatsApp us. Our coordinator will schedule a demo class with Hafiz sb or senior teacher.</div></div>
-            <div class="faq-item"><div class="faq-question">Do you offer separate female teachers?</div><div class="faq-answer">Yes, professional female Ustadhas for sisters and young girls under supervision.</div></div>
-            <div class="faq-item"><div class="faq-question">Are the fees for all countries final?</div><div class="faq-answer">Yes, given pricing for UK, USA, UAE, Europe & Pakistan. Family discounts available.</div></div>
-            <div class="faq-item"><div class="faq-question">Is Hafiz AFAQ Attari personally involved in teaching?</div><div class="faq-answer">Yes, he directly supervises advanced Tafseer & Qira'at classes and trains all teachers.</div></div>
+            <div class="faq-item"><div class="faq-question">How to start Madani Qaida course?</div><div class="faq-answer">Fill the contact form or WhatsApp on UAE +971505859816 / PK +923411472338. We will arrange a free demo class.</div></div>
+            <div class="faq-item"><div class="faq-question">Do you teach Quran with Tarjuma?</div><div class="faq-answer">Yes, we teach word-by-word translation and detailed Tafseer in Urdu/English.</div></div>
+            <div class="faq-item"><div class="faq-question">What kind of Masail do you cover?</div><div class="faq-answer">Salah, Wudu, Zakat, Fasting, Hajj, Nikah, business, and daily life rulings per Hanafi Fiqh.</div></div>
+            <div class="faq-item"><div class="faq-question">Is there any certification?</div><div class="faq-answer">Yes, Ijazah & completion certificates are awarded after evaluation.</div></div>
         </div>
     </section>
 
     <section id="contact">
-        <h2 class="section-title">📞 Register / Contact Hafiz Muhammad AFAQ Attari</h2>
+        <h2 class="section-title">📞 Register for Free Trial</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Get Free Consultation & 3-Day Trial</h3>
-                <div class="contact-item"><span>📞</span> <a href="tel:+44748888888">+44 7488 888888 (UK Office)</a></div>
-                <div class="contact-item"><span>📧</span> <a href="mailto:info@alnooracademy.com">info@alnooracademy.com</a></div>
-                <div class="contact-item"><span>💬</span> WhatsApp Direct: +44 7700 123456</div>
-                <a href="https://wa.me/447700123456" class="whatsapp-btn">📲 Chat on WhatsApp →</a>
-                <p style="margin-top:20px;">⭐ <strong>Hafiz Muhammad AFAQ Attari</strong> personally responds to queries. Enroll for Free Trial Now! ⭐</p>
+                <h3>Hafiz Muhammad AFAQ Attari</h3>
+                <div class="contact-item">📞 UAE (Call/WhatsApp): <a href="tel:+971505859816">+971 505 859816</a></div>
+                <div class="contact-item">📞 Pakistan (Only WhatsApp): <a href="https://wa.me/923411472338">+92 341 1472338</a></div>
+                <div class="contact-item">📧 Email: <a href="mailto:sardarafaqqds@gmail.com">sardarafaqqds@gmail.com</a></div>
+                <a href="https://wa.me/971505859816" class="whatsapp-btn">📲 WhatsApp (UAE)</a>
+                <a href="https://wa.me/923411472338" class="whatsapp-btn" style="background:#075E54; margin-top:10px;">📲 WhatsApp (Pakistan)</a>
+                <p style="margin-top:20px;">⭐ Free 3-Day Trial | Madani Qaida, Tafseer, Masail ⭐</p>
             </div>
             <div class="contact-form">
                 <form id="enrollForm">
-                    <div class="form-group"><label>Full Name *</label><input type="text" required style="width:100%; padding:12px; border-radius:30px; border:none;"></div>
-                    <div class="form-group"><label>Country</label><select style="width:100%; padding:12px; border-radius:30px;"><option>🇬🇧 United Kingdom</option><option>🇺🇸 USA</option><option>🇦🇪 UAE</option><option>🇪🇺 Europe</option><option>🇵🇰 Pakistan</option></select></div>
-                    <div class="form-group"><label>WhatsApp Number *</label><input type="text" required style="width:100%; padding:12px; border-radius:30px;"></div>
-                    <div class="form-group"><label>Course interest</label><select style="width:100%; padding:12px; border-radius:30px;"><option>Qaida</option><option>Quran & Tajweed</option><option>Tafseer</option><option>Hifz Program</option></select></div>
-                    <button type="submit" class="btn btn-gold" style="width:100%">Send Request to Hafiz AFAQ</button>
+                    <div class="form-group"><label>Full Name *</label><input type="text" required></div>
+                    <div class="form-group"><label>Country</label><select><option>🇬🇧 United Kingdom</option><option>🇺🇸 USA</option><option>🇦🇪 UAE</option><option>🇪🇺 Europe</option><option>🇵🇰 Pakistan</option></select></div>
+                    <div class="form-group"><label>WhatsApp Number *</label><input type="text" required placeholder="e.g., +971505859816"></div>
+                    <div class="form-group"><label>Select Course</label><select><option>Madani Qaida</option><option>Quran with Tarjuma & Tafseer</option><option>Masail (Fiqh Course)</option><option>Hifz Program</option></select></div>
+                    <button type="submit" class="btn btn-gold" style="width:100%">Send Request</button>
                 </form>
             </div>
         </div>
+        <div class="quran-verse">" وَقُل رَّبِّ زِدْنِي عِلْمًا " (طه: 114)</div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-section"><h4>Al-Noor Academy</h4><p>Founded by Hafiz Muhammad AFAQ Attari | Authentic Quran, Tajweed & Tafseer since 2009.</p></div>
-            <div class="footer-section"><h4>Global Fees</h4><p>🇬🇧 £25-60 | 🇺🇸 $30-70 <br>🇦🇪 120-300 AED | 🇪🇺 €25-70 <br>🇵🇰 2k-8k PKR</p></div>
-            <div class="footer-section"><h4>Contact</h4><p>WhatsApp: +44 7700 123456 <br> Email: info@alnooracademy.com</p></div>
+            <div class="footer-section"><h4>Dawat-e-Islami Online</h4><p>New Islamic platform by Hafiz Muhammad AFAQ Attari | Madani Qaida, Quran Tafseer & Masail.</p></div>
+            <div class="footer-section"><h4>Quick Contact</h4><p>📞 UAE: +971505859816<br>📞 PK: +923411472338<br>📧 sardarafaqqds@gmail.com</p></div>
+            <div class="footer-section"><h4>Global Fees</h4><p>🇬🇧 £25-60 | 🇺🇸 $30-70 | 🇦🇪 120-300 AED | 🇪🇺 €25-70 | 🇵🇰 2k-8k PKR</p></div>
         </div>
-        <div class="footer-bottom">© 2026 Al-Noor Islamic Learning Academy | Ijazah Certified by Hafiz Muhammad AFAQ Attari</div>
+        <div class="footer-bottom" style="text-align:center; margin-top:20px;">© 2026 Dawat-e-Islami Online Academy | Hafiz Muhammad AFAQ Attari | Madani Channel Style</div>
     </footer>
 
     <script>
-        // Profile image upload for Hafiz Muhammad AFAQ Attari (user can add their real photo)
+        // Profile image upload
         const profileImg = document.getElementById('profileImage');
         const expandedImg = document.getElementById('expandedImg');
-        
-        function setupProfilePicture() {
-            const savedImg = localStorage.getItem('userProfileImage');
-            if (savedImg) {
-                profileImg.src = savedImg;
-                expandedImg.src = savedImg;
-            }
+        function setupProfile() {
+            const saved = localStorage.getItem('userProfileImage');
+            if (saved) { profileImg.src = saved; expandedImg.src = saved; }
         }
-        
         profileImg.style.cursor = "pointer";
         profileImg.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -585,62 +605,44 @@ Now when anyone opens the website, your profile picture (which can be clicked to
                 const file = event.target.files[0];
                 if (file) {
                     const reader = new FileReader();
-                    reader.onload = function(ev) {
-                        const imgData = ev.target.result;
-                        profileImg.src = imgData;
-                        expandedImg.src = imgData;
-                        localStorage.setItem('userProfileImage', imgData);
+                    reader.onload = (ev) => {
+                        const data = ev.target.result;
+                        profileImg.src = data;
+                        expandedImg.src = data;
+                        localStorage.setItem('userProfileImage', data);
                     };
                     reader.readAsDataURL(file);
                 }
             };
             input.click();
         });
-        
-        const profileBtn = document.getElementById('profileToggle');
+        const toggleBtn = document.getElementById('profileToggle');
         const expandedCard = document.getElementById('profileExpanded');
         const closeBtn = document.getElementById('closeProfile');
-        
-        function toggleProfileCard(e) {
-            if(e.target === profileImg) {
-                // allow upload but also open card? fine
-            }
-            if(expandedCard.classList.contains('show')) {
-                expandedCard.classList.remove('show');
-            } else {
-                expandedCard.classList.add('show');
-            }
-        }
-        profileBtn.addEventListener('click', (e) => { toggleProfileCard(e); });
-        closeBtn.addEventListener('click', () => { expandedCard.classList.remove('show'); });
-        
-        setupProfilePicture();
-        
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.addEventListener('click', () => {
-                const item = q.parentElement;
-                item.classList.toggle('active');
-            });
+        toggleBtn.addEventListener('click', (e) => {
+            if(expandedCard.classList.contains('show')) expandedCard.classList.remove('show');
+            else expandedCard.classList.add('show');
         });
-        
+        closeBtn.addEventListener('click', () => expandedCard.classList.remove('show'));
+        setupProfile();
+        // FAQ
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+        });
         const form = document.getElementById('enrollForm');
         if(form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                alert('✅ JazakAllah Khair! Hafiz Muhammad AFAQ Attari\'s team will contact you within 2 hours for free trial.');
+                alert('✅ JazakAllah! Hafiz Muhammad AFAQ Attari will contact you soon for free trial (Madani Qaida / Tafseer / Masail).');
                 form.reset();
             });
         }
-        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if(href === "#" || href === "") return;
                 const target = document.querySelector(href);
-                if(target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
+                if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
             });
         });
     </script>
