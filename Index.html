@@ -1,6 +1,3 @@
-Here is the complete HTML document with your profile picture functionality fixed (now visible and clickable to upload), your name kept in its original script (not forced to Urdu), and all other improvements preserved.
-
-```html
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
@@ -19,119 +16,64 @@ Here is the complete HTML document with your profile picture functionality fixed
             --royal-navy: #1B2A4A;
             --islamic-teal: #1E5F6B;
             --sand-stone: #E8D9C5;
-            --pure-white: #FFFFFF;
             --golden-noor: #E4B363;
             --soft-copper: #C57B4A;
-            --dark-bg: #0F1A2F;
             --card-bg: rgba(255, 248, 235, 0.08);
             --border-light: rgba(228, 179, 99, 0.4);
         }
 
         body {
             font-family: 'Noto Nastaliq Urdu', 'Segoe UI', 'Poppins', Tahoma, sans-serif;
-            background: linear-gradient(145deg, var(--royal-navy) 0%, var(--deep-maroon) 100%);
-            color: var(--sand-stone);
+            background: linear-gradient(145deg, #1B2A4A 0%, #4A1A2C 100%);
+            color: #E8D9C5;
             line-height: 1.8;
             overflow-x: hidden;
         }
 
-        /* RTL base - Urdu starts from right */
-        body, .rtl-text, .section-title, .hero p, .about-text p, .course-card p, .feature-card p, .testimonial-card p, .faq-question, .faq-answer, .footer-section p, .footer-section h4, .logo, nav a, .contact-info h3, label {
-            text-align: right;
-        }
-
-        /* English/LTR elements - force left alignment */
-        .ltr-text, .contact-item a, .whatsapp-btn, .price-amount, .btn, .stat-number, .profile-bio, .profile-expanded-header h4, .profile-expanded-header p, .close-profile, .hero-buttons, .pricing-global .price-card p, .country-name, .footer-bottom {
-            text-align: left;
-            direction: ltr;
-            display: inline-block;
+        header {
+            background: rgba(11, 18, 34, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
             width: 100%;
-        }
-
-        /* Special mixed content handling */
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            direction: ltr;
-            text-align: left;
-        }
-        .contact-item span:first-child {
-            direction: ltr;
-        }
-        .contact-item a {
-            direction: ltr;
-            text-align: left;
-        }
-        .whatsapp-btn {
-            text-align: center;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: auto;
-        }
-        .hero-buttons {
-            text-align: center;
-        }
-        .btn {
-            text-align: center;
-        }
-        .price-card p {
-            text-align: center;
-        }
-        .country-name {
-            text-align: center;
-        }
-        .section-title:after {
-            text-align: center;
-        }
-        .quran-verse {
-            text-align: center;
-        }
-        .course-card h3, .feature-card h3 {
-            text-align: center;
-        }
-        .contact-form input, .contact-form select, .contact-form textarea {
-            text-align: right;
-            direction: rtl;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #E4B363;
         }
         .header-content {
+            max-width: 1300px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 30px;
+            flex-wrap: wrap;
         }
         .logo {
-            text-align: right;
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, #E4B363, #C57B4A);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 800;
         }
         nav ul {
-            justify-content: flex-start;
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            flex-wrap: wrap;
         }
-        .contact-item a, .profile-bio, .price-amount {
-            unicode-bidi: embed;
-            direction: ltr;
-            display: inline-block;
+        nav a {
+            color: #E8D9C5;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s;
         }
-        .profile-bio {
-            text-align: left;
-            width: 100%;
-        }
-        footer .footer-section p, footer .footer-section h4 {
-            text-align: right;
-        }
-        .footer-bottom {
-            text-align: center;
-        }
-        header {
-            direction: rtl;
-        }
-        .about-text h3 {
-            text-align: right;
+        nav a:hover {
+            color: #E4B363;
         }
 
-        /* Floating Profile - Fixed for visible image */
         .floating-profile {
             position: fixed;
             left: 20px;
@@ -140,99 +82,91 @@ Here is the complete HTML document with your profile picture functionality fixed
             width: 85px;
             height: 85px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--golden-noor), var(--soft-copper));
+            background: linear-gradient(135deg, #E4B363, #C57B4A);
             padding: 3px;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
             animation: floatGlow 2s ease-in-out infinite;
         }
-
         .floating-profile:hover {
             transform: scale(1.1);
         }
-
         .floating-profile img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--sand-stone);
+            border: 2px solid #E8D9C5;
             background: #2c5a3e;
         }
-
+        @keyframes floatGlow {
+            0% { box-shadow: 0 8px 20px rgba(228,179,99,0.3); transform: translateY(0px);}
+            50% { box-shadow: 0 12px 30px rgba(228,179,99,0.6); transform: translateY(-5px);}
+            100% { box-shadow: 0 8px 20px rgba(228,179,99,0.3); transform: translateY(0px);}
+        }
         .profile-expanded {
             position: fixed;
             left: 20px;
             bottom: 115px;
-            background: rgba(27, 42, 74, 0.97);
+            background: rgba(27, 42, 74, 0.98);
             backdrop-filter: blur(12px);
             border-radius: 25px;
             padding: 18px 20px;
-            width: 290px;
+            width: 300px;
             z-index: 998;
-            border: 1px solid var(--golden-noor);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 1px solid #E4B363;
             transform: translateX(-120%);
             transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
             pointer-events: none;
         }
-
         .profile-expanded.show {
             transform: translateX(0);
             pointer-events: auto;
         }
-
         .profile-expanded-header {
             display: flex;
             align-items: center;
             gap: 15px;
             margin-bottom: 12px;
-            border-bottom: 1px solid var(--golden-noor);
+            border-bottom: 1px solid #E4B363;
             padding-bottom: 12px;
         }
-
         .profile-expanded-img {
             width: 60px;
             height: 60px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--golden-noor);
-            background: #2c5a3e;
+            border: 2px solid #E4B363;
         }
-
         .profile-expanded-header h4 {
-            color: var(--golden-noor);
+            color: #E4B363;
             font-size: 1rem;
             margin: 0;
+            text-align: left;
         }
-
         .profile-expanded-header p {
             font-size: 0.7rem;
             margin: 0;
-            color: var(--sand-stone);
+            color: #E8D9C5;
+            text-align: left;
         }
-
         .profile-bio {
             font-size: 0.8rem;
             margin: 10px 0;
             line-height: 1.5;
+            text-align: left;
+            direction: ltr;
         }
-
         .close-profile {
-            background: var(--deep-maroon);
+            background: #4A1A2C;
             border: none;
-            color: var(--golden-noor);
+            color: #E4B363;
             padding: 6px 12px;
             border-radius: 30px;
             cursor: pointer;
             width: 100%;
-        }
-
-        @keyframes floatGlow {
-            0% { box-shadow: 0 8px 20px rgba(228,179,99,0.3); transform: translateY(0px);}
-            50% { box-shadow: 0 12px 30px rgba(228,179,99,0.6); transform: translateY(-5px);}
-            100% { box-shadow: 0 8px 20px rgba(228,179,99,0.3); transform: translateY(0px);}
+            text-align: center;
         }
 
         .hero {
@@ -240,16 +174,15 @@ Here is the complete HTML document with your profile picture functionality fixed
             text-align: center;
             background: radial-gradient(circle at 10% 20%, rgba(30, 95, 107, 0.3), rgba(74, 26, 44, 0.7));
         }
-
         .hero h1 {
             font-size: 2.5rem;
-            background: linear-gradient(to right, var(--golden-noor), #F7D98C);
+            background: linear-gradient(to right, #E4B363, #F7D98C);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             margin-bottom: 20px;
+            text-align: center;
         }
-
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
@@ -257,6 +190,7 @@ Here is the complete HTML document with your profile picture functionality fixed
             background: rgba(0,0,0,0.4);
             padding: 12px 20px;
             border-radius: 50px;
+            text-align: center;
         }
 
         .btn {
@@ -268,17 +202,22 @@ Here is the complete HTML document with your profile picture functionality fixed
             transition: all 0.3s;
             display: inline-block;
             margin: 5px;
+            text-align: center;
         }
-
         .btn-gold {
-            background: var(--golden-noor);
-            color: var(--royal-navy);
+            background: #E4B363;
+            color: #1B2A4A;
         }
-
         .btn-outline {
             background: transparent;
-            color: var(--sand-stone);
-            border: 2px solid var(--golden-noor);
+            color: #E8D9C5;
+            border: 2px solid #E4B363;
+        }
+        .btn-gold:hover, .btn-outline:hover {
+            transform: scale(1.05);
+        }
+        .hero-buttons {
+            text-align: center;
         }
 
         section {
@@ -286,30 +225,35 @@ Here is the complete HTML document with your profile picture functionality fixed
             max-width: 1300px;
             margin: 0 auto;
         }
-
         .section-title {
             text-align: center;
             font-size: 2.3rem;
-            color: var(--golden-noor);
+            color: #E4B363;
             margin-bottom: 45px;
         }
-
         .section-title:after {
             content: '﴿';
             display: block;
             font-size: 1.8rem;
-            color: var(--soft-copper);
+            color: #C57B4A;
         }
 
         .quran-verse {
             text-align: center;
             font-size: 1.5rem;
-            color: var(--golden-noor);
-            margin: 30px 0;
+            color: #E4B363;
+            margin: 25px 0;
             padding: 20px;
             background: rgba(228,179,99,0.1);
             border-radius: 40px;
-            font-family: 'Amiri', serif;
+            font-family: 'Amiri', 'Noto Nastaliq Urdu', serif;
+            line-height: 2;
+        }
+        .verse-reference {
+            font-size: 0.9rem;
+            color: #C57B4A;
+            margin-top: 8px;
+            text-align: center;
         }
 
         .about {
@@ -321,33 +265,19 @@ Here is the complete HTML document with your profile picture functionality fixed
             border-radius: 40px;
             padding: 35px;
         }
-
-        .pricing-global {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
+        .about-text h3 {
+            text-align: right;
+            font-size: 1.8rem;
+            color: #E4B363;
         }
-
-        .price-card {
-            background: rgba(27, 42, 74, 0.7);
-            backdrop-filter: blur(8px);
-            border-radius: 30px;
-            padding: 20px;
-            border: 1px solid var(--golden-noor);
+        .about-text p {
+            text-align: right;
+        }
+        .about-image {
             text-align: center;
         }
-
-        .country-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--golden-noor);
-        }
-
-        .price-amount {
-            font-weight: 800;
-            color: #F7E05E;
-            font-size: 1.3rem;
+        .about-image span {
+            font-size: 5rem;
         }
 
         .grid-3cols {
@@ -355,8 +285,7 @@ Here is the complete HTML document with your profile picture functionality fixed
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
-
-        .feature-card, .testimonial-card, .teacher-card, .course-card {
+        .course-card, .feature-card, .testimonial-card {
             background: rgba(30, 45, 60, 0.65);
             backdrop-filter: blur(5px);
             border-radius: 28px;
@@ -365,9 +294,42 @@ Here is the complete HTML document with your profile picture functionality fixed
             text-align: center;
             transition: 0.2s;
         }
-        .feature-card:hover, .course-card:hover {
+        .course-card:hover, .feature-card:hover {
             transform: translateY(-5px);
-            border-color: var(--golden-noor);
+            border-color: #E4B363;
+        }
+        .course-card h3, .feature-card h3 {
+            text-align: center;
+            color: #E4B363;
+            margin-bottom: 15px;
+        }
+
+        .pricing-global {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .price-card {
+            background: rgba(27, 42, 74, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 30px;
+            padding: 20px;
+            border: 1px solid #E4B363;
+            text-align: center;
+        }
+        .country-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #E4B363;
+            text-align: center;
+        }
+        .price-amount {
+            font-weight: 800;
+            color: #F7E05E;
+            font-size: 1.3rem;
+            direction: ltr;
+            display: inline-block;
         }
 
         .contact-container {
@@ -375,7 +337,28 @@ Here is the complete HTML document with your profile picture functionality fixed
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
-
+        .contact-info h3 {
+            text-align: right;
+            font-size: 1.5rem;
+            color: #E4B363;
+        }
+        .contact-item {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            direction: ltr;
+            text-align: left;
+        }
+        .contact-item a {
+            color: #E8D9C5;
+            text-decoration: none;
+        }
+        .contact-item a:hover {
+            color: #E4B363;
+        }
         .whatsapp-btn {
             background: #25D366;
             color: white;
@@ -384,8 +367,35 @@ Here is the complete HTML document with your profile picture functionality fixed
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            gap: 8px;
             margin-top: 10px;
+            width: auto;
+        }
+        .whatsapp-btn:hover {
+            background: #20BD5A;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 30px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: right;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 30px;
+            border: none;
+            margin-top: 5px;
+            font-family: inherit;
         }
 
         .faq-question {
@@ -396,59 +406,72 @@ Here is the complete HTML document with your profile picture functionality fixed
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
+            text-align: right;
         }
-
         .faq-answer {
             padding: 0 18px 15px;
             display: none;
+            text-align: right;
         }
-        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
 
         footer {
             background: #0A1120;
-            border-top: 2px solid var(--golden-noor);
+            border-top: 2px solid #E4B363;
             padding: 40px 20px 20px;
         }
-
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
             gap: 30px;
         }
+        .footer-section h4 {
+            text-align: right;
+            color: #E4B363;
+            margin-bottom: 15px;
+        }
+        .footer-section p {
+            text-align: right;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
 
         @media (max-width: 768px) {
-            nav { display: none; }
-            .hero h1 { font-size: 1.8rem; }
-            .about { grid-template-columns: 1fr; }
-            .contact-container { grid-template-columns: 1fr; }
-            .floating-profile { width: 70px; height: 70px; left: 12px; bottom: 12px; }
-            .profile-expanded { width: 250px; left: 12px; bottom: 95px; }
-            .section-title { font-size: 1.6rem; }
-            .quran-verse { font-size: 1.1rem; }
-        }
-        .contact-item {
-            margin: 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .contact-item a {
-            color: var(--sand-stone);
-            text-decoration: none;
-        }
-        .contact-item a:hover {
-            color: var(--golden-noor);
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 30px;
-            border: none;
-            margin-top: 5px;
-        }
-        .form-group {
-            margin-bottom: 18px;
+            nav {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .about {
+                grid-template-columns: 1fr;
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .floating-profile {
+                width: 70px;
+                height: 70px;
+                left: 12px;
+                bottom: 12px;
+            }
+            .profile-expanded {
+                width: 260px;
+                left: 12px;
+                bottom: 95px;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .quran-verse {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -458,20 +481,20 @@ Here is the complete HTML document with your profile picture functionality fixed
             <div class="logo">⭐ Dawat-e-Islami | Hafiz Muhammad AFAQ Attari</div>
             <nav>
                 <ul>
-                    <li><a href="#home">🏠 Home</a></li>
-                    <li><a href="#about">📖 About</a></li>
-                    <li><a href="#courses">📚 Courses</a></li>
-                    <li><a href="#masail">📜 Masail</a></li>
-                    <li><a href="#pricing">💰 Fees</a></li>
-                    <li><a href="#contact">📞 Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#masail">Masail</a></li>
+                    <li><a href="#pricing">Fees</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Floating Profile with VISIBLE image and default avatar (click to upload your real photo) -->
+    <!-- Floating Profile -->
     <div class="floating-profile" id="profileToggle">
-        <img id="profileImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232c5a3e'/%3E%3Ccircle cx='50' cy='35' r='15' fill='%23E4B363'/%3E%3Ccircle cx='50' cy='70' r='20' fill='%23E4B363'/%3E%3Ctext x='50' y='85' font-size='12' text-anchor='middle' fill='%231B2A4A'%3E📖%3C/text%3E%3C/svg%3E" alt="Hafiz Muhammad AFAQ Attari">
+        <img id="profileImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232c5a3e'/%3E%3Ccircle cx='50' cy='35' r='15' fill='%23E4B363'/%3E%3Ccircle cx='50' cy='70' r='20' fill='%23E4B363'/%3E%3C/svg%3E" alt="Hafiz Muhammad AFAQ Attari">
     </div>
     <div class="profile-expanded" id="profileExpanded">
         <div class="profile-expanded-header">
@@ -486,47 +509,65 @@ Here is the complete HTML document with your profile picture functionality fixed
         <button class="close-profile" id="closeProfile">Close</button>
     </div>
 
+    <!-- Hero Section with Quran Verse -->
     <section id="home" class="hero">
         <h1>🕌 Dawat-e-Islami | Madani Qaida • Quran • Tafseer • Masail</h1>
         <p>🌟 Assalamu Alaikum! Learn Madani Qaida, Quran with Translation & Tafseer, and daily Masail with Hafiz Muhammad AFAQ Attari. Online classes, one-to-one attention, free trial. 🌟</p>
-        <div class="quran-verse">" وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا " (Al-Muzzammil: 4)</div>
+        <div class="quran-verse">
+            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ<br>
+            " وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا "
+            <div class="verse-reference">📖 Surah Al-Muzzammil (73:4)</div>
+        </div>
         <div class="hero-buttons">
             <a href="#courses" class="btn btn-gold">View Courses</a>
             <a href="#contact" class="btn btn-outline">Free Trial ⚡</a>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
-        <h2 class="section-title">About Us | ہمارا تعارف</h2>
+        <h2 class="section-title">About Us</h2>
         <div class="about">
             <div class="about-text">
                 <h3>🎓 Hafiz Muhammad AFAQ Attari</h3>
-                <p>Dawat-e-Islami Online Academy is a new and authentic platform dedicated to spreading Quranic and Sunnah teachings. We offer <strong>Madani Qaida, Quran with Translation & Tafseer, and comprehensive Masail (Islamic rulings) according to Hanafi Fiqh</strong>. Our goal is to provide easy religious education for every Muslim.</p>
+                <p>Dawat-e-Islami Online Academy is a new and authentic platform dedicated to spreading Quranic and Sunnah teachings. We offer Madani Qaida, Quran with Translation & Tafseer, and comprehensive Masail according to Hanafi Fiqh. Our goal is to provide easy religious education for every Muslim.</p>
                 <p>✅ Live Classes | ✅ Tajweed Quran | ✅ Islamic Masail | ✅ Male & Female Teachers</p>
-                <div class="quran-verse" style="font-size:1.2rem">" يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ " (Al-Mujadila: 11)</div>
+                <div class="quran-verse" style="font-size:1.1rem; margin-top:20px;">
+                    " يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ "
+                    <div class="verse-reference">📖 Surah Al-Mujadila (58:11)</div>
+                </div>
             </div>
             <div class="about-image">
-                <span style="font-size:5rem;">📚</span>
+                <span>📚</span>
                 <p>Madani Qaida | Tafseer | Masail</p>
             </div>
         </div>
     </section>
 
+    <!-- Courses Section -->
     <section id="courses">
-        <h2 class="section-title">📚 Our Courses | ہمارے کورسز</h2>
+        <h2 class="section-title">Our Courses</h2>
         <div class="grid-3cols">
             <div class="course-card"><h3>📖 Madani Qaida</h3><p>Complete basics of Arabic letters, Makharij, and Tajweed rules. Best for beginners & children.</p></div>
             <div class="course-card"><h3>🕋 Quran with Translation</h3><p>Word-by-word Urdu/English translation, understanding the meaning of each verse.</p></div>
-            <div class="course-card"><h3>🧠 Tafseer ul Quran</h3><p>Detailed explanation of Quranic verses, background (Shan-e-Nuzool), and Islamic guidance.</p></div>
+            <div class="course-card"><h3>🧠 Tafseer ul Quran</h3><p>Detailed explanation of Quranic verses, background, and Islamic guidance.</p></div>
             <div class="course-card"><h3>📜 Masail (Islamic Rulings)</h3><p>Daily life masail according to Hanafi Fiqh: Salah, Wudu, Zakat, Hajj, Business, Family issues.</p></div>
             <div class="course-card"><h3>🎙️ Tajweed & Qira'at</h3><p>Master perfect recitation with practical Tajweed rules.</p></div>
             <div class="course-card"><h3>👶 Kids Islamic Program</h3><p>Madani Qaida, Duas, Seerah, and basic Aqaid for children.</p></div>
         </div>
-        <div class="quran-verse">" وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا " (Al-Baqarah: 31)</div>
+        <div class="quran-verse">
+            " وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا "
+            <div class="verse-reference">📖 Surah Al-Baqarah (2:31)</div>
+        </div>
+        <div class="quran-verse">
+            " اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ "
+            <div class="verse-reference">📖 Surah Al-Alaq (96:1)</div>
+        </div>
     </section>
 
+    <!-- Masail Section -->
     <section id="masail">
-        <h2 class="section-title">📜 Islamic Masail (Fiqh) - حنفی فقہ</h2>
+        <h2 class="section-title">Islamic Masail (Hanafi Fiqh)</h2>
         <div class="grid-3cols">
             <div class="feature-card"><h3>🧼 Purification (Taharah)</h3><p>Complete masail of Wudu, Ghusl, Tayammum, and cleanliness.</p></div>
             <div class="feature-card"><h3>🕌 Salah (Prayer)</h3><p>Masail of Namaz, timings, Sajda Sahv, and rulings for travelers.</p></div>
@@ -535,55 +576,79 @@ Here is the complete HTML document with your profile picture functionality fixed
             <div class="feature-card"><h3>🕋 Hajj & Umrah</h3><p>Complete guide with masail, Meeqat, rituals, and common mistakes.</p></div>
             <div class="feature-card"><h3>💍 Social Issues</h3><p>Nikah, divorce, inheritance, business dealings, and Halal/Haram.</p></div>
         </div>
-        <div class="quran-verse">" فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ " (An-Nahl: 43)</div>
+        <div class="quran-verse">
+            " فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ "
+            <div class="verse-reference">📖 Surah An-Nahl (16:43)</div>
+        </div>
         <p style="text-align:center; margin-top:15px;">🌟 Weekly live Masail session with Hafiz Muhammad AFAQ Attari 🌟</p>
     </section>
 
+    <!-- Pricing Section -->
     <section id="pricing">
-        <h2 class="section-title">📌 Monthly Fees (International)</h2>
+        <h2 class="section-title">Monthly Fees (International)</h2>
         <div class="pricing-global">
-            <div class="price-card"><div class="country-name">🇬🇧 United Kingdom</div><p>📘 Madani Qaida: <span class="price-amount">£25</span></p><p>📖 Quran & Tafseer: <span class="price-amount">£60</span></p><p>📜 Masail: £40</p></div>
-            <div class="price-card"><div class="country-name">🇺🇸 United States</div><p>📘 Madani Qaida: <span class="price-amount">$30</span></p><p>📖 Quran & Tafseer: <span class="price-amount">$70</span></p></div>
-            <div class="price-card"><div class="country-name">🇦🇪 UAE</div><p>📘 Madani Qaida: <span class="price-amount">120 AED</span></p><p>📖 Quran & Tafseer: <span class="price-amount">300 AED</span></p></div>
-            <div class="price-card"><div class="country-name">🇪🇺 Europe (EUR)</div><p>📘 Madani Qaida: <span class="price-amount">€25</span></p><p>📖 Quran & Tafseer: <span class="price-amount">€70</span></p></div>
-            <div class="price-card"><div class="country-name">🇵🇰 Pakistan</div><p>📘 Madani Qaida: <span class="price-amount">2,000 PKR</span></p><p>📖 Quran & Tafseer: <span class="price-amount">8,000 PKR</span></p><p>📜 Masail: 4,000 PKR</p></div>
+            <div class="price-card"><div class="country-name">🇬🇧 United Kingdom</div><p>📘 Madani Qaida: <span class="price-amount">£25/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">£60/month</span></p><p>📜 Masail: £40/month</p></div>
+            <div class="price-card"><div class="country-name">🇺🇸 United States</div><p>📘 Madani Qaida: <span class="price-amount">$30/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">$70/month</span></p></div>
+            <div class="price-card"><div class="country-name">🇦🇪 UAE</div><p>📘 Madani Qaida: <span class="price-amount">120 AED/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">300 AED/month</span></p></div>
+            <div class="price-card"><div class="country-name">🇪🇺 Europe (EUR)</div><p>📘 Madani Qaida: <span class="price-amount">€25/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">€70/month</span></p></div>
+            <div class="price-card"><div class="country-name">🇵🇰 Pakistan</div><p>📘 Madani Qaida: <span class="price-amount">2,000 PKR/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">8,000 PKR/month</span></p><p>📜 Masail: 4,000 PKR/month</p></div>
         </div>
-        <p style="text-align:center; margin-top:20px;">✨ 15% sibling discount | Installment available ✨</p>
+        <p style="text-align:center; margin-top:20px;">✨ 15% sibling discount | Installment available | Free trial ✨</p>
+        <div class="quran-verse">
+            " وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا "
+            <div class="verse-reference">📖 Surah At-Talaq (65:2)</div>
+        </div>
     </section>
 
+    <!-- Why Choose Us -->
     <section>
-        <h2 class="section-title">Why Choose Dawat-e-Islami Online?</h2>
+        <h2 class="section-title">Why Choose Us?</h2>
         <div class="grid-3cols">
-            <div class="feature-card">✅ Ijazah Certified Scholars</div>
-            <div class="feature-card">✅ Live Madani Qaida Classes</div>
-            <div class="feature-card">✅ Quran Translation & Tafseer</div>
-            <div class="feature-card">✅ Weekly Masail Session</div>
-            <div class="feature-card">✅ Flexible Timings 24/7</div>
-            <div class="feature-card">✅ Free Trial Classes</div>
+            <div class="feature-card"><h3>✅ Ijazah Certified Scholars</h3></div>
+            <div class="feature-card"><h3>✅ Live Madani Qaida Classes</h3></div>
+            <div class="feature-card"><h3>✅ Quran Translation & Tafseer</h3></div>
+            <div class="feature-card"><h3>✅ Weekly Masail Session</h3></div>
+            <div class="feature-card"><h3>✅ Flexible Timings 24/7</h3></div>
+            <div class="feature-card"><h3>✅ Free Trial Classes</h3></div>
+        </div>
+        <div class="quran-verse">
+            " إِنَّ اللَّهَ مَعَ الَّذِينَ اتَّقَوا وَّالَّذِينَ هُم مُّحْسِنُونَ "
+            <div class="verse-reference">📖 Surah An-Nahl (16:128)</div>
         </div>
     </section>
 
+    <!-- Testimonials -->
     <section id="testimonials">
-        <h2 class="section-title">💬 Student Reviews</h2>
+        <h2 class="section-title">Student Reviews</h2>
         <div class="grid-3cols">
             <div class="testimonial-card">"Excellent platform for Madani Qaida. My children learned quickly with Hafiz AFAQ Attari." — Ayesha, UK</div>
             <div class="testimonial-card">"The Tafseer course changed my understanding of Quran. Highly recommended!" — Bilal, USA</div>
             <div class="testimonial-card">"I love the Masail section. Every Muslim should join this academy." — Fatima, UAE</div>
         </div>
+        <div class="quran-verse">
+            " وَذَكِّرْ فَإِنَّ الذِّكْرَىٰ تَنفَعُ الْمُؤْمِنِينَ "
+            <div class="verse-reference">📖 Surah Adh-Dhariyat (51:55)</div>
+        </div>
     </section>
 
+    <!-- FAQ -->
     <section>
-        <h2 class="section-title">❓ Frequently Asked Questions</h2>
+        <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="faq-container">
             <div class="faq-item"><div class="faq-question">How to start Madani Qaida course?</div><div class="faq-answer">Fill the contact form or WhatsApp on UAE +971505859816 / PK +923411472338. We will arrange a free demo class.</div></div>
             <div class="faq-item"><div class="faq-question">Do you teach Quran with Translation?</div><div class="faq-answer">Yes, we teach word-by-word translation and detailed Tafseer in Urdu/English.</div></div>
             <div class="faq-item"><div class="faq-question">What kind of Masail do you cover?</div><div class="faq-answer">Salah, Wudu, Zakat, Fasting, Hajj, Nikah, business, and daily life rulings per Hanafi Fiqh.</div></div>
             <div class="faq-item"><div class="faq-question">Is there any certification?</div><div class="faq-answer">Yes, Ijazah & completion certificates are awarded after evaluation.</div></div>
         </div>
+        <div class="quran-verse">
+            " وَقُل رَّبِّ زِدْنِي عِلْمًا "
+            <div class="verse-reference">📖 Surah Ta-Ha (20:114)</div>
+        </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title">📞 Contact & Free Trial Registration</h2>
+        <h2 class="section-title">Contact & Free Trial Registration</h2>
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Hafiz Muhammad AFAQ Attari</h3>
@@ -604,9 +669,13 @@ Here is the complete HTML document with your profile picture functionality fixed
                 </form>
             </div>
         </div>
-        <div class="quran-verse">" وَقُل رَّبِّ زِدْنِي عِلْمًا " (Ta-Ha: 114)</div>
+        <div class="quran-verse">
+            " وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُ "
+            <div class="verse-reference">📖 Surah Az-Zalzalah (99:8)</div>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section"><h4>Dawat-e-Islami Online</h4><p>New Islamic platform by Hafiz Muhammad AFAQ Attari | Madani Qaida, Quran Tafseer & Masail.</p></div>
@@ -617,11 +686,9 @@ Here is the complete HTML document with your profile picture functionality fixed
     </footer>
 
     <script>
-        // Profile image upload - FIXED to show your picture
         const profileImg = document.getElementById('profileImage');
         const expandedImg = document.getElementById('expandedImg');
         
-        // Load saved image if exists
         function loadSavedImage() {
             const saved = localStorage.getItem('userProfileImage');
             if (saved && saved.startsWith('data:image')) {
@@ -630,7 +697,6 @@ Here is the complete HTML document with your profile picture functionality fixed
             }
         }
         
-        // Click to upload your real photo
         profileImg.style.cursor = "pointer";
         profileImg.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -646,7 +712,7 @@ Here is the complete HTML document with your profile picture functionality fixed
                         profileImg.src = imageData;
                         expandedImg.src = imageData;
                         localStorage.setItem('userProfileImage', imageData);
-                        alert('✅ Your profile picture has been updated successfully!');
+                        alert('✅ Your profile picture has been updated!');
                     };
                     reader.readAsDataURL(file);
                 }
@@ -654,7 +720,6 @@ Here is the complete HTML document with your profile picture functionality fixed
             input.click();
         });
         
-        // Toggle profile card
         const toggleBtn = document.getElementById('profileToggle');
         const expandedCard = document.getElementById('profileExpanded');
         const closeBtn = document.getElementById('closeProfile');
@@ -671,27 +736,23 @@ Here is the complete HTML document with your profile picture functionality fixed
             expandedCard.classList.remove('show');
         });
         
-        // Load saved image on page load
         loadSavedImage();
         
-        // FAQ toggle
         document.querySelectorAll('.faq-question').forEach(q => {
             q.addEventListener('click', () => {
                 q.parentElement.classList.toggle('active');
             });
         });
         
-        // Form submission
         const form = document.getElementById('enrollForm');
         if(form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                alert('✅ JazakAllah! Hafiz Muhammad AFAQ Attari will contact you soon for free trial (Madani Qaida / Tafseer / Masail).');
+                alert('✅ JazakAllah! Hafiz Muhammad AFAQ Attari will contact you soon for free trial.');
                 form.reset();
             });
         }
         
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
@@ -706,4 +767,3 @@ Here is the complete HTML document with your profile picture functionality fixed
     </script>
 </body>
 </html>
-```
