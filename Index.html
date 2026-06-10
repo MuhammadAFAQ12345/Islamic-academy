@@ -1,228 +1,333 @@
-<?php
-session_start();
-
-$owner = [
-    'name' => 'Hafiz Muhammad AFAQ Attari',
-    'email' => 'sardarafaqqds@gmail.com',
-
-    'phone_pk' => '+923411472338',
-    'photo' => 'owner.jpg'
-];
-
-$page = $_GET['page'] ?? 'home';
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>Islamic Academy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Learning Academy - Quran & Tajweed</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        body {
+            font-family: 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(to bottom right, #1a472a, #2d5a3f);
+            color: white;
+            min-height: 100vh;
+        }
 
-<style>
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+        }
 
-body{
-margin:0;
-font-family:Poppins;
-background:#0b0f14;
-color:white;
-}
+        header h1 {
+            font-size: 2.5rem;
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
 
-/* NAV */
-.navbar{
-display:flex;
-justify-content:space-between;
-padding:15px;
-background:rgba(0,0,0,0.7);
-position:sticky;
-top:0;
-}
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
 
-/* HERO */
-.hero{
-padding:80px 20px;
-background:url('https://images.unsplash.com/photo-1548013146-72479768bada');
-background-size:cover;
-position:relative;
-}
+        /* Hero Section */
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="50" x="50" text-anchor="middle">☨</text></svg>') no-repeat center;
+            background-size: contain;
+            background-color: rgba(0,0,0,0.3);
+        }
 
-.hero::before{
-content:'';
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.6);
-}
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #d4af37;
+        }
 
-.hero-content{
-position:relative;
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-align-items:center;
-max-width:1200px;
-margin:auto;
-}
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+        }
 
-.hero img{
-width:260px;
-height:260px;
-border-radius:50%;
-border:5px solid gold;
-object-fit:cover;
-}
+        /* Contact Cards */
+        .contact-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-/* CARDS */
-.container{max-width:1200px;margin:auto;padding:20px;}
+        .contact-section h2 {
+            color: #d4af37;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
+        .phone-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
 
-.card{
-background:rgba(255,255,255,0.05);
-padding:20px;
-border-radius:15px;
-cursor:pointer;
-transition:0.3s;
-border:1px solid rgba(255,255,255,0.1);
-}
+        .phone-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px 40px;
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+            transition: all 0.3s ease;
+        }
 
-.card:hover{
-transform:scale(1.05);
-border-color:gold;
-}
+        .phone-card:hover {
+            transform: scale(1.05);
+            background: rgba(212, 175, 55, 0.2);
+        }
 
-.btn{
-padding:10px 20px;
-border:none;
-border-radius:25px;
-background:gold;
-font-weight:bold;
-cursor:pointer;
-}
+        .phone-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
 
-/* DASHBOARD */
-.dashboard{
-display:<?= ($page=='dashboard')?'block':'none' ?>;
-background:#111;
-padding:20px;
-margin:20px;
-border-radius:15px;
-}
+        .phone-card a {
+            font-size: 1.5rem;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-a{color:white;text-decoration:none;}
+        .phone-card a:hover {
+            color: white;
+        }
 
-</style>
+        /* Services Section */
+        .services {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            color: #d4af37;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #d4af37;
+        }
+
+        .service-card h3 {
+            color: #d4af37;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        /* Features */
+        .features {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            color: #d4af37;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: #d4af37;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* CTA Button */
+        .cta {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: #d4af37;
+            color: #1a472a;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta a:hover {
+            background: white;
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 3px solid #d4af37;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .phone-card {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <h1>☨ اسلامک اکیڈمی ☨</h1>
+        <p>Islamic Learning Academy</p>
+    </header>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <div><b>Islamic Academy</b></div>
-    <div>
-        <a href="?page=home">Home</a> |
-        <a href="?page=dashboard">Dashboard</a>
-    </div>
-</div>
+    <section class="hero">
+        <h2>Quran Pak Seekhein Online</h2>
+        <p>
+            Assalamu Alaikum! Humein afsoos nahi hoti aapki Quran Pak, Tajweed aur Tafseer 
+           .seekhne ke liye behtareen platform. Hum ke qualified teachers aapko 
+            Gair Qurbini roygon mein Quran Sikhayen gay.
+        </p>
+    </section>
 
-<!-- HERO -->
-<div class="hero">
-<div class="hero-content">
+    <section class="services">
+        <h2>हमारी सेवाएं / Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="icon">📖</div>
+                <h3>قرآن پاک تعلیم</h3>
+                <p>Quran Pak ki complete taalim. Nisbat ke hisab se har aik Alfaaz ko theek 
+                taur par pronounce karna sikhana.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🎤</div>
+                <h3>تجوید</h3>
+                <p>Tajweed ke Rules ki taalim. Makharij al-Huruf aur Sifat al-Huruf ko 
+                theek seekhein.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">📚</div>
+                <h3>تفسیر</h3>
+                <p>Tafseer-e-Quran Pak ki taalim. Hamare Quranic scholars aapko ayaton 
+                ki tafseer samjhayen gay.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🕌</div>
+                <h3> namaz ki taalim</h3>
+                <p>Namaz (Salah) ki sahi tareh taalim. Roza rakhnay aur Wazu ke laws 
+                sikhaye jayen gay.</p>
+            </div>
+        </div>
+    </section>
 
-    <div>
-        <h1>Learn Quran Online</h1>
-        <p>Qaida | Quran | Tafseer</p>
-        <button class="btn">Start Learning</button>
-    </div>
+    <section class="features">
+        <h2>ہماری خصوصیات / Our Features</h2>
+        <ul class="feature-list">
+            <li>Onine Classes via WhatsApp / Zoom</li>
+            <li>Qualified Scholars se taalim</li>
+            <li>Urdu/Hindi/English mein taalim available</li>
+            <li>Morning aur Evening classes available</li>
+            <li>Free trial class available</li>
+            <li>Individual attention har student ko</li>
+        </ul>
+    </section>
 
-    <div style="text-align:center;">
-        <img src="<?= $owner['photo'] ?>">
-        <h3><?= $owner['name'] ?></h3>
-    </div>
+    <section class="contact-section">
+        <h2>ہم سے رابطہ کریں / Contact Us</h2>
+        <div class="phone-cards">
+            <div class="phone-card">
+                <h3>WhatsApp / Call</h3>
+                <a href="tel:+923411472338">+92 341 1472338</a>
+            </div>
+            <div class="phone-card">
+                <h3>WhatsApp / Call</h3>
+                <a href="tel:+971505859816">+971 505859816</a>
+            </div>
+        </div>
+    </section>
 
-</div>
-</div>
+    <section class="cta">
+        <a href="tel:+923411472338">📱 Ab Call Karein - Enroll Karein</a>
+    </section>
 
-<?php if($page=='home'): ?>
-
-<!-- COURSES -->
-<div class="container">
-<h2>Courses</h2>
-
-<div class="grid">
-
-<a href="?page=qaida" class="card">
-<h3>Madni Qaida</h3>
-<p>Basic Arabic letters</p>
-</a>
-
-<a href="?page=quran" class="card">
-<h3>Quran Course</h3>
-<p>Tajweed & Recitation</p>
-</a>
-
-<a href="?page=tafseer" class="card">
-<h3>Tafseer Course</h3>
-<p>Quran meaning & explanation</p>
-</a>
-
-</div>
-</div>
-
-<?php endif; ?>
-
-<?php if($page=='qaida'): ?>
-<div class="container">
-<h2>Madni Qaida</h2>
-<p>Basic Arabic letters learning step by step.</p>
-<button class="btn">Enroll Now - $50/month</button>
-</div>
-<?php endif; ?>
-
-<?php if($page=='quran'): ?>
-<div class="container">
-<h2>Quran Course</h2>
-<p>Proper Tajweed & recitation training.</p>
-<button class="btn">Enroll Now - $120/month</button>
-</div>
-<?php endif; ?>
-
-<?php if($page=='tafseer'): ?>
-<div class="container">
-<h2>Tafseer Course</h2>
-<p>Understand meanings of Quran deeply.</p>
-<button class="btn">Enroll Now - $150/month</button>
-</div>
-<?php endif; ?>
-
-<?php if($page=='dashboard'): ?>
-<div class="dashboard">
-<h2>Student Dashboard</h2>
-<p>ID: AUTO-<?= rand(1000,9999) ?></p>
-<p>Status: Active</p>
-<p>Courses: Enabled</p>
-<button class="btn">Payment (Demo)</button>
-</div>
-<?php endif; ?>
-
-<!-- CONTACT -->
-<div class="container">
-<h2>Contact</h2>
-
-<p>Dubai: <?= $owner['phone_dubai'] ?></p>
-<p>Pakistan: <?= $owner['phone_pk'] ?></p>
-<p>Email: <?= $owner['email'] ?></p>
-
-</div>
-
-<!-- FOOTER -->
-<div style="text-align:center;padding:20px;background:black;">
-© <?= date('Y') ?> <?= $owner['name'] ?>
-</div>
-
+    <footer>
+        <p>
+            JazakAllah Khair for visiting our website!<br>
+            May Allah Talah aapko Quran Pak ki taalim karne ki taufiq de Amin!
+        </p>
+    </footer>
 </body>
 </html>
