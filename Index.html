@@ -1,8 +1,22 @@
+<?php
+session_start();
+
+$owner = [
+    'name' => 'Hafiz Muhammad AFAQ Attari',
+    'email' => 'sardarafaqqds@gmail.com',
+    'phone_dubai' => '+971505859816',
+    'phone_pk' => '+923411472338',
+    'photo' => 'owner.jpg'
+];
+
+$page = $_GET['page'] ?? 'home';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Islamic Academy - Hafiz Muhammad AFAQ Attari</title>
+<title>Islamic Academy</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -10,126 +24,96 @@
 
 body{
 margin:0;
-font-family:Poppins, sans-serif;
+font-family:Poppins;
 background:#0b0f14;
 color:white;
 }
 
-/* NAVBAR */
+/* NAV */
 .navbar{
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-padding:15px 30px;
 display:flex;
 justify-content:space-between;
+padding:15px;
+background:rgba(0,0,0,0.7);
 position:sticky;
 top:0;
 }
 
 /* HERO */
 .hero{
-position:relative;
-padding:100px 20px;
+padding:80px 20px;
 background:url('https://images.unsplash.com/photo-1548013146-72479768bada');
 background-size:cover;
-background-position:center;
+position:relative;
 }
 
 .hero::before{
 content:'';
 position:absolute;
-top:0;left:0;
-width:100%;height:100%;
+inset:0;
 background:rgba(0,0,0,0.6);
 }
 
-.hero-inner{
+.hero-content{
 position:relative;
 display:flex;
 justify-content:space-between;
-align-items:center;
 flex-wrap:wrap;
+align-items:center;
 max-width:1200px;
 margin:auto;
 }
 
 .hero img{
-width:280px;
-height:280px;
+width:260px;
+height:260px;
 border-radius:50%;
-border:5px solid #d4a853;
+border:5px solid gold;
 object-fit:cover;
 }
 
-/* BUTTON */
-.btn{
-padding:10px 20px;
-border:none;
-border-radius:30px;
-cursor:pointer;
-font-weight:bold;
-background:#d4a853;
-color:#000;
-}
+/* CARDS */
+.container{max-width:1200px;margin:auto;padding:20px;}
 
-/* CONTAINER */
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
-
-/* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
 .card{
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
 padding:20px;
 border-radius:15px;
+cursor:pointer;
+transition:0.3s;
 border:1px solid rgba(255,255,255,0.1);
 }
 
-.price{
-color:#d4a853;
-font-size:22px;
-margin-top:10px;
+.card:hover{
+transform:scale(1.05);
+border-color:gold;
 }
 
-/* CONTACT */
-.contact{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.btn{
+padding:10px 20px;
+border:none;
+border-radius:25px;
+background:gold;
+font-weight:bold;
+cursor:pointer;
 }
 
-.contact-box{
-background:rgba(255,255,255,0.05);
+/* DASHBOARD */
+.dashboard{
+display:<?= ($page=='dashboard')?'block':'none' ?>;
+background:#111;
 padding:20px;
+margin:20px;
 border-radius:15px;
-text-align:center;
 }
 
-/* ABOUT */
-.about{
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
-line-height:1.9;
-color:#ddd;
-}
-
-/* FOOTER */
-footer{
-background:#000;
-text-align:center;
-padding:20px;
-margin-top:40px;
-}
+a{color:white;text-decoration:none;}
 
 </style>
 </head>
@@ -139,110 +123,106 @@ margin-top:40px;
 <!-- NAVBAR -->
 <div class="navbar">
     <div><b>Islamic Academy</b></div>
-    <div>Online Quran Learning</div>
+    <div>
+        <a href="?page=home">Home</a> |
+        <a href="?page=dashboard">Dashboard</a>
+    </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-    <div class="hero-inner">
+<div class="hero-content">
 
-        <div style="flex:1;min-width:250px;">
-            <h1>Learn Quran Online with Excellence</h1>
-            <p>Tajweed | Hifz | Tafseer | Islamic Education</p>
-            <button class="btn">Start Learning</button>
-        </div>
-
-        <div style="text-align:center;flex:1;min-width:250px;">
-            <img src="owner.jpg" alt="Owner">
-            <h3>Hafiz Muhammad AFAQ Attari</h3>
-            <p>Founder & Principal</p>
-        </div>
-
+    <div>
+        <h1>Learn Quran Online</h1>
+        <p>Qaida | Quran | Tafseer</p>
+        <button class="btn">Start Learning</button>
     </div>
+
+    <div style="text-align:center;">
+        <img src="<?= $owner['photo'] ?>">
+        <h3><?= $owner['name'] ?></h3>
+    </div>
+
+</div>
 </div>
 
-<!-- ABOUT -->
-<div class="about">
-    <h2 style="text-align:center;color:#d4a853;">About Founder</h2>
-
-    <p>
-        Assalamu Alaikum! I am <b>Hafiz Muhammad AFAQ Attari</b>, Founder and Principal of Islamic Academy.
-        I have completed my Hifz-e-Quran and have been dedicated to teaching the Holy Quran with Tajweed,
-        Tafseer and proper understanding for many years.
-    </p>
-
-    <p>
-        My mission is to spread the light of the Holy Quran across the world through online education,
-        making it easy for students from UAE, Pakistan and other countries to learn Islam from home.
-    </p>
-
-    <p>
-        I have taught hundreds of students and focus on discipline, correct pronunciation, and Islamic values
-        to build a strong connection with the Quran.
-    </p>
-</div>
+<?php if($page=='home'): ?>
 
 <!-- COURSES -->
 <div class="container">
-    <h2 style="text-align:center;">Courses</h2>
+<h2>Courses</h2>
 
-    <div class="grid">
+<div class="grid">
 
-        <div class="card">
-            <h3>Basic Qaida</h3>
-            <p>Start from Noorani Qaida basics</p>
-            <div class="price">$30 / month</div>
-            <button class="btn">Enroll Now</button>
-        </div>
+<a href="?page=qaida" class="card">
+<h3>Madni Qaida</h3>
+<p>Basic Arabic letters</p>
+</a>
 
-        <div class="card">
-            <h3>Tajweed Course</h3>
-            <p>Proper Quran recitation rules</p>
-            <div class="price">$70 / month</div>
-            <button class="btn">Enroll Now</button>
-        </div>
+<a href="?page=quran" class="card">
+<h3>Quran Course</h3>
+<p>Tajweed & Recitation</p>
+</a>
 
-        <div class="card">
-            <h3>Hifz Program</h3>
-            <p>Complete Quran memorization</p>
-            <div class="price">$50 / month</div>
-            <button class="btn">Enroll Now</button>
-        </div>
+<a href="?page=tafseer" class="card">
+<h3>Tafseer Course</h3>
+<p>Quran meaning & explanation</p>
+</a>
 
-    </div>
 </div>
+</div>
+
+<?php endif; ?>
+
+<?php if($page=='qaida'): ?>
+<div class="container">
+<h2>Madni Qaida</h2>
+<p>Basic Arabic letters learning step by step.</p>
+<button class="btn">Enroll Now - $50/month</button>
+</div>
+<?php endif; ?>
+
+<?php if($page=='quran'): ?>
+<div class="container">
+<h2>Quran Course</h2>
+<p>Proper Tajweed & recitation training.</p>
+<button class="btn">Enroll Now - $120/month</button>
+</div>
+<?php endif; ?>
+
+<?php if($page=='tafseer'): ?>
+<div class="container">
+<h2>Tafseer Course</h2>
+<p>Understand meanings of Quran deeply.</p>
+<button class="btn">Enroll Now - $150/month</button>
+</div>
+<?php endif; ?>
+
+<?php if($page=='dashboard'): ?>
+<div class="dashboard">
+<h2>Student Dashboard</h2>
+<p>ID: AUTO-<?= rand(1000,9999) ?></p>
+<p>Status: Active</p>
+<p>Courses: Enabled</p>
+<button class="btn">Payment (Demo)</button>
+</div>
+<?php endif; ?>
 
 <!-- CONTACT -->
 <div class="container">
-    <h2 style="text-align:center;">Contact Us</h2>
+<h2>Contact</h2>
 
-    <div class="contact">
+<p>Dubai: <?= $owner['phone_dubai'] ?></p>
+<p>Pakistan: <?= $owner['phone_pk'] ?></p>
+<p>Email: <?= $owner['email'] ?></p>
 
-        <div class="contact-box">
-            <i class="fas fa-phone"></i>
-            <h3>Dubai Number</h3>
-            <p>+971505859816</p>
-        </div>
-
-        <div class="contact-box">
-            <i class="fas fa-phone"></i>
-            <h3>Pakistan Number</h3>
-            <p>+923411472338</p>
-        </div>
-
-        <div class="contact-box">
-            <i class="fas fa-envelope"></i>
-            <h3>Email</h3>
-            <p>sardarafaqqds@gmail.com</p>
-        </div>
-
-    </div>
 </div>
 
 <!-- FOOTER -->
-<footer>
-    © 2026 Hafiz Muhammad AFAQ Attari - Islamic Academy | All Rights Reserved
-</footer>
+<div style="text-align:center;padding:20px;background:black;">
+© <?= date('Y') ?> <?= $owner['name'] ?>
+</div>
 
 </body>
 </html>
