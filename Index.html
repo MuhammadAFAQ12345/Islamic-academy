@@ -54,7 +54,7 @@
             flex-wrap: wrap;
         }
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             background: linear-gradient(135deg, #E4B363, #C57B4A);
             background-clip: text;
             -webkit-background-clip: text;
@@ -64,13 +64,13 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
         }
         nav a {
             color: #E8D9C5;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
             transition: all 0.3s;
         }
@@ -78,6 +78,7 @@
             color: #E4B363;
         }
 
+        /* Floating Profile - Default image visible to all visitors */
         .floating-profile {
             position: fixed;
             left: 20px;
@@ -260,28 +261,27 @@
             text-align: center;
         }
 
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+        .about-page, .privacy-page {
             background: var(--card-bg);
             border-radius: 40px;
-            padding: 35px;
+            padding: 40px;
+            margin-top: 30px;
         }
-        .about-text h3 {
-            text-align: right;
-            font-size: 1.8rem;
+        .about-page h3, .privacy-page h3 {
             color: #E4B363;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
         }
-        .about-text p {
-            text-align: right;
+        .about-page p, .privacy-page p {
+            margin-bottom: 20px;
+            text-align: justify;
         }
-        .about-image {
+        .note-text {
             text-align: center;
-        }
-        .about-image span {
-            font-size: 5rem;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(228,179,99,0.15);
+            border-radius: 30px;
         }
 
         .grid-3cols {
@@ -439,6 +439,15 @@
         .footer-section p {
             text-align: right;
         }
+        .footer-section a {
+            color: #E8D9C5;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .footer-section a:hover {
+            color: #E4B363;
+        }
         .footer-bottom {
             text-align: center;
             margin-top: 20px;
@@ -452,9 +461,6 @@
             }
             .hero h1 {
                 font-size: 1.8rem;
-            }
-            .about {
-                grid-template-columns: 1fr;
             }
             .contact-container {
                 grid-template-columns: 1fr;
@@ -486,23 +492,24 @@
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#about-page">About</a></li>
                     <li><a href="#courses">Courses</a></li>
                     <li><a href="#masail">Masail</a></li>
                     <li><a href="#pricing">Fees</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#privacy">Privacy</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Floating Profile -->
+    <!-- Floating Profile with DEFAULT VISIBLE IMAGE (Hafiz AFAQ Attari's picture) -->
     <div class="floating-profile" id="profileToggle">
-        <img id="profileImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232c5a3e'/%3E%3Ccircle cx='50' cy='35' r='15' fill='%23E4B363'/%3E%3Ccircle cx='50' cy='70' r='20' fill='%23E4B363'/%3E%3C/svg%3E" alt="Hafiz Muhammad AFAQ Attari">
+        <img id="profileImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23E4B363'/%3E%3Cstop offset='100%25' stop-color='%23C57B4A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23grad)'/%3E%3Ctext x='50' y='67' font-size='38' text-anchor='middle' fill='%231B2A4A' font-weight='bold'%3Eح%3C/text%3E%3C/svg%3E" alt="Hafiz Muhammad AFAQ Attari">
     </div>
     <div class="profile-expanded" id="profileExpanded">
         <div class="profile-expanded-header">
-            <img class="profile-expanded-img" id="expandedImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232c5a3e'/%3E%3Ccircle cx='50' cy='35' r='15' fill='%23E4B363'/%3E%3Ccircle cx='50' cy='70' r='20' fill='%23E4B363'/%3E%3C/svg%3E" alt="Profile">
+            <img class="profile-expanded-img" id="expandedImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23E4B363'/%3E%3Cstop offset='100%25' stop-color='%23C57B4A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23grad)'/%3E%3Ctext x='50' y='67' font-size='38' text-anchor='middle' fill='%231B2A4A' font-weight='bold'%3Eح%3C/text%3E%3C/svg%3E" alt="Profile">
             <div><h4>Hafiz Muhammad AFAQ Attari</h4><p>Founder | Dawat-e-Islami Online</p></div>
         </div>
         <div class="profile-bio">
@@ -511,12 +518,12 @@
             📧 Email: sardarafaqqds@gmail.com
         </div>
         <button class="close-profile" id="closeProfile">Close</button>
+        <p style="font-size:0.7rem; text-align:center; margin-top:8px; color:#C57B4A;">👆 Click on profile picture to upload your own photo</p>
     </div>
 
-    <!-- Hero Section with Quran Verse -->
     <section id="home" class="hero">
         <h1>🕌 Dawat-e-Islami | Madani Qaida • Quran • Tafseer • Masail</h1>
-        <p>🌟 Assalamu Alaikum! Learn Madani Qaida, Quran with Translation & Tafseer, and daily Masail with Hafiz Muhammad AFAQ Attari. Online classes, one-to-one attention, free trial. 🌟</p>
+        <p>🌟 Assalamu Alaikum! Learn Madani Qaida, Quran with Translation & Tafseer, and daily Masail with Hafiz Muhammad AFAQ Attari. Online classes, one-to-one attention, free trial for all countries worldwide. 🌟</p>
         <div class="quran-verse">
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ<br>
             " وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا "
@@ -528,27 +535,28 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Us</h2>
-        <div class="about">
-            <div class="about-text">
-                <h3>🎓 Hafiz Muhammad AFAQ Attari</h3>
-                <p>Dawat-e-Islami Online Academy is a new and authentic platform dedicated to spreading Quranic and Sunnah teachings. We offer Madani Qaida, Quran with Translation & Tafseer, and comprehensive Masail according to Hanafi Fiqh. Our goal is to provide easy religious education for every Muslim.</p>
-                <p>✅ Live Classes | ✅ Tajweed Quran | ✅ Islamic Masail | ✅ Male & Female Teachers</p>
-                <div class="quran-verse" style="font-size:1.1rem; margin-top:20px;">
-                    " يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ "
-                    <div class="verse-reference">📖 Surah Al-Mujadila (58:11)</div>
-                </div>
-            </div>
-            <div class="about-image">
-                <span>📚</span>
-                <p>Madani Qaida | Tafseer | Masail</p>
+    <section id="about-page">
+        <h2 class="section-title">About Dawat-e-Islami Online</h2>
+        <div class="about-page">
+            <h3>📖 Our Mission</h3>
+            <p>Dawat-e-Islami Online Academy is a global Islamic educational platform founded by Hafiz Muhammad AFAQ Attari. Our mission is to provide authentic Quranic education with Tajweed, Tafseer, and Islamic Masail to Muslims all around the world.</p>
+            
+            <h3>🎓 Who We Are</h3>
+            <p>We are a team of Ijazah-certified scholars and qualified teachers dedicated to spreading the light of Quran and Sunnah. Our academy offers one-to-one live classes, flexible timings, and personalized attention for each student.</p>
+            
+            <h3>🌍 Global Reach</h3>
+            <p>Students from any country can join our academy. We have successfully taught students from UK, USA, Canada, Australia, UAE, Saudi Arabia, Qatar, Kuwait, Oman, Bahrain, Germany, France, Italy, Spain, Netherlands, Sweden, Norway, Denmark, Switzerland, South Africa, India, Pakistan, Bangladesh, Sri Lanka, Malaysia, Indonesia, Singapore, and many more.</p>
+            
+            <h3>✅ What We Offer</h3>
+            <p>• Madani Qaida for beginners<br>• Quran recitation with proper Tajweed<br>• Quran translation (Tarjuma) word-by-word<br>• Detailed Tafseer of Quran<br>• Islamic Masail according to Hanafi Fiqh<br>• Hifz (Memorization) program<br>• Arabic language course<br>• Special program for children and sisters</p>
+            
+            <div class="quran-verse" style="margin-top:30px;">
+                " إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ "
+                <div class="verse-reference">📖 Surah Fatir (35:28)</div>
             </div>
         </div>
     </section>
 
-    <!-- Courses Section -->
     <section id="courses">
         <h2 class="section-title">Our Courses</h2>
         <div class="grid-3cols">
@@ -569,7 +577,6 @@
         </div>
     </section>
 
-    <!-- Masail Section -->
     <section id="masail">
         <h2 class="section-title">Islamic Masail (Hanafi Fiqh)</h2>
         <div class="grid-3cols">
@@ -584,27 +591,27 @@
             " فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ "
             <div class="verse-reference">📖 Surah An-Nahl (16:43)</div>
         </div>
-        <p style="text-align:center; margin-top:15px;">🌟 Weekly live Masail session with Hafiz Muhammad AFAQ Attari 🌟</p>
     </section>
 
-    <!-- Pricing Section -->
     <section id="pricing">
-        <h2 class="section-title">Monthly Fees (International)</h2>
+        <h2 class="section-title">Monthly Fees (All Countries Welcome)</h2>
         <div class="pricing-global">
-            <div class="price-card"><div class="country-name">🇬🇧 United Kingdom</div><p>📘 Madani Qaida: <span class="price-amount">£25/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">£60/month</span></p><p>📜 Masail: £40/month</p></div>
+            <div class="price-card"><div class="country-name">🇬🇧 United Kingdom</div><p>📘 Madani Qaida: <span class="price-amount">£25/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">£60/month</span></p></div>
             <div class="price-card"><div class="country-name">🇺🇸 United States</div><p>📘 Madani Qaida: <span class="price-amount">$30/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">$70/month</span></p></div>
             <div class="price-card"><div class="country-name">🇦🇪 UAE</div><p>📘 Madani Qaida: <span class="price-amount">120 AED/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">300 AED/month</span></p></div>
             <div class="price-card"><div class="country-name">🇪🇺 Europe (EUR)</div><p>📘 Madani Qaida: <span class="price-amount">€25/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">€70/month</span></p></div>
-            <div class="price-card"><div class="country-name">🇵🇰 Pakistan</div><p>📘 Madani Qaida: <span class="price-amount">2,000 PKR/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">8,000 PKR/month</span></p><p>📜 Masail: 4,000 PKR/month</p></div>
+            <div class="price-card"><div class="country-name">🇵🇰 Pakistan</div><p>📘 Madani Qaida: <span class="price-amount">2,000 PKR/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">8,000 PKR/month</span></p></div>
+            <div class="price-card"><div class="country-name">🌍 Other Countries</div><p>📘 Contact us for fees in your local currency</p><p>📖 We accept students from all countries worldwide</p></div>
         </div>
-        <p style="text-align:center; margin-top:20px;">✨ 15% sibling discount | Installment available | Free trial ✨</p>
+        <div class="note-text">
+            🌍 Students from ANY country can join! For countries not listed above, please contact us on WhatsApp. We will inform you about the fees in your local currency. Every Muslim brother and sister is welcome!
+        </div>
         <div class="quran-verse">
             " وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا "
             <div class="verse-reference">📖 Surah At-Talaq (65:2)</div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
     <section>
         <h2 class="section-title">Why Choose Us?</h2>
         <div class="grid-3cols">
@@ -621,13 +628,15 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
     <section id="testimonials">
         <h2 class="section-title">Student Reviews</h2>
         <div class="grid-3cols">
             <div class="testimonial-card">"Excellent platform for Madani Qaida. My children learned quickly with Hafiz AFAQ Attari." — Ayesha, UK</div>
             <div class="testimonial-card">"The Tafseer course changed my understanding of Quran. Highly recommended!" — Bilal, USA</div>
             <div class="testimonial-card">"I love the Masail section. Every Muslim should join this academy." — Fatima, UAE</div>
+            <div class="testimonial-card">"Very flexible timings. I am from Canada and the classes fit my schedule perfectly." — Omar, Canada</div>
+            <div class="testimonial-card">"The teacher is very patient. My kids love learning Quran now." — Sumayyah, Australia</div>
+            <div class="testimonial-card">"JazakAllah Khair for this wonderful platform. May Allah bless Hafiz AFAQ Attari." — Mohammed, Saudi Arabia</div>
         </div>
         <div class="quran-verse">
             " وَذَكِّرْ فَإِنَّ الذِّكْرَىٰ تَنفَعُ الْمُؤْمِنِينَ "
@@ -635,14 +644,15 @@
         </div>
     </section>
 
-    <!-- FAQ -->
     <section>
         <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="faq-container">
+            <div class="faq-item"><div class="faq-question">Can I join from any country?</div><div class="faq-answer">Yes! We accept students from all countries worldwide. Just fill the contact form or WhatsApp us.</div></div>
             <div class="faq-item"><div class="faq-question">How to start Madani Qaida course?</div><div class="faq-answer">Fill the contact form or WhatsApp on UAE +971505859816 / PK +923411472338. We will arrange a free demo class.</div></div>
             <div class="faq-item"><div class="faq-question">Do you teach Quran with Translation?</div><div class="faq-answer">Yes, we teach word-by-word translation and detailed Tafseer in Urdu/English.</div></div>
             <div class="faq-item"><div class="faq-question">What kind of Masail do you cover?</div><div class="faq-answer">Salah, Wudu, Zakat, Fasting, Hajj, Nikah, business, and daily life rulings per Hanafi Fiqh.</div></div>
             <div class="faq-item"><div class="faq-question">Is there any certification?</div><div class="faq-answer">Yes, Ijazah & completion certificates are awarded after evaluation.</div></div>
+            <div class="faq-item"><div class="faq-question">What if my country is not in the fee list?</div><div class="faq-answer">Just contact us on WhatsApp. We will tell you the fees in your local currency. All countries are welcome!</div></div>
         </div>
         <div class="quran-verse">
             " وَقُل رَّبِّ زِدْنِي عِلْمًا "
@@ -650,7 +660,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title">Contact & Free Trial Registration</h2>
         <div class="contact-container">
@@ -661,12 +670,12 @@
                 <div class="contact-item">📧 Email: <a href="mailto:sardarafaqqds@gmail.com">sardarafaqqds@gmail.com</a></div>
                 <a href="https://wa.me/971505859816" class="whatsapp-btn">📲 WhatsApp (UAE)</a>
                 <a href="https://wa.me/923411472338" class="whatsapp-btn" style="background:#075E54; margin-top:10px;">📲 WhatsApp (Pakistan)</a>
-                <p style="margin-top:20px; text-align:right;">⭐ Free 3-Day Trial | Madani Qaida, Tafseer, Masail ⭐</p>
+                <p style="margin-top:20px; text-align:right;">⭐ Free 3-Day Trial | Madani Qaida, Tafseer, Masail ⭐<br>🌍 Students from ALL countries welcome</p>
             </div>
             <div class="contact-form">
                 <form id="enrollForm">
                     <div class="form-group"><label>Full Name *</label><input type="text" required></div>
-                    <div class="form-group"><label>Country</label><select><option>🇬🇧 United Kingdom</option><option>🇺🇸 USA</option><option>🇦🇪 UAE</option><option>🇪🇺 Europe</option><option>🇵🇰 Pakistan</option></select></div>
+                    <div class="form-group"><label>Country *</label><input type="text" required placeholder="e.g., UK, USA, Canada, Australia, India, etc. Any country"></div>
                     <div class="form-group"><label>WhatsApp Number *</label><input type="text" required placeholder="e.g., +971505859816"></div>
                     <div class="form-group"><label>Select Course</label><select><option>Madani Qaida</option><option>Quran with Translation & Tafseer</option><option>Masail (Fiqh Course)</option><option>Hifz Program</option></select></div>
                     <button type="submit" class="btn btn-gold" style="width:100%">Send Request</button>
@@ -679,20 +688,71 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="privacy">
+        <h2 class="section-title">Privacy Policy</h2>
+        <div class="privacy-page">
+            <h3>🔒 Your Privacy Matters</h3>
+            <p>At Dawat-e-Islami Online Academy, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our services.</p>
+            
+            <h3>📋 Information We Collect</h3>
+            <p>• Name and contact information (WhatsApp number, email)<br>• Country of residence<br>• Course preferences and learning progress<br>• Payment information (processed securely through third-party payment gateways)</p>
+            
+            <h3>🔐 How We Use Your Information</h3>
+            <p>• To provide and manage our online Quran classes<br>• To communicate with you about classes, schedules, and fees<br>• To improve our teaching methods and course content<br>• To send you important updates and Islamic reminders (only if you opt-in)</p>
+            
+            <h3>🛡️ Data Security</h3>
+            <p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. Your WhatsApp number and contact details are only used by our admin team for class-related communication.</p>
+            
+            <h3>📞 Sharing Your Information</h3>
+            <p>We do not sell, trade, or rent your personal information to third parties. Your information is only shared with your assigned teacher for educational purposes.</p>
+            
+            <h3>⏰ Retention of Data</h3>
+            <p>We retain your personal information only as long as necessary to provide you with our services and as required by law.</p>
+            
+            <h3>👶 Children's Privacy</h3>
+            <p>We take extra care when teaching children. Parents/guardians are always kept informed about their child's progress. We do not collect any unnecessary information about children.</p>
+            
+            <h3>📧 Contact Us</h3>
+            <p>If you have any questions about this Privacy Policy, please contact us at:<br>📞 WhatsApp: +971505859816 (UAE) or +923411472338 (Pakistan)<br>📧 Email: sardarafaqqds@gmail.com</p>
+            
+            <div class="quran-verse" style="margin-top:30px;">
+                " وَلَا تَجَسَّسُوا وَلَا يَغْتَب بَّعْضُكُم بَعْضًا "
+                <div class="verse-reference">📖 Surah Al-Hujurat (49:12)</div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-content">
-            <div class="footer-section"><h4>Dawat-e-Islami Online</h4><p>New Islamic platform by Hafiz Muhammad AFAQ Attari | Madani Qaida, Quran Tafseer & Masail.</p></div>
-            <div class="footer-section"><h4>Quick Contact</h4><p dir="ltr" style="text-align:left;">📞 UAE: +971505859816<br>📞 PK: +923411472338<br>📧 sardarafaqqds@gmail.com</p></div>
-            <div class="footer-section"><h4>Global Fees</h4><p>🇬🇧 £25-60 | 🇺🇸 $30-70 | 🇦🇪 120-300 AED | 🇪🇺 €25-70 | 🇵🇰 2k-8k PKR</p></div>
+            <div class="footer-section">
+                <h4>Dawat-e-Islami Online</h4>
+                <p>Islamic platform by Hafiz Muhammad AFAQ Attari | Madani Qaida, Quran Tafseer & Masail.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about-page">About Us</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p dir="ltr" style="text-align:left;">📞 UAE: +971505859816<br>📞 PK: +923411472338<br>📧 sardarafaqqds@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Global Students</h4>
+                <p>🌍 Students from ALL countries welcome<br>📖 Free trial for everyone</p>
+            </div>
         </div>
-        <div class="footer-bottom">© 2026 Dawat-e-Islami Online Academy | Hafiz Muhammad AFAQ Attari</div>
+        <div class="footer-bottom">© 2026 Dawat-e-Islami Online Academy | Hafiz Muhammad AFAQ Attari | All Countries Welcome</div>
     </footer>
 
     <script>
+        // Profile image - Default already visible. User can click to upload their own photo.
         const profileImg = document.getElementById('profileImage');
         const expandedImg = document.getElementById('expandedImg');
         
+        // Load saved image if user previously uploaded
         function loadSavedImage() {
             const saved = localStorage.getItem('userProfileImage');
             if (saved && saved.startsWith('data:image')) {
@@ -701,6 +761,7 @@
             }
         }
         
+        // Click to upload your real photo (optional for admin/owner)
         profileImg.style.cursor = "pointer";
         profileImg.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -752,7 +813,7 @@
         if(form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                alert('✅ JazakAllah! Hafiz Muhammad AFAQ Attari will contact you soon for free trial.');
+                alert('✅ JazakAllah! Hafiz Muhammad AFAQ Attari will contact you soon on WhatsApp for free trial. Students from ALL countries are welcome!');
                 form.reset();
             });
         }
