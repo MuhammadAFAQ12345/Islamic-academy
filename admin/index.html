@@ -4,38 +4,7 @@
   <meta charset="UTF-8">
   <title>QuranNor CMS</title>
 </head>
-
 <body>
-
-<script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-
-<script>
-  window.CMS.init({
-    config: {
-      backend: {
-        name: "git-gateway",
-        branch: "main"
-      },
-
-      media_folder: "images",
-      public_folder: "/images",
-
-      collections: [
-        {
-          name: "posts",
-          label: "Posts",
-          folder: "posts",
-          create: true,
-          slug: "{{slug}}",
-          fields: [
-            { label: "Title", name: "title", widget: "string" },
-            { label: "Content", name: "body", widget: "markdown" }
-          ]
-        }
-      ]
-    }
-  });
-</script>
-
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 </body>
 </html>
