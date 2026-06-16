@@ -2,15 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <meta name="google-site-verification" content="y8uedaDcSe2QnqWvpjjWwlTRw2nOL2Au2FfFkpj1RYk" />
-    <title>Dawat-e-Islami | Hafiz Muhammad AFAQ Attari</title>
+    <title>🌙 Dawat-e-Islami | Ramadan Special | Hafiz Muhammad AFAQ Attari</title>
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9882271685584324" crossorigin="anonymous"></script>
 
     <style>
-        /* ===== RESET ===== */
+        /* ============================================================ */
+        /* ===== RAMADAN DESERT THEME ================================== */
+        /* ============================================================ */
+        
+        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -18,13 +22,20 @@
         }
 
         :root {
-            --deep-maroon: #4A1A2C;
-            --royal-navy: #1B2A4A;
-            --sand-stone: #E8D9C5;
-            --golden-noor: #E4B363;
-            --soft-copper: #C57B4A;
-            --card-bg: rgba(255, 248, 235, 0.08);
-            --border-light: rgba(228, 179, 99, 0.4);
+            --sand-light: #F5E6CA;
+            --sand-medium: #E8D5B5;
+            --sand-dark: #D4A574;
+            --golden-sand: #E8B86D;
+            --deep-desert: #8B6B4A;
+            --night-sky: #0D1B2A;
+            --star-glow: #FFD700;
+            --camel-brown: #B8860B;
+            --royal-purple: #2D1B3D;
+            --ramadan-green: #1B4D3E;
+            --card-bg: rgba(255, 248, 235, 0.06);
+            --border-light: rgba(232, 184, 109, 0.2);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         html {
@@ -33,26 +44,99 @@
 
         body {
             font-family: 'Segoe UI', 'Poppins', 'Noto Nastaliq Urdu', Tahoma, sans-serif;
-            background: linear-gradient(145deg, #1B2A4A 0%, #4A1A2C 100%);
+            background: linear-gradient(180deg, #0D1B2A 0%, #1B2A4A 30%, #2D1B3D 60%, #4A1A2C 100%);
             background-attachment: fixed;
-            color: #E8D9C5;
+            color: #F5E6CA;
             line-height: 1.8;
             overflow-x: hidden;
             min-height: 100vh;
+            position: relative;
+        }
+
+        /* ===== STARS BACKGROUND ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,215,0,0.8), transparent),
+                radial-gradient(2px 2px at 50px 160px, #fff, transparent),
+                radial-gradient(2px 2px at 90px 40px, rgba(255,215,0,0.6), transparent),
+                radial-gradient(2px 2px at 130px 80px, #fff, transparent),
+                radial-gradient(2px 2px at 160px 30px, rgba(255,215,0,0.7), transparent),
+                radial-gradient(1px 1px at 300px 200px, #fff, transparent),
+                radial-gradient(1px 1px at 400px 100px, rgba(255,215,0,0.5), transparent),
+                radial-gradient(1px 1px at 500px 300px, #fff, transparent),
+                radial-gradient(1px 1px at 600px 150px, rgba(255,215,0,0.6), transparent),
+                radial-gradient(1px 1px at 700px 400px, #fff, transparent),
+                radial-gradient(1px 1px at 800px 250px, rgba(255,215,0,0.4), transparent),
+                radial-gradient(1px 1px at 900px 350px, #fff, transparent),
+                radial-gradient(1px 1px at 1000px 180px, rgba(255,215,0,0.5), transparent),
+                radial-gradient(1px 1px at 1100px 450px, #fff, transparent),
+                radial-gradient(1px 1px at 1200px 280px, rgba(255,215,0,0.7), transparent);
+            background-size: 200px 200px;
+            background-repeat: repeat;
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 0;
+            animation: twinkle 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
+        }
+
+        /* ===== MOON ===== */
+        body::after {
+            content: '🌙';
+            position: fixed;
+            top: 60px;
+            right: 40px;
+            font-size: 4rem;
+            opacity: 0.25;
+            animation: moonGlow 6s ease-in-out infinite alternate;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes moonGlow {
+            0% { opacity: 0.15; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.4; transform: scale(1.1) rotate(10deg); }
+            100% { opacity: 0.2; transform: scale(1) rotate(0deg); }
         }
 
         /* ============================================================ */
-        /* ===== TOP NAVBAR ============================================ */
+        /* ===== SCROLLBAR ===== */
+        /* ============================================================ */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D1B2A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #E8B86D, #D4A574);
+            border-radius: 10px;
+        }
+
+        /* ============================================================ */
+        /* ===== TOP HEADER ============================================ */
         /* ============================================================ */
         header {
-            background: rgba(11, 18, 34, 0.96);
-            backdrop-filter: blur(10px);
+            background: rgba(13, 27, 42, 0.92);
+            backdrop-filter: blur(15px);
             padding: 8px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid #E4B363;
+            border-bottom: 2px solid rgba(232, 184, 109, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
         .header-content {
             max-width: 1300px;
@@ -62,21 +146,76 @@
             align-items: center;
             padding: 0 15px;
             flex-wrap: wrap;
+            gap: 8px;
         }
         .logo {
-            font-size: 0.95rem;
-            background: linear-gradient(135deg, #E4B363, #C57B4A);
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #E8B86D, #FFD700, #D4A574);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             font-weight: 800;
             direction: ltr;
             text-align: left;
+            letter-spacing: 1px;
+            text-shadow: 0 0 30px rgba(232, 184, 109, 0.1);
         }
+        .logo .camel-icon {
+            display: inline-block;
+            animation: camelWalk 3s ease-in-out infinite;
+        }
+        @keyframes camelWalk {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            padding: 4px 15px;
+            border: 1px solid rgba(232, 184, 109, 0.12);
+            max-width: 280px;
+            width: 100%;
+            transition: var(--transition);
+        }
+        .search-box:focus-within {
+            border-color: #E8B86D;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 30px rgba(232, 184, 109, 0.05);
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: #F5E6CA;
+            padding: 8px 8px;
+            font-size: 0.85rem;
+            width: 100%;
+            outline: none;
+            font-family: inherit;
+            direction: ltr;
+            text-align: left;
+        }
+        .search-box input::placeholder {
+            color: #8a7a6a;
+            font-weight: 300;
+        }
+        .search-box .search-icon {
+            color: #8a7a6a;
+            font-size: 1rem;
+        }
+
+        /* ===== NAVBAR ===== */
         nav {
             display: flex;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 3px;
+            width: 100%;
+            justify-content: flex-start;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            margin-top: 5px;
         }
         .nav-btn {
             color: #E8D9C5;
@@ -86,17 +225,34 @@
             padding: 5px 14px;
             border-radius: 25px;
             border: 1px solid transparent;
-            transition: all 0.3s;
+            transition: var(--transition);
             cursor: pointer;
             background: transparent;
             direction: ltr;
             text-align: left;
+            letter-spacing: 0.3px;
+            position: relative;
+        }
+        .nav-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #E8B86D, #FFD700);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        .nav-btn:hover::after,
+        .nav-btn.active::after {
+            width: 60%;
         }
         .nav-btn:hover,
         .nav-btn.active {
-            background: rgba(228, 179, 99, 0.15);
-            border-color: #E4B363;
-            color: #E4B363;
+            color: #FFD700;
+            background: rgba(232, 184, 109, 0.08);
         }
 
         /* ============================================================ */
@@ -106,62 +262,77 @@
             display: flex;
             max-width: 1300px;
             margin: 0 auto;
-            padding: 70px 15px 30px;
-            gap: 20px;
+            padding: 130px 15px 30px;
+            gap: 25px;
             min-height: 100vh;
+            position: relative;
+            z-index: 1;
         }
 
         /* ============================================================ */
         /* ===== SIDEBAR =============================================== */
         /* ============================================================ */
         .sidebar {
-            width: 220px;
-            min-width: 200px;
-            background: rgba(27, 42, 74, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+            width: 210px;
+            min-width: 180px;
+            background: rgba(13, 27, 42, 0.8);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
             padding: 20px 15px;
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(232, 184, 109, 0.12);
             position: sticky;
-            top: 80px;
+            top: 140px;
             height: fit-content;
-            max-height: calc(100vh - 100px);
+            max-height: calc(100vh - 160px);
             overflow-y: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+        .sidebar:hover {
+            border-color: rgba(232, 184, 109, 0.25);
         }
         .sidebar .profile-mini {
             text-align: center;
             margin-bottom: 15px;
             padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid rgba(232, 184, 109, 0.08);
         }
         .sidebar .profile-mini img {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            border: 2px solid #E4B363;
+            border: 3px solid #E8B86D;
             object-fit: cover;
             background: #2c5a3e;
+            transition: var(--transition);
+            box-shadow: 0 0 30px rgba(232, 184, 109, 0.08);
+        }
+        .sidebar .profile-mini img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(232, 184, 109, 0.15);
         }
         .sidebar .profile-mini h4 {
-            color: #E4B363;
+            color: #FFD700;
             font-size: 0.8rem;
-            margin-top: 5px;
+            margin-top: 6px;
             direction: ltr;
             text-align: center;
+            font-weight: 600;
         }
         .sidebar .profile-mini p {
             font-size: 0.6rem;
-            color: #C57B4A;
+            color: #D4A574;
             direction: ltr;
             text-align: center;
         }
         .sidebar .menu-label {
-            color: #C57B4A;
-            font-size: 0.7rem;
+            color: #D4A574;
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin: 10px 0 8px;
             text-align: center;
+            font-weight: 600;
         }
         .sidebar a {
             display: block;
@@ -170,7 +341,7 @@
             padding: 8px 12px;
             border-radius: 12px;
             font-size: 0.8rem;
-            transition: all 0.3s;
+            transition: var(--transition);
             margin-bottom: 3px;
             text-align: left;
             border: none;
@@ -178,11 +349,30 @@
             width: 100%;
             cursor: pointer;
             direction: ltr;
+            font-weight: 500;
+            position: relative;
+        }
+        .sidebar a::before {
+            content: '✦';
+            position: absolute;
+            left: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: var(--transition);
+            color: #FFD700;
+            font-size: 0.6rem;
+        }
+        .sidebar a:hover::before,
+        .sidebar a.active::before {
+            opacity: 1;
+            left: 5px;
         }
         .sidebar a:hover,
         .sidebar a.active {
-            background: rgba(228, 179, 99, 0.15);
-            color: #E4B363;
+            background: rgba(232, 184, 109, 0.08);
+            color: #FFD700;
+            padding-left: 22px;
         }
 
         /* ============================================================ */
@@ -198,7 +388,7 @@
         /* ============================================================ */
         .page {
             display: none;
-            animation: fadeInPage 0.5s ease;
+            animation: fadeInPage 0.6s ease;
         }
         .page.active {
             display: block;
@@ -207,7 +397,7 @@
         @keyframes fadeInPage {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -220,15 +410,19 @@
         /* ============================================================ */
         .section-title {
             text-align: center;
-            font-size: 1.8rem;
-            color: #E4B363;
-            margin-bottom: 25px;
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.05);
         }
         .section-title:after {
             content: '﴿';
             display: block;
-            font-size: 1.3rem;
-            color: #C57B4A;
+            font-size: 1.5rem;
+            color: #D4A574;
+            margin-top: -8px;
         }
 
         /* ============================================================ */
@@ -236,80 +430,108 @@
         /* ============================================================ */
         .quran-verse {
             text-align: center;
-            font-size: 1.2rem;
-            color: #E4B363;
-            margin: 15px 0;
-            padding: 15px;
-            background: rgba(228, 179, 99, 0.1);
-            border-radius: 40px;
+            font-size: 1.3rem;
+            color: #FFD700;
+            margin: 20px 0;
+            padding: 20px 25px;
+            background: rgba(232, 184, 109, 0.05);
+            border-radius: 50px;
             font-family: 'Amiri', serif;
-            line-height: 2;
+            line-height: 2.2;
+            border: 1px solid rgba(232, 184, 109, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .quran-verse::before {
+            content: '﷽';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.04;
+            color: #FFD700;
         }
         .verse-reference {
-            font-size: 0.8rem;
-            color: #C57B4A;
-            margin-top: 5px;
+            font-size: 0.85rem;
+            color: #D4A574;
+            margin-top: 8px;
             text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 0.5px;
         }
 
         /* ============================================================ */
         /* ===== WELCOME - TOP OF DASHBOARD ============================ */
         /* ============================================================ */
         .welcome-global {
-            background: linear-gradient(135deg, rgba(228, 179, 99, 0.2), rgba(197, 123, 74, 0.1));
-            border: 2px solid #E4B363;
-            border-radius: 25px;
-            padding: 18px 15px;
-            margin-bottom: 25px;
+            background: linear-gradient(135deg, rgba(232, 184, 109, 0.08), rgba(212, 165, 116, 0.04));
+            border: 1px solid rgba(232, 184, 109, 0.15);
+            border-radius: 30px;
+            padding: 22px 20px;
+            margin-bottom: 30px;
             text-align: center;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+        .welcome-global:hover {
+            border-color: rgba(232, 184, 109, 0.3);
+            box-shadow: 0 0 40px rgba(232, 184, 109, 0.03);
         }
         .welcome-global h2 {
-            color: #E4B363;
-            font-size: 1.3rem;
-            margin-bottom: 6px;
-            text-align: center;
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.05);
         }
         .welcome-global p {
-            font-size: 0.85rem;
-            margin-bottom: 8px;
-            text-align: center;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
         }
         .welcome-global .flag-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 8px;
-            margin: 10px 0;
+            gap: 10px;
+            margin: 12px 0;
         }
         .welcome-global .flag-item {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 5px 14px;
             border-radius: 30px;
-            font-size: 0.75rem;
-            border: 1px solid rgba(228, 179, 99, 0.3);
+            font-size: 0.8rem;
+            border: 1px solid rgba(232, 184, 109, 0.1);
             direction: ltr;
+            transition: var(--transition);
+            cursor: default;
+        }
+        .welcome-global .flag-item:hover {
+            background: rgba(232, 184, 109, 0.06);
+            border-color: rgba(232, 184, 109, 0.2);
         }
         .welcome-global .contact-btns {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 12px;
+            margin-top: 14px;
         }
         .welcome-global .contact-btns a {
-            padding: 7px 18px;
+            padding: 8px 22px;
             border-radius: 40px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
-            font-size: 0.8rem;
-            transition: all 0.3s;
+            gap: 6px;
+            font-size: 0.85rem;
+            transition: var(--transition);
             direction: ltr;
         }
         .welcome-global .contact-btns a:hover {
-            transform: scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
         .btn-whatsapp-uae {
             background: #25D366;
@@ -320,7 +542,7 @@
             color: white;
         }
         .btn-call-uae {
-            background: #E4B363;
+            background: #E8B86D;
             color: #1B2A4A;
         }
 
@@ -328,35 +550,26 @@
         /* ===== BUTTONS =============================================== */
         /* ============================================================ */
         .btn {
-            padding: 10px 25px;
-            font-size: 0.95rem;
+            padding: 12px 30px;
+            font-size: 1rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
+            font-weight: 600;
+            transition: var(--transition);
             display: inline-block;
-            margin: 4px;
+            margin: 5px;
             text-align: center;
             border: none;
             cursor: pointer;
         }
         .btn-gold {
-            background: #E4B363;
+            background: linear-gradient(135deg, #E8B86D, #D4A574);
             color: #1B2A4A;
+            box-shadow: 0 4px 20px rgba(232, 184, 109, 0.15);
         }
         .btn-gold:hover {
-            transform: scale(1.05);
-            background: #f0ca7a;
-        }
-        .btn-outline {
-            background: transparent;
-            color: #E8D9C5;
-            border: 2px solid #E4B363;
-        }
-        .btn-outline:hover {
-            background: #E4B363;
-            color: #1B2A4A;
-            transform: scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(232, 184, 109, 0.25);
         }
 
         /* ============================================================ */
@@ -364,31 +577,38 @@
         /* ============================================================ */
         .grid-3cols {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .grid-2cols {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .card {
-            background: rgba(30, 45, 60, 0.65);
-            backdrop-filter: blur(5px);
+            background: rgba(13, 27, 42, 0.6);
+            backdrop-filter: blur(8px);
             border-radius: 25px;
-            padding: 18px;
-            border: 1px solid var(--border-light);
+            padding: 22px 18px;
+            border: 1px solid rgba(232, 184, 109, 0.08);
             text-align: center;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
         }
         .card:hover {
-            transform: translateY(-5px);
-            border-color: #E4B363;
+            transform: translateY(-8px);
+            border-color: rgba(232, 184, 109, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
         .card h3 {
-            color: #E4B363;
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-            text-align: center;
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
         }
         .card p {
-            text-align: center;
+            opacity: 0.85;
+            font-size: 0.9rem;
         }
         .card a {
             text-decoration: none;
@@ -403,33 +623,37 @@
         .about-page,
         .privacy-page,
         .terms-page {
-            background: var(--card-bg);
-            border-radius: 35px;
-            padding: 30px;
-            margin-top: 15px;
+            background: rgba(13, 27, 42, 0.6);
+            border-radius: 30px;
+            padding: 35px;
+            margin-top: 20px;
+            border: 1px solid rgba(232, 184, 109, 0.08);
+            backdrop-filter: blur(8px);
         }
         .about-page h3,
         .privacy-page h3,
         .terms-page h3 {
-            color: #E4B363;
-            margin-bottom: 12px;
-            font-size: 1.3rem;
+            color: #FFD700;
+            margin-bottom: 14px;
+            font-size: 1.4rem;
+            font-weight: 600;
             text-align: left;
             direction: ltr;
         }
         .about-page p,
         .privacy-page p,
         .terms-page p {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             text-align: justify;
             direction: ltr;
+            opacity: 0.9;
         }
         .terms-page ul {
             padding-left: 25px;
             margin-bottom: 15px;
         }
         .terms-page li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             text-align: left;
             direction: ltr;
         }
@@ -439,69 +663,75 @@
         /* ============================================================ */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 18px;
+            margin-top: 18px;
         }
         .price-card {
-            background: rgba(27, 42, 74, 0.7);
+            background: rgba(13, 27, 42, 0.7);
+            backdrop-filter: blur(8px);
             border-radius: 25px;
-            padding: 15px;
-            border: 1px solid #E4B363;
+            padding: 18px 15px;
+            border: 1px solid rgba(232, 184, 109, 0.12);
             text-align: center;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
         }
         .price-card:hover {
-            transform: translateY(-5px);
-            border-color: #C57B4A;
+            transform: translateY(-6px);
+            border-color: rgba(232, 184, 109, 0.25);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
         }
         .price-card .country {
-            font-size: 1.05rem;
-            font-weight: bold;
-            color: #E4B363;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #FFD700;
             text-align: center;
             direction: ltr;
         }
         .price-card p {
             text-align: center;
             direction: ltr;
+            font-size: 0.9rem;
         }
         .price-card .amount {
             font-weight: 800;
             color: #F7E05E;
-            font-size: 0.95rem;
+            font-size: 1rem;
             direction: ltr;
             display: inline-block;
         }
         .note-text {
             text-align: center;
-            margin-top: 15px;
-            padding: 12px;
-            background: rgba(228, 179, 99, 0.15);
+            margin-top: 18px;
+            padding: 14px;
+            background: rgba(232, 184, 109, 0.05);
             border-radius: 30px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             direction: ltr;
+            border: 1px solid rgba(232, 184, 109, 0.06);
         }
 
         /* ============================================================ */
-        /* ===== CONTACT =============================================== */
+        /* ===== CONTACT FORM ========================================== */
         /* ============================================================ */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            gap: 30px;
         }
         .contact-info h3 {
             text-align: left;
-            font-size: 1.2rem;
-            color: #E4B363;
+            font-size: 1.3rem;
+            color: #FFD700;
             direction: ltr;
+            margin-bottom: 15px;
         }
         .contact-item {
-            margin: 10px 0;
+            margin: 12px 0;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
             justify-content: flex-start;
             direction: ltr;
@@ -511,68 +741,93 @@
             color: #E8D9C5;
             text-decoration: none;
             direction: ltr;
+            transition: var(--transition);
         }
         .contact-item a:hover {
-            color: #E4B363;
+            color: #FFD700;
         }
         .contact-form {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
+            background: rgba(13, 27, 42, 0.5);
+            padding: 28px;
             border-radius: 25px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(232, 184, 109, 0.08);
         }
         .form-group {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
         .form-group label {
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             text-align: left;
             font-size: 0.85rem;
             direction: ltr;
+            font-weight: 500;
+            color: #F5E6CA;
+        }
+        .form-group label .required {
+            color: #FFD700;
         }
         input,
         select,
         textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px 15px;
             border-radius: 25px;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.03);
+            color: #F5E6CA;
             margin-top: 4px;
             font-family: inherit;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             direction: ltr;
             text-align: left;
+            font-size: 0.9rem;
         }
         input:focus,
         select:focus,
         textarea:focus {
-            outline: 2px solid #E4B363;
+            outline: none;
+            border-color: #E8B86D;
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 30px rgba(232, 184, 109, 0.03);
+        }
+        input::placeholder,
+        textarea::placeholder {
+            color: #6a5a4a;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
         }
 
         /* ============================================================ */
         /* ===== BLOG ================================================== */
         /* ============================================================ */
         .blog-card {
-            background: rgba(30, 45, 60, 0.65);
+            background: rgba(13, 27, 42, 0.6);
+            backdrop-filter: blur(8px);
             border-radius: 25px;
-            padding: 18px;
-            border: 1px solid var(--border-light);
-            transition: all 0.3s ease;
-            margin-bottom: 15px;
+            padding: 20px;
+            border: 1px solid rgba(232, 184, 109, 0.08);
+            transition: var(--transition);
+            margin-bottom: 18px;
+            box-shadow: var(--shadow);
         }
         .blog-card:hover {
             transform: translateY(-5px);
-            border-color: #E4B363;
+            border-color: rgba(232, 184, 109, 0.2);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
         }
         .blog-card .date {
-            color: #C57B4A;
-            font-size: 0.65rem;
+            color: #D4A574;
+            font-size: 0.7rem;
             direction: ltr;
             text-align: left;
         }
         .blog-card h3 {
-            color: #E4B363;
-            font-size: 1.05rem;
+            color: #FFD700;
+            font-size: 1.1rem;
             margin: 6px 0;
             direction: ltr;
             text-align: left;
@@ -580,84 +835,48 @@
         .blog-card p {
             direction: ltr;
             text-align: left;
+            opacity: 0.85;
         }
         .blog-card .read-more {
-            color: #E4B363;
+            color: #E8B86D;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 0.85rem;
+            font-weight: 600;
+            font-size: 0.9rem;
             direction: ltr;
             display: inline-block;
+            transition: var(--transition);
         }
         .blog-card .read-more:hover {
-            text-decoration: underline;
-        }
-
-        /* ============================================================ */
-        /* ===== FAQ =================================================== */
-        /* ============================================================ */
-        .faq-question {
-            background: rgba(228, 179, 99, 0.1);
-            padding: 10px 16px;
-            border-radius: 50px;
-            cursor: pointer;
-            margin-bottom: 6px;
-            display: flex;
-            justify-content: space-between;
-            text-align: left;
-            font-size: 0.85rem;
-            transition: all 0.3s;
-            direction: ltr;
-        }
-        .faq-question:hover {
-            background: rgba(228, 179, 99, 0.2);
-        }
-        .faq-answer {
-            padding: 0 15px 10px;
-            display: none;
-            text-align: left;
-            font-size: 0.8rem;
-            direction: ltr;
-        }
-        .faq-item.active .faq-answer {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            color: #FFD700;
+            transform: translateX(5px);
         }
 
         /* ============================================================ */
         /* ===== FOOTER ================================================ */
         /* ============================================================ */
         footer {
-            background: #0A1120;
-            border-top: 2px solid #E4B363;
-            padding: 25px 20px 12px;
-            margin-top: 20px;
+            background: rgba(13, 27, 42, 0.9);
+            border-top: 1px solid rgba(232, 184, 109, 0.1);
+            padding: 30px 20px 15px;
+            margin-top: 25px;
         }
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            max-width: 1300px;
+            margin: 0 auto;
         }
         .footer-section h4 {
             text-align: left;
-            color: #E4B363;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-size: 1rem;
             direction: ltr;
         }
         .footer-section p,
         .footer-section a {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             text-align: left;
             direction: ltr;
         }
@@ -665,37 +884,39 @@
             color: #E8D9C5;
             text-decoration: none;
             display: block;
-            margin-bottom: 4px;
-            transition: color 0.3s;
+            margin-bottom: 5px;
+            transition: var(--transition);
             cursor: pointer;
             background: none;
             border: none;
         }
         .footer-section a:hover {
-            color: #E4B363;
+            color: #FFD700;
+            padding-left: 5px;
         }
         .footer-bottom {
             text-align: center;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.65rem;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.7rem;
             direction: ltr;
+            opacity: 0.6;
         }
 
         /* ============================================================ */
-        /* ===== RESPONSIVE - MOBILE + COMPUTER ======================== */
+        /* ===== RESPONSIVE ============================================ */
         /* ============================================================ */
 
-        /* ===== COMPUTER / LAPTOP (1024px and above) ===== */
+        /* ===== COMPUTER (1024px+) ===== */
         @media (min-width: 1024px) {
             .app-container {
-                padding: 75px 25px 40px;
+                padding: 140px 25px 40px;
                 gap: 30px;
             }
             .sidebar {
-                width: 250px;
-                min-width: 220px;
+                width: 240px;
+                min-width: 210px;
                 padding: 25px 20px;
             }
             .sidebar .profile-mini img {
@@ -703,17 +924,14 @@
                 height: 75px;
             }
             .sidebar .profile-mini h4 {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
             .sidebar a {
                 font-size: 0.9rem;
                 padding: 10px 15px;
             }
-            .main-content {
-                padding: 0 10px;
-            }
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
             .grid-3cols {
                 grid-template-columns: repeat(3, 1fr);
@@ -721,7 +939,7 @@
             }
             .pricing-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
+                gap: 22px;
             }
             .contact-container {
                 grid-template-columns: 1fr 1fr;
@@ -732,28 +950,18 @@
             }
             .nav-btn {
                 font-size: 0.85rem;
-                padding: 8px 20px;
-            }
-            header {
-                padding: 12px 0;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .quran-verse {
-                font-size: 1.5rem;
-                padding: 25px;
+                padding: 6px 20px;
             }
             .welcome-global h2 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
             .welcome-global .flag-item {
-                font-size: 0.85rem;
-                padding: 6px 14px;
+                font-size: 0.9rem;
+                padding: 6px 18px;
             }
             .welcome-global .contact-btns a {
                 font-size: 0.95rem;
-                padding: 10px 25px;
+                padding: 10px 28px;
             }
             .card {
                 padding: 25px;
@@ -762,7 +970,7 @@
                 font-size: 1.2rem;
             }
             .price-card {
-                padding: 20px;
+                padding: 22px;
             }
             .price-card .country {
                 font-size: 1.2rem;
@@ -776,17 +984,21 @@
             .blog-card h3 {
                 font-size: 1.2rem;
             }
+            .quran-verse {
+                font-size: 1.5rem;
+                padding: 25px 35px;
+            }
         }
 
-        /* ===== TABLET (768px to 1023px) ===== */
+        /* ===== TABLET (768px - 1023px) ===== */
         @media (min-width: 768px) and (max-width: 1023px) {
             .app-container {
-                padding: 72px 20px 30px;
+                padding: 135px 18px 30px;
                 gap: 20px;
             }
             .sidebar {
-                width: 200px;
-                min-width: 170px;
+                width: 190px;
+                min-width: 160px;
                 padding: 15px 12px;
             }
             .sidebar a {
@@ -810,13 +1022,16 @@
                 font-size: 0.65rem;
                 padding: 4px 12px;
             }
+            .search-box {
+                max-width: 200px;
+            }
         }
 
         /* ===== MOBILE (below 768px) ===== */
         @media (max-width: 767px) {
             .app-container {
                 flex-direction: column;
-                padding: 62px 8px 20px;
+                padding: 125px 10px 20px;
                 gap: 15px;
             }
 
@@ -830,9 +1045,9 @@
                 display: flex;
                 flex-wrap: wrap;
                 gap: 5px;
-                padding: 10px;
+                padding: 12px 10px;
                 justify-content: center;
-                border-radius: 15px;
+                border-radius: 18px;
             }
             .sidebar .profile-mini {
                 display: none;
@@ -842,16 +1057,22 @@
             }
             .sidebar a {
                 display: inline-block;
-                padding: 4px 10px;
-                font-size: 0.65rem;
+                padding: 5px 12px;
+                font-size: 0.7rem;
                 margin: 0;
                 width: auto;
                 border-radius: 20px;
-                background: rgba(255, 255, 255, 0.05);
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.03);
+            }
+            .sidebar a::before {
+                display: none;
             }
             .sidebar a:hover,
             .sidebar a.active {
-                background: rgba(228, 179, 99, 0.2);
+                background: rgba(232, 184, 109, 0.08);
+                padding-left: 12px;
+                border-color: rgba(232, 184, 109, 0.12);
             }
 
             /* ===== HEADER ===== */
@@ -859,24 +1080,39 @@
                 padding: 0 10px;
             }
             .logo {
+                font-size: 0.75rem;
+            }
+            .search-box {
+                max-width: 160px;
+                padding: 2px 10px;
+            }
+            .search-box input {
                 font-size: 0.7rem;
+                padding: 5px 5px;
             }
             nav {
                 gap: 3px;
+                padding-top: 6px;
             }
             .nav-btn {
-                font-size: 0.5rem;
-                padding: 3px 7px;
+                font-size: 0.55rem;
+                padding: 3px 8px;
+            }
+            .nav-btn::after {
+                display: none;
             }
 
             /* ===== GRIDS ===== */
             .grid-3cols {
                 grid-template-columns: 1fr 1fr;
-                gap: 10px;
+                gap: 12px;
+            }
+            .grid-2cols {
+                grid-template-columns: 1fr;
             }
             .pricing-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 10px;
+                gap: 12px;
             }
             .contact-container {
                 grid-template-columns: 1fr;
@@ -885,7 +1121,8 @@
 
             /* ===== CARDS ===== */
             .card {
-                padding: 12px;
+                padding: 14px 12px;
+                border-radius: 18px;
             }
             .card h3 {
                 font-size: 0.85rem;
@@ -896,7 +1133,8 @@
 
             /* ===== PRICE CARDS ===== */
             .price-card {
-                padding: 10px;
+                padding: 12px;
+                border-radius: 18px;
             }
             .price-card .country {
                 font-size: 0.9rem;
@@ -910,8 +1148,8 @@
 
             /* ===== SECTION TITLE ===== */
             .section-title {
-                font-size: 1.2rem;
-                margin-bottom: 15px;
+                font-size: 1.3rem;
+                margin-bottom: 18px;
             }
             .section-title:after {
                 font-size: 1rem;
@@ -919,28 +1157,28 @@
 
             /* ===== WELCOME ===== */
             .welcome-global {
-                padding: 12px 10px;
+                padding: 14px 12px;
                 border-radius: 18px;
             }
             .welcome-global h2 {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             .welcome-global p {
-                font-size: 0.75rem;
+                font-size: 0.8rem;
             }
             .welcome-global .flag-item {
-                font-size: 0.55rem;
-                padding: 3px 7px;
+                font-size: 0.6rem;
+                padding: 3px 8px;
             }
             .welcome-global .contact-btns a {
-                font-size: 0.6rem;
-                padding: 4px 10px;
+                font-size: 0.65rem;
+                padding: 5px 12px;
             }
 
             /* ===== QURAN VERSE ===== */
             .quran-verse {
                 font-size: 1rem;
-                padding: 12px;
+                padding: 14px;
                 border-radius: 25px;
             }
 
@@ -950,23 +1188,23 @@
                 border-radius: 18px;
             }
             .form-group label {
-                font-size: 0.75rem;
+                font-size: 0.8rem;
             }
             input,
             select,
             textarea {
-                padding: 8px;
+                padding: 10px 12px;
                 font-size: 0.85rem;
                 border-radius: 20px;
             }
 
             /* ===== BLOG ===== */
             .blog-card {
-                padding: 12px;
+                padding: 14px;
                 border-radius: 18px;
             }
             .blog-card h3 {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
             }
             .blog-card p {
                 font-size: 0.8rem;
@@ -975,14 +1213,14 @@
             /* ===== FOOTER ===== */
             .footer-content {
                 grid-template-columns: 1fr 1fr;
-                gap: 12px;
+                gap: 15px;
             }
             .footer-section h4 {
-                font-size: 0.8rem;
+                font-size: 0.85rem;
             }
             .footer-section p,
             .footer-section a {
-                font-size: 0.6rem;
+                font-size: 0.65rem;
             }
 
             /* ===== BUTTONS ===== */
@@ -991,18 +1229,17 @@
                 font-size: 0.8rem;
             }
 
-            /* ===== HERO ===== */
-            .hero h1 {
-                font-size: 1.3rem;
-            }
-            .hero p {
-                font-size: 0.85rem;
-            }
-
             /* ===== NOTE TEXT ===== */
             .note-text {
                 font-size: 0.75rem;
-                padding: 8px;
+                padding: 10px;
+            }
+
+            /* ===== MOON ===== */
+            body::after {
+                font-size: 2.5rem;
+                top: 80px;
+                right: 15px;
             }
         }
 
@@ -1024,22 +1261,22 @@
             }
             .nav-btn {
                 font-size: 0.45rem;
-                padding: 2px 5px;
+                padding: 2px 6px;
             }
             .logo {
                 font-size: 0.6rem;
             }
             .sidebar a {
                 font-size: 0.55rem;
-                padding: 3px 7px;
+                padding: 3px 8px;
             }
             .welcome-global .flag-item {
                 font-size: 0.5rem;
-                padding: 2px 5px;
+                padding: 2px 6px;
             }
             .welcome-global .contact-btns a {
                 font-size: 0.5rem;
-                padding: 3px 7px;
+                padding: 3px 8px;
             }
             .section-title {
                 font-size: 1rem;
@@ -1048,25 +1285,37 @@
                 font-size: 0.85rem;
                 padding: 10px;
             }
+            .search-box {
+                max-width: 120px;
+            }
+            .search-box input {
+                font-size: 0.6rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- ============================================================ -->
-    <!-- ===== TOP NAVBAR ============================================ -->
+    <!-- ===== TOP HEADER ============================================ -->
     <!-- ============================================================ -->
     <header>
         <div class="header-content">
-            <div class="logo">⭐ Dawat-e-Islami | Hafiz AFAQ Attari</div>
+            <div class="logo">
+                <span class="camel-icon">🐪</span> Dawat-e-Islami | Hafiz AFAQ Attari
+            </div>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search courses, blogs...">
+            </div>
             <nav>
                 <button class="nav-btn active" data-page="home">🏠 Home</button>
-                <button class="nav-btn" data-page="about">📖 About</button>
                 <button class="nav-btn" data-page="courses">📚 Courses</button>
                 <button class="nav-btn" data-page="blog">📝 Blog</button>
                 <button class="nav-btn" data-page="contact">📞 Contact</button>
                 <button class="nav-btn" data-page="privacy">🔒 Privacy</button>
                 <button class="nav-btn" data-page="terms">📜 Terms</button>
+                <button class="nav-btn" data-page="about">📖 About</button>
             </nav>
         </div>
     </header>
@@ -1079,18 +1328,18 @@
         <!-- ===== SIDEBAR ===== -->
         <aside class="sidebar">
             <div class="profile-mini">
-                <img id="sidebarProfileImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232c5a3e'/%3E%3Ccircle cx='50' cy='35' r='15' fill='%23E4B363'/%3E%3Ccircle cx='50' cy='70' r='20' fill='%23E4B363'/%3E%3Ctext x='50' y='80' font-size='28' text-anchor='middle' fill='%231B2A4A'%3Eح%3C/text%3E%3C/svg%3E" alt="Profile">
+                <img id="sidebarProfileImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232c5a3e'/%3E%3Ccircle cx='50' cy='35' r='15' fill='%23E8B86D'/%3E%3Ccircle cx='50' cy='70' r='20' fill='%23E8B86D'/%3E%3Ctext x='50' y='80' font-size='28' text-anchor='middle' fill='%231B2A4A'%3Eح%3C/text%3E%3C/svg%3E" alt="Profile">
                 <h4>Hafiz AFAQ Attari</h4>
-                <p>Founder</p>
+                <p>🌙 Founder</p>
             </div>
-            <div class="menu-label">📌 Menu</div>
+            <div class="menu-label">🌟 Menu</div>
             <a href="#" class="active" data-page="home">🏠 Dashboard</a>
-            <a href="#" data-page="about">📖 About Us</a>
             <a href="#" data-page="courses">📚 Courses</a>
             <a href="#" data-page="blog">📝 Blog</a>
             <a href="#" data-page="contact">📞 Contact</a>
             <a href="#" data-page="privacy">🔒 Privacy</a>
             <a href="#" data-page="terms">📜 Terms</a>
+            <a href="#" data-page="about">📖 About</a>
         </aside>
 
         <!-- ===== MAIN CONTENT ===== -->
@@ -1128,8 +1377,8 @@
 
                 <!-- ===== WELCOME TEXT ===== -->
                 <div style="text-align:center; margin-bottom:20px;">
-                    <h1 style="font-size:1.8rem; background:linear-gradient(to right,#E4B363,#F7D98C); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">📝 Welcome to Dawat-e-Islami</h1>
-                    <p style="font-size:1rem; margin-top:5px; direction:ltr; text-align:center;">Learn Quran, Tajweed, Tafseer & Masail Online with Hafiz Muhammad AFAQ Attari</p>
+                    <h1 style="font-size:1.8rem; background:linear-gradient(to right,#E8B86D,#FFD700,#D4A574); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">🌙 Welcome to Dawat-e-Islami</h1>
+                    <p style="font-size:1rem; margin-top:5px; direction:ltr; text-align:center; color:#F5E6CA;">Learn Quran, Tajweed, Tafseer & Masail Online with Hafiz Muhammad AFAQ Attari</p>
                 </div>
 
                 <!-- ===== QUICK STATS ===== -->
@@ -1184,16 +1433,24 @@
                     <div class="contact-form">
                         <form id="enrollForm">
                             <div class="form-group">
-                                <label>Full Name *</label>
-                                <input type="text" required placeholder="Enter your full name">
+                                <label>First Name <span class="required">*</span></label>
+                                <input type="text" required placeholder="Enter your first name">
                             </div>
                             <div class="form-group">
-                                <label>Country *</label>
+                                <label>Last Name <span class="required">*</span></label>
+                                <input type="text" required placeholder="Enter your last name">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number <span class="required">*</span></label>
+                                <input type="tel" required placeholder="e.g., +971505859816">
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address <span class="required">*</span></label>
+                                <input type="email" required placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label>Country <span class="required">*</span></label>
                                 <input type="text" required placeholder="e.g., UK, USA, Pakistan">
-                            </div>
-                            <div class="form-group">
-                                <label>WhatsApp Number *</label>
-                                <input type="text" required placeholder="e.g., +971505859816">
                             </div>
                             <div class="form-group">
                                 <label>Select Course</label>
@@ -1204,7 +1461,7 @@
                                     <option>Hifz Program</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-gold" style="width:100%">🚀 Send Request</button>
+                            <button type="submit" class="btn btn-gold" style="width:100%">🚀 Submit Registration</button>
                         </form>
                     </div>
                 </div>
@@ -1216,7 +1473,7 @@
                 </div>
 
                 <!-- ===== FREE TRIAL BANNER ===== -->
-                <div style="text-align:center; padding:15px; background:rgba(228,179,99,0.1); border-radius:25px; border:1px solid #E4B363;">
+                <div style="text-align:center; padding:15px; background:rgba(232,184,109,0.05); border-radius:25px; border:1px solid rgba(232,184,109,0.1);">
                     <p style="font-size:1rem; direction:ltr;">⭐ Free 3-Day Trial | Ijazah Certified | 24/7 Support ⭐</p>
                 </div>
             </div>
@@ -1227,13 +1484,13 @@
             <div id="page-about" class="page">
                 <h2 class="section-title">📖 About Us</h2>
                 <div class="about-page">
-                    <h3>Our Mission</h3>
+                    <h3>🌙 Our Mission</h3>
                     <p>Dawat-e-Islami Online Academy is a global Islamic educational platform founded by Hafiz Muhammad AFAQ Attari. Our mission is to provide authentic Quranic education with Tajweed, Tafseer, and Islamic Masail to Muslims all around the world.</p>
 
-                    <h3>Who We Are</h3>
+                    <h3>🐪 Who We Are</h3>
                     <p>We are a team of Ijazah-certified scholars and qualified teachers dedicated to spreading the light of Quran and Sunnah. Our academy offers one-to-one live classes, flexible timings, and personalized attention for each student.</p>
 
-                    <h3>Global Reach</h3>
+                    <h3>🏜️ Global Reach</h3>
                     <p>Students from any country can join our academy. We have successfully taught students from UK, USA, Canada, Australia, UAE, Saudi Arabia, Qatar, Kuwait, Oman, Bahrain, Germany, France, Italy, Spain, Netherlands, Sweden, Norway, Denmark, Switzerland, South Africa, India, Pakistan, Bangladesh, Sri Lanka, Malaysia, Indonesia, Singapore, and many more.</p>
 
                     <div class="quran-verse">
@@ -1317,11 +1574,11 @@
                 </div>
 
                 <!-- ===== ADD NEW BLOG POST FORM ===== -->
-                <div style="margin-top:30px; background:var(--card-bg); border-radius:25px; padding:20px; border:1px solid var(--border-light);">
-                    <h3 style="color:#E4B363; margin-bottom:15px; direction:ltr; text-align:left;">✏️ Add New Blog Post</h3>
+                <div style="margin-top:30px; background:rgba(13,27,42,0.5); border-radius:25px; padding:20px; border:1px solid rgba(232,184,109,0.08);">
+                    <h3 style="color:#FFD700; margin-bottom:15px; direction:ltr; text-align:left;">✏️ Add New Blog Post</h3>
                     <form id="blogForm">
                         <div class="form-group">
-                            <label>Post Title *</label>
+                            <label>Post Title <span class="required">*</span></label>
                             <input type="text" id="blogTitle" required placeholder="Enter post title">
                         </div>
                         <div class="form-group">
@@ -1329,7 +1586,7 @@
                             <input type="date" id="blogDate">
                         </div>
                         <div class="form-group">
-                            <label>Summary *</label>
+                            <label>Summary <span class="required">*</span></label>
                             <textarea id="blogSummary" rows="3" required placeholder="Write a short summary..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-gold" style="width:100%;">📝 Add Post</button>
@@ -1360,16 +1617,24 @@
                     <div class="contact-form">
                         <form id="contactForm">
                             <div class="form-group">
-                                <label>Full Name *</label>
-                                <input type="text" required placeholder="Enter your full name">
+                                <label>First Name <span class="required">*</span></label>
+                                <input type="text" required placeholder="Enter your first name">
                             </div>
                             <div class="form-group">
-                                <label>Country *</label>
+                                <label>Last Name <span class="required">*</span></label>
+                                <input type="text" required placeholder="Enter your last name">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number <span class="required">*</span></label>
+                                <input type="tel" required placeholder="e.g., +971505859816">
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address <span class="required">*</span></label>
+                                <input type="email" required placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label>Country <span class="required">*</span></label>
                                 <input type="text" required placeholder="e.g., UK, USA, Pakistan">
-                            </div>
-                            <div class="form-group">
-                                <label>WhatsApp Number *</label>
-                                <input type="text" required placeholder="e.g., +971505859816">
                             </div>
                             <div class="form-group">
                                 <label>Select Course</label>
@@ -1380,7 +1645,7 @@
                                     <option>Hifz Program</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-gold" style="width:100%">🚀 Send Request</button>
+                            <button type="submit" class="btn btn-gold" style="width:100%">🚀 Submit Request</button>
                         </form>
                     </div>
                 </div>
@@ -1457,18 +1722,18 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>Dawat-e-Islami Online</h4>
+                <h4>🌙 Dawat-e-Islami Online</h4>
                 <p>By Hafiz Muhammad AFAQ Attari</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <a href="#" data-page="home">Home</a>
-                <a href="#" data-page="about">About</a>
-                <a href="#" data-page="courses">Courses</a>
-                <a href="#" data-page="blog">Blog</a>
-                <a href="#" data-page="contact">Contact</a>
-                <a href="#" data-page="privacy">Privacy</a>
-                <a href="#" data-page="terms">Terms</a>
+                <a href="#" data-page="home">🏠 Home</a>
+                <a href="#" data-page="courses">📚 Courses</a>
+                <a href="#" data-page="blog">📝 Blog</a>
+                <a href="#" data-page="contact">📞 Contact</a>
+                <a href="#" data-page="privacy">🔒 Privacy</a>
+                <a href="#" data-page="terms">📜 Terms</a>
+                <a href="#" data-page="about">📖 About</a>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
@@ -1479,7 +1744,7 @@
                 <p>🌍 All countries welcome<br>📖 Free trial for everyone</p>
             </div>
         </div>
-        <div class="footer-bottom">© 2026 Dawat-e-Islami Online Academy | Hafiz Muhammad AFAQ Attari | All Countries Welcome</div>
+        <div class="footer-bottom">🌙 © 2026 Dawat-e-Islami Online Academy | Hafiz Muhammad AFAQ Attari | All Countries Welcome</div>
     </footer>
 
     <!-- ============================================================ -->
@@ -1597,23 +1862,14 @@
         // ============================================================
         document.getElementById('contactForm')?.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('✅ JazakAllah! Hafiz Muhammad AFAQ Attari will contact you soon on WhatsApp for free trial.');
+            alert('✅ JazakAllah! Hafiz Muhammad AFAQ Attari will contact you soon on WhatsApp for free trial. Students from ALL countries are welcome!');
             this.reset();
         });
 
         document.getElementById('enrollForm')?.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('✅ JazakAllah! Hafiz Muhammad AFAQ Attari will contact you soon on WhatsApp for free trial.');
+            alert('✅ JazakAllah! Hafiz Muhammad AFAQ Attari will contact you soon on WhatsApp for free trial. Students from ALL countries are welcome!');
             this.reset();
-        });
-
-        // ============================================================
-        // ===== FAQ TOGGLE ===========================================
-        // ============================================================
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.addEventListener('click', function() {
-                this.parentElement.classList.toggle('active');
-            });
         });
 
         // ============================================================
