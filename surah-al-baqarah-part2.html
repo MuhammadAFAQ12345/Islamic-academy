@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surah Al-Baqarah (Ayat 4–5) | Imaan Walon Ki Kamyabi Ka Raasta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Amiri', 'Noto Naskh Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+            color: #e8e4d8;
+            line-height: 1.8;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            background: rgba(18, 24, 40, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 40px 35px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        /* Decorative Header */
+        .header-decoration {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header-decoration .ornament {
+            font-size: 28px;
+            color: #c9a84c;
+            letter-spacing: 8px;
+            opacity: 0.6;
+        }
+
+        .header-decoration h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #f0e6c8;
+            margin: 10px 0 4px;
+            text-shadow: 0 2px 12px rgba(201, 168, 76, 0.15);
+            letter-spacing: 1px;
+        }
+
+        .header-decoration .subtitle {
+            font-size: 16px;
+            color: #a89f8a;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #c9a84c55, #c9a84c88, #c9a84c55, transparent);
+            margin: 20px 0 28px;
+        }
+
+        /* Section Headings */
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #d4c49a;
+            margin: 30px 0 12px;
+            padding-right: 8px;
+            border-right: 4px solid #c9a84c;
+            padding-right: 16px;
+            display: inline-block;
+        }
+
+        .section-title i {
+            font-style: normal;
+            margin-left: 8px;
+            color: #b8a87a;
+        }
+
+        /* Arabic Box */
+        .arabic-box {
+            background: rgba(12, 16, 30, 0.7);
+            border-radius: 16px;
+            padding: 28px 22px;
+            margin: 16px 0 22px;
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .arabic-box .arabic-text {
+            font-size: 26px;
+            line-height: 2;
+            color: #f0e6c8;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            font-family: 'Amiri', 'Noto Naskh Arabic', serif;
+        }
+
+        .arabic-box .arabic-text .ayah-number {
+            font-size: 16px;
+            color: #c9a84c;
+            margin: 0 6px;
+        }
+
+        .translation-box {
+            background: rgba(201, 168, 76, 0.06);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 6px 0 16px;
+            border-right: 3px solid #c9a84c;
+            text-align: right;
+        }
+
+        .translation-box p {
+            font-size: 17px;
+            color: #d6cebc;
+            margin: 0;
+        }
+
+        .translation-box .label {
+            font-size: 13px;
+            color: #a89f8a;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Tafseer Content */
+        .tafseer-point {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin: 14px 0;
+            border-left: 3px solid rgba(201, 168, 76, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .tafseer-point:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-left-color: #c9a84c;
+        }
+
+        .tafseer-point h3 {
+            font-size: 18px;
+            color: #d4c49a;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tafseer-point h3 .icon {
+            font-size: 20px;
+            color: #c9a84c;
+        }
+
+        .tafseer-point p {
+            color: #cbc2ae;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* Urdu Tafseer Box (Siraat ul Janaan) */
+        .urdu-tafseer-box {
+            background: rgba(12, 16, 30, 0.5);
+            border-radius: 14px;
+            padding: 22px 24px;
+            margin: 16px 0;
+            border: 1px solid rgba(201, 168, 76, 0.08);
+        }
+
+        .urdu-tafseer-box .tafseer-title {
+            font-size: 18px;
+            color: #d4c49a;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .urdu-tafseer-box .tafseer-title small {
+            font-weight: 400;
+            font-size: 15px;
+            color: #a89f8a;
+        }
+
+        .urdu-tafseer-box .urdu-text {
+            font-size: 17px;
+            color: #d6cebc;
+            text-align: right;
+            line-height: 2;
+        }
+
+        .urdu-tafseer-box .urdu-text .highlight {
+            color: #c9a84c;
+        }
+
+        /* Highlights & Key Points */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.06), rgba(201, 168, 76, 0.02));
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin: 18px 0;
+            border: 1px solid rgba(201, 168, 76, 0.12);
+        }
+
+        .highlight-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .highlight-box ul li {
+            padding: 6px 0 6px 30px;
+            position: relative;
+            color: #cbc2ae;
+            font-size: 16px;
+        }
+
+        .highlight-box ul li::before {
+            content: "✦";
+            position: absolute;
+            right: 0;
+            color: #c9a84c;
+            font-size: 14px;
+            top: 6px;
+        }
+
+        /* Conclusion */
+        .conclusion-box {
+            background: rgba(201, 168, 76, 0.05);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin: 30px 0 20px;
+            border: 1px solid rgba(201, 168, 76, 0.12);
+            text-align: center;
+        }
+
+        .conclusion-box p {
+            font-size: 17px;
+            color: #d6cebc;
+            line-height: 1.9;
+        }
+
+        .conclusion-box .dua {
+            font-size: 18px;
+            color: #d4c49a;
+            font-weight: 500;
+            margin-top: 12px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(201, 168, 76, 0.1);
+        }
+
+        .conclusion-box .signature {
+            font-size: 15px;
+            color: #a89f8a;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        /* Footer */
+        .footer-note {
+            text-align: center;
+            font-size: 14px;
+            color: #6a6a7a;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            letter-spacing: 0.5px;
+        }
+
+        .footer-note a {
+            color: #c9a84c;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 22px 16px;
+            }
+
+            .header-decoration h1 {
+                font-size: 22px;
+            }
+
+            .arabic-box .arabic-text {
+                font-size: 20px;
+            }
+
+            .arabic-box {
+                padding: 20px 14px;
+            }
+
+            .section-title {
+                font-size: 17px;
+            }
+
+            .tafseer-point {
+                padding: 14px 14px;
+            }
+
+            .tafseer-point h3 {
+                font-size: 16px;
+            }
+
+            .urdu-tafseer-box {
+                padding: 16px 16px;
+            }
+
+            .urdu-tafseer-box .urdu-text {
+                font-size: 15px;
+            }
+
+            .translation-box p {
+                font-size: 15px;
+            }
+
+            .conclusion-box {
+                padding: 18px 16px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 16px 10px;
+            }
+
+            .arabic-box .arabic-text {
+                font-size: 17px;
+            }
+
+            .header-decoration h1 {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 15px;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0e1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c9a84c55;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c9a84c88;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header-decoration">
+            <div class="ornament">✦ ✦ ✦</div>
+            <h1>📖 Surah Al-Baqarah (Ayat 4–5)</h1>
+            <div class="subtitle">Imaan Walon Ki Kamyabi Ka Raasta</div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Intro -->
+        <div style="margin-bottom: 20px;">
+            <p style="font-size: 17px; color: #cbc2ae; text-align: right; line-height: 2;">
+                🌙 Surah Al-Baqarah ki pichli ayat mein Allah Ta'ala ne muttaqeen ki kuch sifat bayan farmayi thin. 
+                Aaj ki in ayat mein Allah un logon ki mazeed khasusiyat aur unki kamyabi ka zikar farmata hai 
+                jo uski hidayat ko qabool karte hain.
+            </p>
+        </div>
+
+        <!-- Arabic Ayat 4 -->
+        <div class="arabic-box">
+            <div class="arabic-text">
+                وَالَّذِينَ يُؤْمِنُونَ بِمَا أُنزِلَ إِلَيْكَ وَمَا أُنزِلَ مِن قَبْلِكَ وَبِالْآخِرَةِ هُمْ يُوقِنُونَ
+                <span class="ayah-number">(4)</span>
+            </div>
+        </div>
+
+        <!-- Translation Ayat 4 -->
+        <div class="translation-box">
+            <span class="label">📝 Tarjuma (Kanz-ul-Iman):</span>
+            <p>''Aur jo log imaan rakhte hain us par jo aap ki taraf nazil kiya gaya aur us par jo aap se pehle nazil kiya gaya aur aakhirat par yaqeen rakhte hain.''</p>
+        </div>
+
+        <!-- Arabic Ayat 5 -->
+        <div class="arabic-box" style="margin-top: 8px;">
+            <div class="arabic-text">
+                أُولَٰئِكَ عَلَىٰ هُدًى مِّن رَّبِّهِمْ ۖ وَأُولَٰئِكَ هُمُ الْمُفْلِحُونَ
+                <span class="ayah-number">(5)</span>
+            </div>
+        </div>
+
+        <!-- Translation Ayat 5 -->
+        <div class="translation-box">
+            <span class="label">📝 Tarjuma (Kanz-ul-Iman):</span>
+            <p>''Yahi log apne Rab ki taraf se hidayat par hain aur yahi log (asl) kamyabi paane wale hain.''</p>
+        </div>
+
+        <hr class="divider" style="margin: 28px 0;">
+
+        <!-- Tafseer Section -->
+        <h2 class="section-title">🌟 Tafseer</h2>
+
+        <!-- Point 1 -->
+        <div class="tafseer-point">
+            <h3><span class="icon">🔹</span> Allah ki Nazil Kardah Tamam Kitabon Par Imaan</h3>
+            <p>
+                Allah Ta'ala farmata hai ke sacha momin woh hai jo sirf Quran par hi nahi balkay un tamam asmani 
+                kitabon par bhi imaan rakhta hai jo Allah ne pehle ambiya par nazil farmayi thin.
+                <br><br>
+                Yeh baat hume sikhati hai ke Islam tamam ambiya aur Allah ke paigham ka ehtram karne ka dars deta hai.
+            </p>
+        </div>
+
+        <!-- Point 2 -->
+        <div class="tafseer-point">
+            <h3><span class="icon">🔹</span> Aakhirat Par Pukhta Yaqeen</h3>
+            <p>
+                Momin ki ek bari nishani yeh hai ke usay aakhirat par poora yaqeen hota hai.
+                <br><br>
+                Woh janta hai ke ek din har insan ko Allah ke samne apne aamaal ka hisab dena hoga. 
+                Isi yaqeen ki wajah se woh nek kaam karta hai aur gunaahon se bachne ki koshish karta hai.
+            </p>
+        </div>
+
+        <!-- Point 3 -->
+        <div class="tafseer-point">
+            <h3><span class="icon">🔹</span> Hidayat Aur Kamyabi</h3>
+            <p>
+                Allah Ta'ala farmata hai ke jo log in sifaat ke malik hote hain, woh apne Rab ki taraf se 
+                hidayat par hote hain.
+                <br><br>
+                Aur asal kamyab log bhi wahi hain.
+                <br><br>
+                Duniya ki daulat, shohrat aur mansab se zyada ahm asal kamyabi Allah ki raza aur aakhirat ki nijat hai.
+            </p>
+        </div>
+
+        <hr class="divider" style="margin: 26px 0;">
+
+        <!-- Tafseer Siraat ul Janaan -->
+        <h2 class="section-title">🌟 Tafseer Siraat ul Janaan</h2>
+
+        <div class="urdu-tafseer-box">
+            <div class="tafseer-title">
+                اُولٰىٕكَ عَلٰى هُدًى مِّنْ رَّبِّهِمْۗ-وَ اُولٰىٕكَ هُمُ الْمُفْلِحُوْنَ <small>(۵)</small>
+            </div>
+            <div class="urdu-text">
+                <strong>ترجمۂ کنز الایمان:</strong> وہی لوگ اپنے رب کی طرف سے ہدایت پر ہیں اور وہی مراد کو پہنچنے والے۔
+            </div>
+            <div class="urdu-text" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05);">
+                <strong>تفسیر صراط الجنان:</strong><br>
+                {<span class="highlight">هُمُ الْمُفْلِحُوْنَ: وہی فلاح پانے والے ہیں۔</span>} 
+                یعنی جن لوگوں میں بیان کی گئی صفات پائی جاتی ہیں وہ اپنے رب عَزَّوَجَلَّ کی طرف سے 
+                عطا کی گئی ہدایت پر ہیں اور یہی لوگ جہنم سے نجات پا کر اور جنت میں داخل ہو کر 
+                کامل کامیابی حاصل کرنے والے ہیں۔ <span style="color: #a89f8a; font-size: 14px;">(خازن، البقرۃ، تحت الآیۃ: ۵، ۱ / ۲۵)</span>
+            </div>
+        </div>
+
+        <!-- Additional note from Siraat -->
+        <div class="urdu-tafseer-box" style="margin-top: 6px;">
+            <div class="tafseer-title" style="font-size: 17px;">
+                اصل کامیابی ہر مسلمان کو حاصل ہے:
+            </div>
+            <div class="urdu-text" style="font-size: 16px;">
+                یاد رہے کہ اس آیت میں فلاح سے مراد ''کامل فلاح'' ہے یعنی کامل کامیابی متقین ہی کو حاصل ہے 
+                ہاں اصلِ فلاح ہر مسلمان کو حاصل ہے اگرچہ وہ کتنا ہی گناہگار کیوں نہ ہو کیونکہ ایمان 
+                بذات خود بہت بڑی کامیابی ہے جس کی برکت سے بہرحال جنت کا داخلہ ضرور حاصل ہوگا 
+                اگرچہ عذابِ نار کے بعد ہو۔
+            </div>
+        </div>
+
+        <!-- Ayat 6 - Kuffar ka zikr -->
+        <hr class="divider" style="margin: 28px 0;">
+
+        <div style="margin: 10px 0 14px;">
+            <p style="font-size: 16px; color: #a89f8a; text-align: right;">
+                📖 <em>Allah Ta'ala ne aage kuffar ka zikr farmaya:</em>
+            </p>
+        </div>
+
+        <div class="arabic-box" style="background: rgba(40, 20, 20, 0.2); border-color: rgba(200, 80, 80, 0.15);">
+            <div class="arabic-text" style="font-size: 22px;">
+                إِنَّ الَّذِينَ كَفَرُوا سَوَاءٌ عَلَيْهِمْ أَأَنذَرْتَهُمْ أَمْ لَمْ تُنذِرْهُمْ لَا يُؤْمِنُونَ
+                <span class="ayah-number">(۶)</span>
+            </div>
+        </div>
+
+        <div class="translation-box" style="border-right-color: #8a6a4a;">
+            <span class="label">📝 Tarjuma (Kanz-ul-Iman):</span>
+            <p>''Beshak woh jin ki qismat mein kufr hai, un par barabar hai tum unhein darao ya na darao, woh imaan lanay walay nahi hain.''</p>
+        </div>
+
+        <!-- Tafseer Ayat 6 -->
+        <div class="urdu-tafseer-box" style="margin-top: 12px;">
+            <div class="tafseer-title" style="font-size: 17px;">
+                تفسیر صراط الجنان – آیت ۶
+            </div>
+            <div class="urdu-text" style="font-size: 16px;">
+                {<span class="highlight">إِنَّ الَّذِينَ كَفَرُوا سَوَاءٌ عَلَيْهِمْ: بیشک وہ لوگ جن کی قسمت میں کفر ہے ان کے لئے برابر ہے۔</span>}
+                چونکہ ٹھنڈک کی پہچان گرمی سے، دن کی پہچان رات سے اور اچھائی کی پہچان برائی سے ہوتی ہے 
+                اسی لئے اہل ایمان کے بعد کافروں اور منافقوں کے افعال اور ان کے انجام کا ذکر کیا گیا ہے 
+                تاکہ ان کی پہچان بھی واضح ہوجائے اور آدمی کے سامنے تمام راہیں نمایاں ہوجائیں۔
+                <br><br>
+                اس آیت کا خلاصہ یہ ہے کہ اے پیارے حبیب! صَلَّی اللہُ تَعَالٰی عَلَیْہِ وَاٰلِہٖ وَسَلَّمَ، 
+                وہ لوگ جن کی قسمت میں کفر ہے جیسے ابو جہل اور ابو لہب وغیرہ کفار، ان کے لئے برابر ہے 
+                کہ آپ انہیں اللہ تعالیٰ کے احکامات کی مخالفت کرنے کے عذاب سے ڈرائیں یا نہ ڈرائیں، 
+                یہ کسی صورت ایمان نہیں لائیں گے کیونکہ ان کے بارے میں اللہ تعالیٰ کو پہلے سے ہی 
+                معلوم ہے کہ یہ لوگ ایمان سے محروم ہیں۔ 
+                <span style="color: #a89f8a; font-size: 14px;">(جلالین مع جمل، البقرۃ، تحت الآیۃ: ۶، ۱ / ۲۰-۲۱)</span>
+            </div>
+        </div>
+
+        <!-- Kufr ki Tareef -->
+        <div class="urdu-tafseer-box" style="margin-top: 6px;">
+            <div class="tafseer-title" style="font-size: 17px; color: #c9a84c;">
+                کفر کی تعریف اور ازلی کافروں کو تبلیغ کرنے کا حکم دینے کی وجہ:
+            </div>
+
+            <div class="urdu-text" style="font-size: 16px; text-align: right; padding-right: 8px;">
+                <strong>(۱)</strong> ضروریاتِ دین میں سے کسی چیز کا انکار یا تحقیر و استہزاء کرنا کفر ہے 
+                اور ضروریاتِ دین، اسلام کے وہ احکام ہیں، جن کو ہر خاص و عام جانتے ہوں، 
+                جیسے اللہ تعالیٰ کی وحدانیت، انبیاء کرام عَلَیْہِمُ الصَّلٰوۃُ وَالسَّلَام کی نبوت، 
+                نماز، روزے، حج، جنت، دوزخ، قیامت میں اُٹھایا جانا وغیرہا۔
+                <br><br>
+                عوام سے مراد وہ مسلمان ہیں جو علماء کے طبقہ میں شمار نہ کئے جاتے ہوں مگر 
+                علماء کی صحبت میں بیٹھنے والے ہوں اور علمی مسائل کا ذوق رکھتے ہوں، 
+                اس سے وہ لوگ مراد نہیں جو دور دراز جنگلوں پہاڑوں میں رہنے والے ہوں 
+                جنہیں صحیح کلمہ پڑھنا بھی نہ آتا ہو کہ ایسے لوگوں کا ضروریاتِ دین سے 
+                ناواقف ہونا اس دینی ضروری کو غیرضروری نہ کردے گا، البتہ ایسے لوگوں کے 
+                مسلمان ہونے کے لئے یہ بات ضروری ہے کہ وہ ضروریاتِ دین کا انکار کرنے والے 
+                نہ ہوں اور یہ عقیدہ رکھتے ہوں کہ اسلام میں جو کچھ ہے حق ہے اور ان سب 
+                پر اجمالاً ایمان لائے ہوں۔ 
+                <span style="color: #a89f8a; font-size: 14px;">(بہارِ شریعت، ۱ / ۱۷۲-۱۷۳، ملخصاً)</span>
+            </div>
+
+            <div class="urdu-text" style="font-size: 16px; text-align: right; padding-right: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.05);">
+                <strong>(۲)</strong> ایمان سے محروم کفار کے بارے میں معلوم ہونے کے باوجود انہیں تبلیغ کرنے کا 
+                حکم اس لئے دیا گیا تاکہ ان پر حجت پوری ہو جائے اور قیامت کے دن ان کے لئے 
+                کوئی عذر باقی نہ رہے۔
+                <br><br>
+                اللہ تعالیٰ ارشاد فرماتا ہے:
+                <br>
+                <span style="color: #d4c49a; font-size: 18px;">
+                    ''رُسُلًا مُّبَشِّرِیْنَ وَ مُنْذِرِیْنَ لِئَلَّا یَكُوْنَ لِلنَّاسِ عَلَى اللّٰهِ حُجَّةٌۢ بَعْدَ الرُّسُلِؕ-وَ كَانَ اللّٰهُ عَزِیْزًا حَكِیْمًا''
+                </span>
+                <br>
+                <span style="color: #a89f8a; font-size: 14px;">(النساء: ۱۶۵)</span>
+                <br><br>
+                ''(ہم نے) رسول خوشخبری دیتے اور ڈر سناتے (بھیجے) تاکہ رسولوں (کو بھیجنے) کے بعد 
+                اللہ کے یہاں لوگوں کے لئے کوئی عذر (باقی) نہ رہے اور اللہ زبردست ہے، حکمت والا ہے۔''
+                <br><br>
+                اور ارشاد فرمایا:
+                <br>
+                <span style="color: #d4c49a; font-size: 18px;">
+                    ''وَ لَوْ اَنَّاۤ اَهْلَكْنٰهُمْ بِعَذَابٍ مِّنْ قَبْلِهٖ لَقَالُوْا رَبَّنَا لَوْ لَاۤ اَرْسَلْتَ اِلَیْنَا رَسُوْلًا فَنَتَّبِـعَ اٰیٰتِكَ مِنْ قَبْلِ اَنْ نَّذِلَّ وَ نَخْزٰى''
+                </span>
+                <br>
+                <span style="color: #a89f8a; font-size: 14px;">(طہ: ۱۳۴)</span>
+                <br><br>
+                ''اور اگر ہم انہیں رسول کے آنے سے پہلے کسی عذاب سے ہلاک کردیتے تو ضرور کہتے: 
+                اے ہمارے رب! تو نے ہماری طرف کوئی رسول کیوں نہ بھیجا کہ ہم ذلیل و رسوا ہونے سے 
+                پہلے تیری آیتوں کی پیروی کرتے؟''
+                <br><br>
+                نیز انہیں تبلیغ کرنے سے ایک فائدہ یہ بھی حاصل ہوا کہ وہ اگرچہ ایمان نہیں لائے 
+                لیکن حضور پرنور صَلَّی اللہُ تَعَالٰی عَلَیْہِ وَاٰلِہٖ وَسَلَّمَ کو انہیں تبلیغ 
+                کرنے کا ثواب ضرور ملے گا اور یہ بات ہر مبلغ کو پیشِ نظر رکھنی چاہیے کہ 
+                اس کا کام تبلیغ کرنا اور رضائے الہٰی پانا ہے، لوگوں کو سیدھی راہ پر لا کر 
+                ہی چھوڑنا نہیں لہٰذا مبلغ نیکی کی دعوت دیتا رہے اور نتائج اللہ تعالیٰ کے 
+                حوالے کردے اور لوگوں کے نیکی کی دعوت قبول نہ کرنے سے مایوس ہونے کی بجائے 
+                اس ثواب پر نظر رکھے جو نیکی کی دعوت دینے کی صورت میں اسے آخرت میں ملنے والا ہے۔
+            </div>
+        </div>
+
+        <hr class="divider" style="margin: 28px 0;">
+
+        <!-- Aaj Ka Sabak -->
+        <h2 class="section-title">💡 Aaj Ka Sabak</h2>
+
+        <div class="highlight-box">
+            <ul>
+                <li>✅ Quran par imaan rakho</li>
+                <li>✅ Tamam ambiya aur asmani kitabon ka ehtram karo</li>
+                <li>✅ Aakhirat ko hamesha yaad rakho</li>
+                <li>✅ Allah ki hidayat par chalne ki koshish karo</li>
+            </ul>
+        </div>
+
+        <hr class="divider" style="margin: 24px 0;">
+
+        <!-- Conclusion -->
+        <h2 class="section-title">🤲 Conclusion</h2>
+
+        <div class="conclusion-box">
+            <p>
+                Surah Al-Baqarah ki yeh ayat hume batati hain ke asal kamyabi sirf un logon ke liye hai 
+                jo Allah par, uske paigham par aur aakhirat par sachay dil se imaan rakhte hain. 
+                Aisi zindagi insan ko duniya aur aakhirat dono mein kamyabi ki taraf le jati hai.
+            </p>
+            <div class="dua">
+                🤲 Allah hum sab ko hidayat par chalne aur kamyab logon mein shamil hone ki tofeeq ata farmaye. Ameen.
+            </div>
+            <div class="signature">
+                — Dua goo Muhammad Saddique
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-note">
+            ✦ Blog post for website ✦
+        </div>
+
+    </div>
+
+</body>
+</html>
