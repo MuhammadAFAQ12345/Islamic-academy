@@ -6,14 +6,13 @@
 
     <meta name="google-site-verification" content="y8uedaDcSe2QnqWvpjjWwlTRw2nOL2Au2FfFkpj1RYk" />
 
-    <title>Dawat-e-Islami | Madani Qaida | Quran Tafseer | Masail</title>
+    <title>Dawat-e-Islami | Hafiz Muhammad AFAQ Attari | Madani Qaida | Quran Tafseer | Masail</title>
 
-    <!-- Google AdSense START -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9882271685584324"
-     crossorigin="anonymous"></script>
-    <!-- Google AdSense END -->
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9882271685584324" crossorigin="anonymous"></script>
 
     <style>
+        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -31,14 +30,33 @@
             --border-light: rgba(228, 179, 99, 0.4);
         }
 
+        /* ===== SMOOTH SCROLLING ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Noto Nastaliq Urdu', 'Segoe UI', 'Poppins', Tahoma, sans-serif;
             background: linear-gradient(145deg, #1B2A4A 0%, #4A1A2C 100%);
+            background-attachment: fixed;
             color: #E8D9C5;
             line-height: 1.8;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
+        /* ===== SMOOTH FADE-IN ON SCROLL ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== HEADER ===== */
         header {
             background: rgba(11, 18, 34, 0.95);
             backdrop-filter: blur(10px);
@@ -48,6 +66,7 @@
             top: 0;
             z-index: 1000;
             border-bottom: 2px solid #E4B363;
+            transition: all 0.3s ease;
         }
         .header-content {
             max-width: 1300px;
@@ -78,12 +97,26 @@
             font-size: 0.95rem;
             font-weight: 500;
             transition: all 0.3s;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #E4B363;
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
         }
         nav a:hover {
             color: #E4B363;
         }
 
-        /* Floating Profile - Default image visible to all visitors */
+        /* ===== FLOATING PROFILE - DEFAULT VISIBLE IMAGE ===== */
         .floating-profile {
             position: fixed;
             left: 20px;
@@ -179,10 +212,16 @@
             text-align: center;
         }
 
+        /* ===== HERO ===== */
         .hero {
             padding: 180px 20px 100px;
             text-align: center;
             background: radial-gradient(circle at 10% 20%, rgba(30, 95, 107, 0.3), rgba(74, 26, 44, 0.7));
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .hero h1 {
             font-size: 2.5rem;
@@ -203,6 +242,7 @@
             text-align: center;
         }
 
+        /* ===== BUTTONS ===== */
         .btn {
             padding: 12px 30px;
             font-size: 1.1rem;
@@ -230,6 +270,7 @@
             text-align: center;
         }
 
+        /* ===== SECTIONS ===== */
         section {
             padding: 70px 20px;
             max-width: 1300px;
@@ -248,6 +289,7 @@
             color: #C57B4A;
         }
 
+        /* ===== QURAN VERSE ===== */
         .quran-verse {
             text-align: center;
             font-size: 1.5rem;
@@ -266,20 +308,28 @@
             text-align: center;
         }
 
-        .about-page, .privacy-page {
+        /* ===== ABOUT / PRIVACY / TERMS ===== */
+        .about-page, .privacy-page, .terms-page {
             background: var(--card-bg);
             border-radius: 40px;
             padding: 40px;
             margin-top: 30px;
         }
-        .about-page h3, .privacy-page h3 {
+        .about-page h3, .privacy-page h3, .terms-page h3 {
             color: #E4B363;
             margin-bottom: 20px;
             font-size: 1.8rem;
         }
-        .about-page p, .privacy-page p {
+        .about-page p, .privacy-page p, .terms-page p {
             margin-bottom: 20px;
             text-align: justify;
+        }
+        .terms-page ul {
+            padding-right: 30px;
+            margin-bottom: 20px;
+        }
+        .terms-page li {
+            margin-bottom: 10px;
         }
         .note-text {
             text-align: center;
@@ -289,6 +339,7 @@
             border-radius: 30px;
         }
 
+        /* ===== GRIDS ===== */
         .grid-3cols {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -301,7 +352,7 @@
             padding: 25px;
             border: 1px solid var(--border-light);
             text-align: center;
-            transition: 0.2s;
+            transition: all 0.3s ease;
         }
         .course-card:hover, .feature-card:hover {
             transform: translateY(-5px);
@@ -313,6 +364,7 @@
             margin-bottom: 15px;
         }
 
+        /* ===== PRICING ===== */
         .pricing-global {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -326,6 +378,11 @@
             padding: 20px;
             border: 1px solid #E4B363;
             text-align: center;
+            transition: all 0.3s ease;
+        }
+        .price-card:hover {
+            transform: translateY(-5px);
+            border-color: #C57B4A;
         }
         .country-name {
             font-size: 1.5rem;
@@ -341,6 +398,7 @@
             display: inline-block;
         }
 
+        /* ===== CONTACT ===== */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -364,6 +422,7 @@
         .contact-item a {
             color: #E8D9C5;
             text-decoration: none;
+            transition: color 0.3s;
         }
         .contact-item a:hover {
             color: #E4B363;
@@ -380,9 +439,11 @@
             gap: 8px;
             margin-top: 10px;
             width: auto;
+            transition: all 0.3s ease;
         }
         .whatsapp-btn:hover {
             background: #20BD5A;
+            transform: scale(1.05);
         }
 
         .contact-form {
@@ -405,8 +466,13 @@
             border: none;
             margin-top: 5px;
             font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: 2px solid #E4B363;
         }
 
+        /* ===== FAQ ===== */
         .faq-question {
             background: rgba(228,179,99,0.1);
             padding: 14px 20px;
@@ -416,6 +482,10 @@
             display: flex;
             justify-content: space-between;
             text-align: right;
+            transition: all 0.3s ease;
+        }
+        .faq-question:hover {
+            background: rgba(228,179,99,0.2);
         }
         .faq-answer {
             padding: 0 18px 15px;
@@ -424,8 +494,14 @@
         }
         .faq-item.active .faq-answer {
             display: block;
+            animation: slideDown 0.3s ease;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
+        /* ===== FOOTER ===== */
         footer {
             background: #0A1120;
             border-top: 2px solid #E4B363;
@@ -449,6 +525,7 @@
             text-decoration: none;
             display: block;
             margin-bottom: 8px;
+            transition: color 0.3s;
         }
         .footer-section a:hover {
             color: #E4B363;
@@ -460,6 +537,7 @@
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             nav {
                 display: none;
@@ -491,6 +569,7 @@
     </style>
 </head>
 <body>
+    <!-- ===== HEADER ===== -->
     <header>
         <div class="header-content">
             <div class="logo">⭐ Dawat-e-Islami | Hafiz Muhammad AFAQ Attari</div>
@@ -503,13 +582,15 @@
                     <li><a href="#pricing">Fees</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#privacy">Privacy</a></li>
+                    <li><a href="#terms">Terms</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Floating Profile with DEFAULT VISIBLE IMAGE (Hafiz AFAQ Attari's picture) -->
+    <!-- ===== FLOATING PROFILE - HAFIZ AFAQ ATTARI PICTURE ===== -->
     <div class="floating-profile" id="profileToggle">
+        <!-- DEFAULT PROFILE PICTURE - Ye picture visitor ko show hogi -->
         <img id="profileImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23E4B363'/%3E%3Cstop offset='100%25' stop-color='%23C57B4A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23grad)'/%3E%3Ctext x='50' y='67' font-size='38' text-anchor='middle' fill='%231B2A4A' font-weight='bold'%3Eح%3C/text%3E%3C/svg%3E" alt="Hafiz Muhammad AFAQ Attari">
     </div>
     <div class="profile-expanded" id="profileExpanded">
@@ -526,6 +607,7 @@
         <p style="font-size:0.7rem; text-align:center; margin-top:8px; color:#C57B4A;">👆 Click on profile picture to upload your own photo</p>
     </div>
 
+    <!-- ===== HERO ===== -->
     <section id="home" class="hero">
         <h1>🕌 Dawat-e-Islami | Madani Qaida • Quran • Tafseer • Masail</h1>
         <p>🌟 Assalamu Alaikum! Learn Madani Qaida, Quran with Translation & Tafseer, and daily Masail with Hafiz Muhammad AFAQ Attari. Online classes, one-to-one attention, free trial for all countries worldwide. 🌟</p>
@@ -540,21 +622,22 @@
         </div>
     </section>
 
-    <section id="about-page">
+    <!-- ===== ABOUT ===== -->
+    <section id="about-page" class="fade-in">
         <h2 class="section-title">About Dawat-e-Islami Online</h2>
         <div class="about-page">
             <h3>📖 Our Mission</h3>
             <p>Dawat-e-Islami Online Academy is a global Islamic educational platform founded by Hafiz Muhammad AFAQ Attari. Our mission is to provide authentic Quranic education with Tajweed, Tafseer, and Islamic Masail to Muslims all around the world.</p>
-            
+
             <h3>🎓 Who We Are</h3>
             <p>We are a team of Ijazah-certified scholars and qualified teachers dedicated to spreading the light of Quran and Sunnah. Our academy offers one-to-one live classes, flexible timings, and personalized attention for each student.</p>
-            
+
             <h3>🌍 Global Reach</h3>
             <p>Students from any country can join our academy. We have successfully taught students from UK, USA, Canada, Australia, UAE, Saudi Arabia, Qatar, Kuwait, Oman, Bahrain, Germany, France, Italy, Spain, Netherlands, Sweden, Norway, Denmark, Switzerland, South Africa, India, Pakistan, Bangladesh, Sri Lanka, Malaysia, Indonesia, Singapore, and many more.</p>
-            
+
             <h3>✅ What We Offer</h3>
             <p>• Madani Qaida for beginners<br>• Quran recitation with proper Tajweed<br>• Quran translation (Tarjuma) word-by-word<br>• Detailed Tafseer of Quran<br>• Islamic Masail according to Hanafi Fiqh<br>• Hifz (Memorization) program<br>• Arabic language course<br>• Special program for children and sisters</p>
-            
+
             <div class="quran-verse" style="margin-top:30px;">
                 " إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ "
                 <div class="verse-reference">📖 Surah Fatir (35:28)</div>
@@ -562,7 +645,8 @@
         </div>
     </section>
 
-    <section id="courses">
+    <!-- ===== COURSES ===== -->
+    <section id="courses" class="fade-in">
         <h2 class="section-title">Our Courses</h2>
         <div class="grid-3cols">
             <div class="course-card"><h3>📖 Madani Qaida</h3><p>Complete basics of Arabic letters, Makharij, and Tajweed rules. Best for beginners & children.</p></div>
@@ -582,7 +666,8 @@
         </div>
     </section>
 
-    <section id="masail">
+    <!-- ===== MASAIL ===== -->
+    <section id="masail" class="fade-in">
         <h2 class="section-title">Islamic Masail (Hanafi Fiqh)</h2>
         <div class="grid-3cols">
             <div class="feature-card"><h3>🧼 Purification (Taharah)</h3><p>Complete masail of Wudu, Ghusl, Tayammum, and cleanliness.</p></div>
@@ -598,7 +683,8 @@
         </div>
     </section>
 
-    <section id="pricing">
+    <!-- ===== PRICING ===== -->
+    <section id="pricing" class="fade-in">
         <h2 class="section-title">Monthly Fees (All Countries Welcome)</h2>
         <div class="pricing-global">
             <div class="price-card"><div class="country-name">🇬🇧 United Kingdom</div><p>📘 Madani Qaida: <span class="price-amount">£25/month</span></p><p>📖 Quran & Tafseer: <span class="price-amount">£60/month</span></p></div>
@@ -617,7 +703,8 @@
         </div>
     </section>
 
-    <section>
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section class="fade-in">
         <h2 class="section-title">Why Choose Us?</h2>
         <div class="grid-3cols">
             <div class="feature-card"><h3>✅ Ijazah Certified Scholars</h3></div>
@@ -633,7 +720,8 @@
         </div>
     </section>
 
-    <section id="testimonials">
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="testimonials" class="fade-in">
         <h2 class="section-title">Student Reviews</h2>
         <div class="grid-3cols">
             <div class="testimonial-card">"Excellent platform for Madani Qaida. My children learned quickly with Hafiz AFAQ Attari." — Ayesha, UK</div>
@@ -649,7 +737,8 @@
         </div>
     </section>
 
-    <section>
+    <!-- ===== FAQ ===== -->
+    <section class="fade-in">
         <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="faq-container">
             <div class="faq-item"><div class="faq-question">Can I join from any country?</div><div class="faq-answer">Yes! We accept students from all countries worldwide. Just fill the contact form or WhatsApp us.</div></div>
@@ -665,7 +754,8 @@
         </div>
     </section>
 
-    <section id="contact">
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="fade-in">
         <h2 class="section-title">Contact & Free Trial Registration</h2>
         <div class="contact-container">
             <div class="contact-info">
@@ -687,39 +777,30 @@
                 </form>
             </div>
         </div>
-        <div class="quran-verse">
-            " وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُ "
-            <div class="verse-reference">📖 Surah Az-Zalzalah (99:8)</div>
-        </div>
     </section>
 
-    <section id="privacy">
+    <!-- ===== PRIVACY POLICY ===== -->
+    <section id="privacy" class="fade-in">
         <h2 class="section-title">Privacy Policy</h2>
         <div class="privacy-page">
             <h3>🔒 Your Privacy Matters</h3>
             <p>At Dawat-e-Islami Online Academy, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our services.</p>
-            
+
             <h3>📋 Information We Collect</h3>
             <p>• Name and contact information (WhatsApp number, email)<br>• Country of residence<br>• Course preferences and learning progress<br>• Payment information (processed securely through third-party payment gateways)</p>
-            
+
             <h3>🔐 How We Use Your Information</h3>
             <p>• To provide and manage our online Quran classes<br>• To communicate with you about classes, schedules, and fees<br>• To improve our teaching methods and course content<br>• To send you important updates and Islamic reminders (only if you opt-in)</p>
-            
+
             <h3>🛡️ Data Security</h3>
             <p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. Your WhatsApp number and contact details are only used by our admin team for class-related communication.</p>
-            
+
             <h3>📞 Sharing Your Information</h3>
             <p>We do not sell, trade, or rent your personal information to third parties. Your information is only shared with your assigned teacher for educational purposes.</p>
-            
-            <h3>⏰ Retention of Data</h3>
-            <p>We retain your personal information only as long as necessary to provide you with our services and as required by law.</p>
-            
+
             <h3>👶 Children's Privacy</h3>
             <p>We take extra care when teaching children. Parents/guardians are always kept informed about their child's progress. We do not collect any unnecessary information about children.</p>
-            
-            <h3>📧 Contact Us</h3>
-            <p>If you have any questions about this Privacy Policy, please contact us at:<br>📞 WhatsApp: +971505859816 (UAE) or +923411472338 (Pakistan)<br>📧 Email: sardarafaqqds@gmail.com</p>
-            
+
             <div class="quran-verse" style="margin-top:30px;">
                 " وَلَا تَجَسَّسُوا وَلَا يَغْتَب بَّعْضُكُم بَعْضًا "
                 <div class="verse-reference">📖 Surah Al-Hujurat (49:12)</div>
@@ -727,6 +808,26 @@
         </div>
     </section>
 
+    <!-- ===== TERMS & CONDITIONS ===== -->
+    <section id="terms" class="fade-in">
+        <h2 class="section-title">Terms & Conditions</h2>
+        <div class="terms-page">
+            <h3>📜 Terms & Conditions</h3>
+            <p>By enrolling in our courses, you agree to the following terms and conditions:</p>
+            <ul>
+                <li>Attend classes on time and maintain punctuality</li>
+                <li>Pay fees on a monthly basis as per the selected package</li>
+                <li>Respect teachers, fellow students, and the learning environment</li>
+                <li>Provide honest feedback for continuous improvement</li>
+                <li>Complete assignments and homework as given by the teacher</li>
+                <li>Notify the academy at least 24 hours in advance for any missed class</li>
+                <li>Refund policy: Fees once paid are non-refundable</li>
+            </ul>
+            <p>For any queries regarding these terms, please contact us directly on WhatsApp.</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -738,6 +839,7 @@
                 <a href="#home">Home</a>
                 <a href="#about-page">About Us</a>
                 <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms & Conditions</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="footer-section">
@@ -752,12 +854,15 @@
         <div class="footer-bottom">© 2026 Dawat-e-Islami Online Academy | Hafiz Muhammad AFAQ Attari | All Countries Welcome</div>
     </footer>
 
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // Profile image - Default already visible. User can click to upload their own photo.
+        // ===== PROFILE PICTURE - DEFAULT VISIBLE =====
+        // Visitor ko default picture show hogi (Hafiz AFAQ Attari ka avatar)
+        // Agar admin apni real photo upload kare to localStorage mein save ho jayegi
+
         const profileImg = document.getElementById('profileImage');
         const expandedImg = document.getElementById('expandedImg');
-        
-        // Load saved image if user previously uploaded
+
         function loadSavedImage() {
             const saved = localStorage.getItem('userProfileImage');
             if (saved && saved.startsWith('data:image')) {
@@ -765,8 +870,8 @@
                 expandedImg.src = saved;
             }
         }
-        
-        // Click to upload your real photo (optional for admin/owner)
+
+        // Click to upload your real photo (only admin will do this)
         profileImg.style.cursor = "pointer";
         profileImg.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -789,11 +894,12 @@
             };
             input.click();
         });
-        
+
+        // ===== PROFILE CARD TOGGLE =====
         const toggleBtn = document.getElementById('profileToggle');
         const expandedCard = document.getElementById('profileExpanded');
         const closeBtn = document.getElementById('closeProfile');
-        
+
         toggleBtn.addEventListener('click', (e) => {
             if (expandedCard.classList.contains('show')) {
                 expandedCard.classList.remove('show');
@@ -801,38 +907,70 @@
                 expandedCard.classList.add('show');
             }
         });
-        
+
         closeBtn.addEventListener('click', () => {
             expandedCard.classList.remove('show');
         });
-        
+
+        // Load saved image if admin previously uploaded
         loadSavedImage();
-        
+
+        // ===== FAQ TOGGLE =====
         document.querySelectorAll('.faq-question').forEach(q => {
             q.addEventListener('click', () => {
                 q.parentElement.classList.toggle('active');
             });
         });
-        
+
+        // ===== FORM SUBMISSION =====
         const form = document.getElementById('enrollForm');
-        if(form) {
+        if (form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
                 alert('✅ JazakAllah! Hafiz Muhammad AFAQ Attari will contact you soon on WhatsApp for free trial. Students from ALL countries are welcome!');
                 form.reset();
             });
         }
-        
+
+        // ===== SMOOTH SCROLL FOR NAV =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
-                if(href === "#" || href === "") return;
+                if (href === "#" || href === "") return;
                 const target = document.querySelector(href);
-                if(target) {
+                if (target) {
                     e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
+        });
+
+        // ===== FADE-IN ON SCROLL (Intersection Observer) =====
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== HEADER SHADOW ON SCROLL =====
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 30px rgba(0,0,0,0.5)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
         });
     </script>
 </body>
