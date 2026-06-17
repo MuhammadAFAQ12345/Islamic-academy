@@ -4,56 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <meta name="google-site-verification" content="y8uedaDcSe2QnqWvpjjWwlTRw2nOL2Au2FfFkpj1RYk" />
-    <title>🌙 Dawat-e-Islami | Ramadan Special | Hafiz Muhammad AFAQ Attari</title>
+    <title>🌙 Dawat-e-Islami | Hafiz Muhammad AFAQ Attari</title>
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9882271685584324" crossorigin="anonymous"></script>
 
     <style>
         /* ============================================================ */
-        /* ===== RAMADAN DESERT THEME ================================== */
+        /* ===== RESET & BASE ========================================== */
         /* ============================================================ */
-        
-        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* ============================================================ */
+        /* ===== CSS VARIABLES ========================================= */
+        /* ============================================================ */
         :root {
-            --sand-light: #F5E6CA;
-            --sand-medium: #E8D5B5;
-            --sand-dark: #D4A574;
-            --golden-sand: #E8B86D;
-            --deep-desert: #8B6B4A;
-            --night-sky: #0D1B2A;
-            --star-glow: #FFD700;
-            --camel-brown: #B8860B;
-            --royal-purple: #2D1B3D;
-            --ramadan-green: #1B4D3E;
-            --card-bg: rgba(255, 248, 235, 0.06);
-            --border-light: rgba(232, 184, 109, 0.2);
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --golden: #E8B86D;
+            --golden-light: #FFD700;
+            --sand: #D4A574;
+            --night: #0D1B2A;
+            --text: #F5E6CA;
+            --shadow: 0 4px 20px rgba(0,0,0,0.3);
+            --transition: all 0.3s ease;
+            --border-light: rgba(232, 184, 109, 0.08);
+            --border-medium: rgba(232, 184, 109, 0.15);
         }
 
+        /* ============================================================ */
+        /* ===== HTML & BODY ========================================== */
+        /* ============================================================ */
         html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Segoe UI', 'Poppins', 'Noto Nastaliq Urdu', Tahoma, sans-serif;
-            background: linear-gradient(180deg, #0D1B2A 0%, #1B2A4A 30%, #2D1B3D 60%, #4A1A2C 100%);
+            background: linear-gradient(180deg, #0D1B2A 0%, #1B2A4A 40%, #2D1B3D 70%, #4A1A2C 100%);
             background-attachment: fixed;
-            color: #F5E6CA;
-            line-height: 1.8;
+            color: var(--text);
+            line-height: 1.7;
             overflow-x: hidden;
             min-height: 100vh;
-            position: relative;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ===== STARS BACKGROUND ===== */
+        /* ============================================================ */
+        /* ===== STATIC STARS BACKGROUND =============================== */
+        /* ============================================================ */
         body::before {
             content: '';
             position: fixed;
@@ -62,94 +64,84 @@
             right: 0;
             bottom: 0;
             background-image: 
-                radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-                radial-gradient(2px 2px at 40px 70px, rgba(255,215,0,0.8), transparent),
-                radial-gradient(2px 2px at 50px 160px, #fff, transparent),
-                radial-gradient(2px 2px at 90px 40px, rgba(255,215,0,0.6), transparent),
-                radial-gradient(2px 2px at 130px 80px, #fff, transparent),
-                radial-gradient(2px 2px at 160px 30px, rgba(255,215,0,0.7), transparent),
-                radial-gradient(1px 1px at 300px 200px, #fff, transparent),
-                radial-gradient(1px 1px at 400px 100px, rgba(255,215,0,0.5), transparent),
-                radial-gradient(1px 1px at 500px 300px, #fff, transparent),
-                radial-gradient(1px 1px at 600px 150px, rgba(255,215,0,0.6), transparent),
-                radial-gradient(1px 1px at 700px 400px, #fff, transparent),
-                radial-gradient(1px 1px at 800px 250px, rgba(255,215,0,0.4), transparent),
-                radial-gradient(1px 1px at 900px 350px, #fff, transparent),
-                radial-gradient(1px 1px at 1000px 180px, rgba(255,215,0,0.5), transparent),
-                radial-gradient(1px 1px at 1100px 450px, #fff, transparent),
-                radial-gradient(1px 1px at 1200px 280px, rgba(255,215,0,0.7), transparent);
-            background-size: 200px 200px;
+                radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.3), transparent),
+                radial-gradient(1px 1px at 40px 70px, rgba(255,215,0,0.2), transparent),
+                radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.2), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,215,0,0.15), transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.2), transparent),
+                radial-gradient(1px 1px at 160px 30px, rgba(255,215,0,0.15), transparent),
+                radial-gradient(1px 1px at 200px 120px, rgba(255,255,255,0.15), transparent),
+                radial-gradient(1px 1px at 250px 50px, rgba(255,215,0,0.1), transparent),
+                radial-gradient(1px 1px at 300px 200px, rgba(255,255,255,0.15), transparent),
+                radial-gradient(1px 1px at 350px 90px, rgba(255,215,0,0.12), transparent),
+                radial-gradient(1px 1px at 400px 250px, rgba(255,255,255,0.12), transparent),
+                radial-gradient(1px 1px at 450px 150px, rgba(255,215,0,0.1), transparent),
+                radial-gradient(1px 1px at 500px 300px, rgba(255,255,255,0.12), transparent);
+            background-size: 180px 180px;
             background-repeat: repeat;
-            opacity: 0.6;
+            opacity: 0.4;
             pointer-events: none;
             z-index: 0;
-            animation: twinkle 4s ease-in-out infinite alternate;
         }
 
-        @keyframes twinkle {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.8; }
-        }
-
-        /* ===== MOON ===== */
+        /* ============================================================ */
+        /* ===== STATIC MOON ========================================== */
+        /* ============================================================ */
         body::after {
             content: '🌙';
             position: fixed;
-            top: 60px;
-            right: 40px;
-            font-size: 4rem;
-            opacity: 0.25;
-            animation: moonGlow 6s ease-in-out infinite alternate;
+            top: 50px;
+            right: 35px;
+            font-size: 3.5rem;
+            opacity: 0.12;
             z-index: 0;
             pointer-events: none;
+            animation: moonGlow 8s ease-in-out infinite alternate;
         }
 
         @keyframes moonGlow {
-            0% { opacity: 0.15; transform: scale(1) rotate(0deg); }
-            50% { opacity: 0.4; transform: scale(1.1) rotate(10deg); }
-            100% { opacity: 0.2; transform: scale(1) rotate(0deg); }
+            0% { opacity: 0.08; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.18; transform: scale(1.05) rotate(5deg); }
+            100% { opacity: 0.10; transform: scale(1) rotate(0deg); }
         }
 
         /* ============================================================ */
-        /* ===== SCROLLBAR ===== */
+        /* ===== SCROLLBAR ============================================= */
         /* ============================================================ */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0D1B2A;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #E8B86D, #D4A574);
-            border-radius: 10px;
-        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--night); }
+        ::-webkit-scrollbar-thumb { background: var(--golden); border-radius: 10px; }
 
         /* ============================================================ */
-        /* ===== TOP HEADER ============================================ */
+        /* ===== HEADER ================================================ */
         /* ============================================================ */
         header {
-            background: rgba(13, 27, 42, 0.92);
-            backdrop-filter: blur(15px);
-            padding: 8px 0;
+            background: rgba(13, 27, 42, 0.94);
+            backdrop-filter: blur(10px);
+            padding: 6px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid rgba(232, 184, 109, 0.2);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid var(--border-light);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+            transition: var(--transition);
         }
+
         .header-content {
             max-width: 1300px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 15px;
+            padding: 0 12px;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 5px;
         }
+
+        /* ===== LOGO ===== */
         .logo {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             background: linear-gradient(135deg, #E8B86D, #FFD700, #D4A574);
             background-clip: text;
             -webkit-background-clip: text;
@@ -157,73 +149,133 @@
             font-weight: 800;
             direction: ltr;
             text-align: left;
-            letter-spacing: 1px;
-            text-shadow: 0 0 30px rgba(232, 184, 109, 0.1);
-        }
-        .logo .camel-icon {
-            display: inline-block;
-            animation: camelWalk 3s ease-in-out infinite;
-        }
-        @keyframes camelWalk {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-3px); }
+            letter-spacing: 0.5px;
         }
 
+        .logo .camel-icon {
+            display: inline-block;
+            animation: camelWalk 4s ease-in-out infinite;
+        }
+
+        @keyframes camelWalk {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-3px) rotate(3deg); }
+        }
+
+        /* ===== SEARCH BOX ===== */
         .search-box {
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255,255,255,0.04);
             border-radius: 30px;
-            padding: 4px 15px;
-            border: 1px solid rgba(232, 184, 109, 0.12);
-            max-width: 280px;
+            padding: 3px 14px;
+            border: 1px solid var(--border-light);
+            max-width: 240px;
             width: 100%;
             transition: var(--transition);
+            position: relative;
         }
+
         .search-box:focus-within {
-            border-color: #E8B86D;
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 30px rgba(232, 184, 109, 0.05);
+            border-color: var(--border-medium);
+            background: rgba(255,255,255,0.06);
+            box-shadow: 0 0 30px rgba(232,184,109,0.03);
         }
+
         .search-box input {
             background: transparent;
             border: none;
-            color: #F5E6CA;
-            padding: 8px 8px;
-            font-size: 0.85rem;
+            color: var(--text);
+            padding: 6px 6px;
+            font-size: 0.8rem;
             width: 100%;
             outline: none;
             font-family: inherit;
             direction: ltr;
             text-align: left;
         }
+
         .search-box input::placeholder {
-            color: #8a7a6a;
+            color: #6a5a4a;
             font-weight: 300;
         }
+
         .search-box .search-icon {
+            color: #6a5a4a;
+            font-size: 0.9rem;
+        }
+
+        /* ===== SEARCH RESULTS DROPDOWN ===== */
+        .search-results {
+            display: none;
+            position: absolute;
+            top: 110%;
+            left: 0;
+            right: 0;
+            background: rgba(13,27,42,0.96);
+            backdrop-filter: blur(12px);
+            border-radius: 14px;
+            border: 1px solid var(--border-light);
+            max-height: 320px;
+            overflow-y: auto;
+            z-index: 999;
+            padding: 8px;
+            margin-top: 2px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+        }
+
+        .search-results.show { display: block; }
+
+        .search-results .result-item {
+            padding: 10px 14px;
+            color: var(--text);
+            cursor: pointer;
+            border-radius: 10px;
+            transition: var(--transition);
+            font-size: 0.8rem;
+            direction: ltr;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+        }
+
+        .search-results .result-item:last-child { border-bottom: none; }
+
+        .search-results .result-item:hover {
+            background: rgba(232,184,109,0.08);
+            color: #FFD700;
+        }
+
+        .search-results .result-item .result-type {
+            color: #D4A574;
+            font-size: 0.65rem;
+            margin-right: 8px;
+        }
+
+        .search-results .no-result {
+            padding: 16px;
             color: #8a7a6a;
-            font-size: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
         }
 
         /* ===== NAVBAR ===== */
         nav {
             display: flex;
             flex-wrap: wrap;
-            gap: 3px;
+            gap: 2px;
             width: 100%;
             justify-content: flex-start;
-            padding-top: 8px;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 5px;
+            padding-top: 6px;
+            border-top: 1px solid rgba(255,255,255,0.03);
+            margin-top: 4px;
         }
+
         .nav-btn {
-            color: #E8D9C5;
-            text-decoration: none;
-            font-size: 0.7rem;
+            color: #c8b9a9;
+            font-size: 0.62rem;
             font-weight: 600;
-            padding: 5px 14px;
-            border-radius: 25px;
+            padding: 4px 12px;
+            border-radius: 20px;
             border: 1px solid transparent;
             transition: var(--transition);
             cursor: pointer;
@@ -231,39 +283,24 @@
             direction: ltr;
             text-align: left;
             letter-spacing: 0.3px;
-            position: relative;
         }
-        .nav-btn::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #E8B86D, #FFD700);
-            transition: var(--transition);
-            border-radius: 2px;
-        }
-        .nav-btn:hover::after,
-        .nav-btn.active::after {
-            width: 60%;
-        }
+
         .nav-btn:hover,
         .nav-btn.active {
             color: #FFD700;
-            background: rgba(232, 184, 109, 0.08);
+            background: rgba(232,184,109,0.06);
+            border-color: var(--border-light);
         }
 
         /* ============================================================ */
-        /* ===== LAYOUT: SIDEBAR + CONTENT ============================= */
+        /* ===== LAYOUT ================================================ */
         /* ============================================================ */
         .app-container {
             display: flex;
             max-width: 1300px;
             margin: 0 auto;
-            padding: 130px 15px 30px;
-            gap: 25px;
+            padding: 118px 12px 25px;
+            gap: 20px;
             min-height: 100vh;
             position: relative;
             z-index: 1;
@@ -273,76 +310,85 @@
         /* ===== SIDEBAR =============================================== */
         /* ============================================================ */
         .sidebar {
-            width: 210px;
-            min-width: 180px;
-            background: rgba(13, 27, 42, 0.8);
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            padding: 20px 15px;
-            border: 1px solid rgba(232, 184, 109, 0.12);
+            width: 200px;
+            min-width: 170px;
+            background: rgba(13,27,42,0.75);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 18px 14px;
+            border: 1px solid var(--border-light);
             position: sticky;
-            top: 140px;
+            top: 128px;
             height: fit-content;
-            max-height: calc(100vh - 160px);
+            max-height: calc(100vh - 145px);
             overflow-y: auto;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--shadow);
             transition: var(--transition);
         }
+
         .sidebar:hover {
-            border-color: rgba(232, 184, 109, 0.25);
+            border-color: var(--border-medium);
         }
+
+        /* ===== SIDEBAR PROFILE ===== */
         .sidebar .profile-mini {
             text-align: center;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(232, 184, 109, 0.08);
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-light);
         }
+
         .sidebar .profile-mini img {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
-            border: 3px solid #E8B86D;
+            border: 2.5px solid #E8B86D;
             object-fit: cover;
             background: #2c5a3e;
             transition: var(--transition);
-            box-shadow: 0 0 30px rgba(232, 184, 109, 0.08);
+            box-shadow: 0 0 30px rgba(232,184,109,0.05);
         }
+
         .sidebar .profile-mini img:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 50px rgba(232, 184, 109, 0.15);
+            box-shadow: 0 0 50px rgba(232,184,109,0.1);
         }
+
         .sidebar .profile-mini h4 {
             color: #FFD700;
-            font-size: 0.8rem;
-            margin-top: 6px;
+            font-size: 0.75rem;
+            margin-top: 5px;
             direction: ltr;
             text-align: center;
             font-weight: 600;
         }
+
         .sidebar .profile-mini p {
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             color: #D4A574;
             direction: ltr;
             text-align: center;
         }
+
+        /* ===== SIDEBAR MENU ===== */
         .sidebar .menu-label {
             color: #D4A574;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin: 10px 0 8px;
+            margin: 8px 0 6px;
             text-align: center;
             font-weight: 600;
         }
+
         .sidebar a {
             display: block;
-            color: #E8D9C5;
-            text-decoration: none;
-            padding: 8px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
+            color: #c8b9a9;
+            padding: 6px 12px;
+            border-radius: 10px;
+            font-size: 0.75rem;
             transition: var(--transition);
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             text-align: left;
             border: none;
             background: none;
@@ -352,27 +398,30 @@
             font-weight: 500;
             position: relative;
         }
+
         .sidebar a::before {
-            content: '✦';
+            content: '';
             position: absolute;
-            left: -5px;
+            left: 0;
             top: 50%;
             transform: translateY(-50%);
-            opacity: 0;
+            width: 3px;
+            height: 0;
+            background: #FFD700;
+            border-radius: 3px;
             transition: var(--transition);
-            color: #FFD700;
-            font-size: 0.6rem;
         }
+
         .sidebar a:hover::before,
         .sidebar a.active::before {
-            opacity: 1;
-            left: 5px;
+            height: 60%;
         }
+
         .sidebar a:hover,
         .sidebar a.active {
-            background: rgba(232, 184, 109, 0.08);
+            background: rgba(232,184,109,0.05);
             color: #FFD700;
-            padding-left: 22px;
+            padding-left: 18px;
         }
 
         /* ============================================================ */
@@ -388,21 +437,14 @@
         /* ============================================================ */
         .page {
             display: none;
-            animation: fadeInPage 0.6s ease;
-        }
-        .page.active {
-            display: block;
+            animation: fadeIn 0.4s ease;
         }
 
-        @keyframes fadeInPage {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .page.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ============================================================ */
@@ -410,19 +452,20 @@
         /* ============================================================ */
         .section-title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #FFD700;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-weight: 700;
-            letter-spacing: 1px;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.05);
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 30px rgba(255,215,0,0.03);
         }
+
         .section-title:after {
             content: '﴿';
             display: block;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #D4A574;
-            margin-top: -8px;
+            margin-top: -6px;
         }
 
         /* ============================================================ */
@@ -430,146 +473,161 @@
         /* ============================================================ */
         .quran-verse {
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #FFD700;
-            margin: 20px 0;
-            padding: 20px 25px;
-            background: rgba(232, 184, 109, 0.05);
+            margin: 15px 0;
+            padding: 16px 22px;
+            background: rgba(232,184,109,0.03);
             border-radius: 50px;
             font-family: 'Amiri', serif;
             line-height: 2.2;
-            border: 1px solid rgba(232, 184, 109, 0.08);
+            border: 1px solid var(--border-light);
             position: relative;
             overflow: hidden;
         }
+
         .quran-verse::before {
             content: '﷽';
             position: absolute;
-            top: -10px;
+            top: -8px;
             right: 20px;
             font-size: 2rem;
-            opacity: 0.04;
+            opacity: 0.03;
             color: #FFD700;
         }
+
         .verse-reference {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #D4A574;
-            margin-top: 8px;
+            margin-top: 5px;
             text-align: center;
             font-family: 'Segoe UI', sans-serif;
             letter-spacing: 0.5px;
         }
 
         /* ============================================================ */
-        /* ===== WELCOME - TOP OF DASHBOARD ============================ */
+        /* ===== WELCOME GLOBAL SECTION ================================ */
         /* ============================================================ */
         .welcome-global {
-            background: linear-gradient(135deg, rgba(232, 184, 109, 0.08), rgba(212, 165, 116, 0.04));
-            border: 1px solid rgba(232, 184, 109, 0.15);
-            border-radius: 30px;
-            padding: 22px 20px;
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, rgba(232,184,109,0.05), rgba(212,165,116,0.02));
+            border: 1px solid var(--border-light);
+            border-radius: 25px;
+            padding: 20px 18px;
+            margin-bottom: 25px;
             text-align: center;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(4px);
             transition: var(--transition);
         }
+
         .welcome-global:hover {
-            border-color: rgba(232, 184, 109, 0.3);
-            box-shadow: 0 0 40px rgba(232, 184, 109, 0.03);
+            border-color: var(--border-medium);
+            box-shadow: 0 0 40px rgba(232,184,109,0.02);
         }
+
         .welcome-global h2 {
             color: #FFD700;
-            font-size: 1.5rem;
-            margin-bottom: 8px;
+            font-size: 1.4rem;
+            margin-bottom: 6px;
             font-weight: 700;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.05);
+            text-shadow: 0 0 30px rgba(255,215,0,0.03);
         }
+
         .welcome-global p {
-            font-size: 0.95rem;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
             opacity: 0.9;
         }
+
         .welcome-global .flag-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            margin: 12px 0;
+            gap: 8px;
+            margin: 10px 0;
         }
+
         .welcome-global .flag-item {
-            background: rgba(255, 255, 255, 0.04);
-            padding: 5px 14px;
+            background: rgba(255,255,255,0.03);
+            padding: 4px 14px;
             border-radius: 30px;
-            font-size: 0.8rem;
-            border: 1px solid rgba(232, 184, 109, 0.1);
+            font-size: 0.75rem;
+            border: 1px solid var(--border-light);
             direction: ltr;
             transition: var(--transition);
-            cursor: default;
         }
+
         .welcome-global .flag-item:hover {
-            background: rgba(232, 184, 109, 0.06);
-            border-color: rgba(232, 184, 109, 0.2);
+            background: rgba(232,184,109,0.04);
+            border-color: var(--border-medium);
         }
+
         .welcome-global .contact-btns {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
-            margin-top: 14px;
+            gap: 10px;
+            margin-top: 12px;
         }
+
         .welcome-global .contact-btns a {
-            padding: 8px 22px;
+            padding: 7px 20px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.85rem;
+            gap: 5px;
+            font-size: 0.8rem;
             transition: var(--transition);
             direction: ltr;
         }
+
         .welcome-global .contact-btns a:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
         }
-        .btn-whatsapp-uae {
-            background: #25D366;
-            color: white;
-        }
-        .btn-whatsapp-pk {
-            background: #075E54;
-            color: white;
-        }
-        .btn-call-uae {
-            background: #E8B86D;
-            color: #1B2A4A;
-        }
+
+        .btn-whatsapp-uae { background: #25D366; color: white; }
+        .btn-whatsapp-pk { background: #075E54; color: white; }
+        .btn-call-uae { background: #E8B86D; color: #1B2A4A; }
 
         /* ============================================================ */
         /* ===== BUTTONS =============================================== */
         /* ============================================================ */
         .btn {
-            padding: 12px 30px;
-            font-size: 1rem;
+            padding: 10px 26px;
+            font-size: 0.9rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
             display: inline-block;
-            margin: 5px;
+            margin: 4px;
             text-align: center;
             border: none;
             cursor: pointer;
         }
+
         .btn-gold {
             background: linear-gradient(135deg, #E8B86D, #D4A574);
             color: #1B2A4A;
-            box-shadow: 0 4px 20px rgba(232, 184, 109, 0.15);
+            box-shadow: 0 3px 20px rgba(232,184,109,0.1);
         }
+
         .btn-gold:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(232, 184, 109, 0.25);
+            box-shadow: 0 6px 30px rgba(232,184,109,0.15);
+        }
+
+        .btn-form {
+            background: rgba(232,184,109,0.1);
+            color: #FFD700;
+            border: 1px solid var(--border-light);
+        }
+
+        .btn-form:hover {
+            background: rgba(232,184,109,0.2);
+            transform: translateY(-3px);
         }
 
         /* ============================================================ */
@@ -577,39 +635,48 @@
         /* ============================================================ */
         .grid-3cols {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .grid-2cols {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
         }
 
+        .grid-2cols {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        /* ============================================================ */
+        /* ===== CARDS ================================================= */
+        /* ============================================================ */
         .card {
-            background: rgba(13, 27, 42, 0.6);
-            backdrop-filter: blur(8px);
-            border-radius: 25px;
-            padding: 22px 18px;
-            border: 1px solid rgba(232, 184, 109, 0.08);
+            background: rgba(13,27,42,0.5);
+            backdrop-filter: blur(6px);
+            border-radius: 22px;
+            padding: 18px 16px;
+            border: 1px solid var(--border-light);
             text-align: center;
             transition: var(--transition);
             box-shadow: var(--shadow);
         }
+
         .card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(232, 184, 109, 0.2);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-6px);
+            border-color: var(--border-medium);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
         }
+
         .card h3 {
             color: #FFD700;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
         }
+
         .card p {
             opacity: 0.85;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
+
         .card a {
             text-decoration: none;
             color: inherit;
@@ -618,44 +685,50 @@
         }
 
         /* ============================================================ */
-        /* ===== ABOUT / PRIVACY / TERMS =============================== */
+        /* ===== ABOUT / PRIVACY / TERMS PAGES ======================== */
         /* ============================================================ */
         .about-page,
         .privacy-page,
         .terms-page {
-            background: rgba(13, 27, 42, 0.6);
-            border-radius: 30px;
-            padding: 35px;
-            margin-top: 20px;
-            border: 1px solid rgba(232, 184, 109, 0.08);
-            backdrop-filter: blur(8px);
+            background: rgba(13,27,42,0.5);
+            border-radius: 25px;
+            padding: 30px 32px;
+            margin-top: 15px;
+            border: 1px solid var(--border-light);
+            backdrop-filter: blur(6px);
         }
+
         .about-page h3,
         .privacy-page h3,
         .terms-page h3 {
             color: #FFD700;
-            margin-bottom: 14px;
-            font-size: 1.4rem;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
             font-weight: 600;
             text-align: left;
             direction: ltr;
         }
+
         .about-page p,
         .privacy-page p,
         .terms-page p {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             text-align: justify;
             direction: ltr;
             opacity: 0.9;
+            font-size: 0.95rem;
         }
+
         .terms-page ul {
             padding-left: 25px;
             margin-bottom: 15px;
         }
+
         .terms-page li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             text-align: left;
             direction: ltr;
+            font-size: 0.95rem;
         }
 
         /* ============================================================ */
@@ -663,379 +736,306 @@
         /* ============================================================ */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-            gap: 18px;
-            margin-top: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
         }
+
         .price-card {
-            background: rgba(13, 27, 42, 0.7);
-            backdrop-filter: blur(8px);
-            border-radius: 25px;
-            padding: 18px 15px;
-            border: 1px solid rgba(232, 184, 109, 0.12);
+            background: rgba(13,27,42,0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 22px;
+            padding: 16px 14px;
+            border: 1px solid var(--border-light);
             text-align: center;
             transition: var(--transition);
             box-shadow: var(--shadow);
         }
+
         .price-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(232, 184, 109, 0.25);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+            border-color: var(--border-medium);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.3);
         }
+
         .price-card .country {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: #FFD700;
             text-align: center;
             direction: ltr;
         }
+
         .price-card p {
             text-align: center;
             direction: ltr;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
+
         .price-card .amount {
             font-weight: 800;
             color: #F7E05E;
-            font-size: 1rem;
+            font-size: 0.95rem;
             direction: ltr;
             display: inline-block;
         }
+
         .note-text {
             text-align: center;
-            margin-top: 18px;
-            padding: 14px;
-            background: rgba(232, 184, 109, 0.05);
-            border-radius: 30px;
-            font-size: 0.9rem;
+            margin-top: 15px;
+            padding: 12px 16px;
+            background: rgba(232,184,109,0.03);
+            border-radius: 25px;
+            font-size: 0.85rem;
             direction: ltr;
-            border: 1px solid rgba(232, 184, 109, 0.06);
+            border: 1px solid var(--border-light);
         }
 
         /* ============================================================ */
-        /* ===== CONTACT FORM ========================================== */
+        /* ===== CONTACT SECTION ====================================== */
         /* ============================================================ */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 25px;
         }
+
         .contact-info h3 {
             text-align: left;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #FFD700;
             direction: ltr;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
+
         .contact-item {
-            margin: 12px 0;
+            margin: 10px 0;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
             justify-content: flex-start;
             direction: ltr;
             text-align: left;
         }
+
         .contact-item a {
-            color: #E8D9C5;
+            color: #c8b9a9;
             text-decoration: none;
             direction: ltr;
             transition: var(--transition);
         }
-        .contact-item a:hover {
-            color: #FFD700;
-        }
+
+        .contact-item a:hover { color: #FFD700; }
+
+        /* ============================================================ */
+        /* ===== CONTACT FORM ========================================== */
+        /* ============================================================ */
         .contact-form {
-            background: rgba(13, 27, 42, 0.5);
-            padding: 28px;
-            border-radius: 25px;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(232, 184, 109, 0.08);
+            background: rgba(13,27,42,0.4);
+            padding: 24px;
+            border-radius: 22px;
+            border: 1px solid var(--border-light);
+            backdrop-filter: blur(6px);
         }
+
         .form-group {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
+
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             text-align: left;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             direction: ltr;
             font-weight: 500;
-            color: #F5E6CA;
+            color: #c8b9a9;
         }
-        .form-group label .required {
-            color: #FFD700;
-        }
+
+        .form-group label .required { color: #FFD700; }
+
         input,
         select,
         textarea {
             width: 100%;
-            padding: 12px 15px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            background: rgba(255, 255, 255, 0.03);
-            color: #F5E6CA;
-            margin-top: 4px;
+            padding: 10px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.02);
+            color: var(--text);
+            margin-top: 3px;
             font-family: inherit;
             transition: var(--transition);
             direction: ltr;
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
+
         input:focus,
         select:focus,
         textarea:focus {
             outline: none;
-            border-color: #E8B86D;
-            background: rgba(255, 255, 255, 0.06);
-            box-shadow: 0 0 30px rgba(232, 184, 109, 0.03);
+            border-color: var(--border-medium);
+            background: rgba(255,255,255,0.04);
+            box-shadow: 0 0 30px rgba(232,184,109,0.02);
         }
+
         input::placeholder,
-        textarea::placeholder {
-            color: #6a5a4a;
-        }
-        textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
+        textarea::placeholder { color: #5a4a3a; }
+
+        textarea { resize: vertical; min-height: 70px; }
 
         /* ============================================================ */
         /* ===== BLOG ================================================== */
         /* ============================================================ */
         .blog-card {
-            background: rgba(13, 27, 42, 0.6);
-            backdrop-filter: blur(8px);
-            border-radius: 25px;
-            padding: 20px;
-            border: 1px solid rgba(232, 184, 109, 0.08);
+            background: rgba(13,27,42,0.5);
+            backdrop-filter: blur(6px);
+            border-radius: 20px;
+            padding: 18px;
+            border: 1px solid var(--border-light);
             transition: var(--transition);
-            margin-bottom: 18px;
+            margin-bottom: 15px;
             box-shadow: var(--shadow);
         }
+
         .blog-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(232, 184, 109, 0.2);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+            border-color: var(--border-medium);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.3);
         }
+
         .blog-card .date {
             color: #D4A574;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             direction: ltr;
             text-align: left;
+            letter-spacing: 0.3px;
         }
+
         .blog-card h3 {
             color: #FFD700;
-            font-size: 1.1rem;
-            margin: 6px 0;
+            font-size: 1rem;
+            margin: 5px 0;
             direction: ltr;
             text-align: left;
+            font-weight: 600;
         }
+
         .blog-card p {
             direction: ltr;
             text-align: left;
             opacity: 0.85;
+            font-size: 0.85rem;
         }
+
         .blog-card .read-more {
             color: #E8B86D;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             direction: ltr;
             display: inline-block;
             transition: var(--transition);
         }
+
         .blog-card .read-more:hover {
             color: #FFD700;
-            transform: translateX(5px);
+            transform: translateX(4px);
         }
 
         /* ============================================================ */
         /* ===== FOOTER ================================================ */
         /* ============================================================ */
         footer {
-            background: rgba(13, 27, 42, 0.9);
-            border-top: 1px solid rgba(232, 184, 109, 0.1);
-            padding: 30px 20px 15px;
-            margin-top: 25px;
+            background: rgba(13,27,42,0.92);
+            border-top: 1px solid var(--border-light);
+            padding: 28px 20px 12px;
+            margin-top: 22px;
         }
+
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
             max-width: 1300px;
             margin: 0 auto;
         }
+
         .footer-section h4 {
             text-align: left;
             color: #FFD700;
-            margin-bottom: 10px;
-            font-size: 1rem;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
             direction: ltr;
+            font-weight: 600;
         }
+
         .footer-section p,
         .footer-section a {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-align: left;
             direction: ltr;
         }
+
         .footer-section a {
-            color: #E8D9C5;
+            color: #c8b9a9;
             text-decoration: none;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             transition: var(--transition);
             cursor: pointer;
             background: none;
             border: none;
         }
+
         .footer-section a:hover {
             color: #FFD700;
             padding-left: 5px;
         }
+
         .footer-bottom {
             text-align: center;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            font-size: 0.7rem;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.02);
+            font-size: 0.65rem;
             direction: ltr;
-            opacity: 0.6;
+            opacity: 0.5;
+            letter-spacing: 0.5px;
         }
 
         /* ============================================================ */
-        /* ===== RESPONSIVE ============================================ */
+        /* ===== RESPONSIVE - COMPUTER ================================= */
         /* ============================================================ */
-
-        /* ===== COMPUTER (1024px+) ===== */
         @media (min-width: 1024px) {
-            .app-container {
-                padding: 140px 25px 40px;
-                gap: 30px;
-            }
-            .sidebar {
-                width: 240px;
-                min-width: 210px;
-                padding: 25px 20px;
-            }
-            .sidebar .profile-mini img {
-                width: 75px;
-                height: 75px;
-            }
-            .sidebar .profile-mini h4 {
-                font-size: 0.95rem;
-            }
-            .sidebar a {
-                font-size: 0.9rem;
-                padding: 10px 15px;
-            }
-            .section-title {
-                font-size: 2.3rem;
-            }
-            .grid-3cols {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 25px;
-            }
-            .pricing-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 22px;
-            }
-            .contact-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
-            }
-            .logo {
-                font-size: 1.3rem;
-            }
-            .nav-btn {
-                font-size: 0.85rem;
-                padding: 6px 20px;
-            }
-            .welcome-global h2 {
-                font-size: 1.8rem;
-            }
-            .welcome-global .flag-item {
-                font-size: 0.9rem;
-                padding: 6px 18px;
-            }
-            .welcome-global .contact-btns a {
-                font-size: 0.95rem;
-                padding: 10px 28px;
-            }
-            .card {
-                padding: 25px;
-            }
-            .card h3 {
-                font-size: 1.2rem;
-            }
-            .price-card {
-                padding: 22px;
-            }
-            .price-card .country {
-                font-size: 1.2rem;
-            }
-            .contact-form {
-                padding: 35px;
-            }
-            .blog-card {
-                padding: 25px;
-            }
-            .blog-card h3 {
-                font-size: 1.2rem;
-            }
-            .quran-verse {
-                font-size: 1.5rem;
-                padding: 25px 35px;
-            }
+            .app-container { padding: 128px 25px 35px; gap: 25px; }
+            .sidebar { width: 230px; min-width: 200px; padding: 22px 18px; }
+            .sidebar .profile-mini img { width: 70px; height: 70px; }
+            .sidebar .profile-mini h4 { font-size: 0.9rem; }
+            .sidebar a { font-size: 0.85rem; padding: 8px 14px; }
+            .section-title { font-size: 2.2rem; }
+            .grid-3cols { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+            .pricing-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+            .contact-container { grid-template-columns: 1fr 1fr; gap: 35px; }
+            .logo { font-size: 1.2rem; }
+            .nav-btn { font-size: 0.75rem; padding: 5px 16px; }
+            .quran-verse { font-size: 1.4rem; padding: 22px 30px; }
+            .welcome-global h2 { font-size: 1.7rem; }
+            .welcome-global .flag-item { font-size: 0.85rem; padding: 5px 16px; }
+            .welcome-global .contact-btns a { font-size: 0.9rem; padding: 8px 24px; }
+            .search-box { max-width: 280px; }
         }
 
-        /* ===== TABLET (768px - 1023px) ===== */
-        @media (min-width: 768px) and (max-width: 1023px) {
-            .app-container {
-                padding: 135px 18px 30px;
-                gap: 20px;
-            }
-            .sidebar {
-                width: 190px;
-                min-width: 160px;
-                padding: 15px 12px;
-            }
-            .sidebar a {
-                font-size: 0.75rem;
-                padding: 6px 10px;
-            }
-            .grid-3cols {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .pricing-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .contact-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 25px;
-            }
-            .logo {
-                font-size: 0.9rem;
-            }
-            .nav-btn {
-                font-size: 0.65rem;
-                padding: 4px 12px;
-            }
-            .search-box {
-                max-width: 200px;
-            }
-        }
-
-        /* ===== MOBILE (below 768px) ===== */
+        /* ============================================================ */
+        /* ===== RESPONSIVE - MOBILE =================================== */
+        /* ============================================================ */
         @media (max-width: 767px) {
-            .app-container {
-                flex-direction: column;
-                padding: 125px 10px 20px;
-                gap: 15px;
-            }
+            .app-container { flex-direction: column; padding: 112px 8px 18px; gap: 14px; }
 
-            /* ===== SIDEBAR ===== */
+            /* ===== SIDEBAR - MOBILE ===== */
             .sidebar {
                 width: 100%;
                 min-width: unset;
@@ -1044,270 +1044,139 @@
                 max-height: unset;
                 display: flex;
                 flex-wrap: wrap;
-                gap: 5px;
-                padding: 12px 10px;
+                gap: 4px;
+                padding: 10px 8px;
                 justify-content: center;
-                border-radius: 18px;
+                border-radius: 16px;
             }
-            .sidebar .profile-mini {
-                display: none;
-            }
-            .sidebar .menu-label {
-                display: none;
-            }
+
+            .sidebar .profile-mini { display: none; }
+            .sidebar .menu-label { display: none; }
+
             .sidebar a {
                 display: inline-block;
-                padding: 5px 12px;
-                font-size: 0.7rem;
+                padding: 4px 10px;
+                font-size: 0.65rem;
                 margin: 0;
                 width: auto;
-                border-radius: 20px;
-                background: rgba(255, 255, 255, 0.03);
-                border: 1px solid rgba(255, 255, 255, 0.03);
+                border-radius: 16px;
+                background: rgba(255,255,255,0.02);
+                border: 1px solid rgba(255,255,255,0.02);
             }
-            .sidebar a::before {
-                display: none;
-            }
+
+            .sidebar a::before { display: none; }
+
             .sidebar a:hover,
             .sidebar a.active {
-                background: rgba(232, 184, 109, 0.08);
-                padding-left: 12px;
-                border-color: rgba(232, 184, 109, 0.12);
+                background: rgba(232,184,109,0.06);
+                padding-left: 10px;
+                border-color: var(--border-light);
             }
 
-            /* ===== HEADER ===== */
-            .header-content {
-                padding: 0 10px;
-            }
-            .logo {
-                font-size: 0.75rem;
-            }
-            .search-box {
-                max-width: 160px;
-                padding: 2px 10px;
-            }
-            .search-box input {
-                font-size: 0.7rem;
-                padding: 5px 5px;
-            }
-            nav {
-                gap: 3px;
-                padding-top: 6px;
-            }
-            .nav-btn {
-                font-size: 0.55rem;
-                padding: 3px 8px;
-            }
-            .nav-btn::after {
-                display: none;
-            }
+            /* ===== HEADER - MOBILE ===== */
+            .header-content { padding: 0 8px; }
+            .logo { font-size: 0.7rem; }
+            .search-box { max-width: 150px; padding: 2px 10px; }
+            .search-box input { font-size: 0.65rem; padding: 4px 4px; }
 
-            /* ===== GRIDS ===== */
-            .grid-3cols {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            .grid-2cols {
-                grid-template-columns: 1fr;
-            }
-            .pricing-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
+            nav { gap: 2px; padding-top: 4px; }
+            .nav-btn { font-size: 0.5rem; padding: 2px 8px; }
 
-            /* ===== CARDS ===== */
-            .card {
-                padding: 14px 12px;
-                border-radius: 18px;
-            }
-            .card h3 {
-                font-size: 0.85rem;
-            }
-            .card p {
-                font-size: 0.75rem;
-            }
+            /* ===== GRIDS - MOBILE ===== */
+            .grid-3cols { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .grid-2cols { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .contact-container { grid-template-columns: 1fr; gap: 18px; }
 
-            /* ===== PRICE CARDS ===== */
-            .price-card {
-                padding: 12px;
-                border-radius: 18px;
-            }
-            .price-card .country {
-                font-size: 0.9rem;
-            }
-            .price-card p {
-                font-size: 0.75rem;
-            }
-            .price-card .amount {
-                font-size: 0.8rem;
-            }
+            /* ===== CARDS - MOBILE ===== */
+            .card { padding: 12px 10px; border-radius: 16px; }
+            .card h3 { font-size: 0.85rem; }
+            .card p { font-size: 0.75rem; }
 
-            /* ===== SECTION TITLE ===== */
-            .section-title {
-                font-size: 1.3rem;
-                margin-bottom: 18px;
-            }
-            .section-title:after {
-                font-size: 1rem;
-            }
+            /* ===== PRICE CARDS - MOBILE ===== */
+            .price-card { padding: 10px; border-radius: 16px; }
+            .price-card .country { font-size: 0.85rem; }
+            .price-card p { font-size: 0.75rem; }
+            .price-card .amount { font-size: 0.8rem; }
 
-            /* ===== WELCOME ===== */
-            .welcome-global {
-                padding: 14px 12px;
-                border-radius: 18px;
-            }
-            .welcome-global h2 {
-                font-size: 1.1rem;
-            }
-            .welcome-global p {
-                font-size: 0.8rem;
-            }
-            .welcome-global .flag-item {
-                font-size: 0.6rem;
-                padding: 3px 8px;
-            }
-            .welcome-global .contact-btns a {
-                font-size: 0.65rem;
-                padding: 5px 12px;
-            }
+            /* ===== SECTIONS - MOBILE ===== */
+            .section-title { font-size: 1.3rem; margin-bottom: 18px; }
+            .section-title:after { font-size: 1rem; }
 
-            /* ===== QURAN VERSE ===== */
-            .quran-verse {
-                font-size: 1rem;
-                padding: 14px;
-                border-radius: 25px;
-            }
+            .welcome-global { padding: 14px 12px; border-radius: 18px; }
+            .welcome-global h2 { font-size: 1.1rem; }
+            .welcome-global p { font-size: 0.75rem; }
+            .welcome-global .flag-item { font-size: 0.6rem; padding: 3px 8px; }
+            .welcome-global .contact-btns a { font-size: 0.65rem; padding: 4px 12px; }
 
-            /* ===== CONTACT FORM ===== */
-            .contact-form {
-                padding: 18px;
-                border-radius: 18px;
-            }
-            .form-group label {
-                font-size: 0.8rem;
-            }
-            input,
-            select,
-            textarea {
-                padding: 10px 12px;
-                font-size: 0.85rem;
-                border-radius: 20px;
-            }
+            .quran-verse { font-size: 1rem; padding: 12px 16px; border-radius: 28px; }
 
-            /* ===== BLOG ===== */
-            .blog-card {
-                padding: 14px;
-                border-radius: 18px;
-            }
-            .blog-card h3 {
-                font-size: 0.95rem;
-            }
-            .blog-card p {
-                font-size: 0.8rem;
-            }
+            .contact-form { padding: 16px; border-radius: 16px; }
+            .form-group label { font-size: 0.75rem; }
+            input, select, textarea { padding: 8px 12px; font-size: 0.8rem; border-radius: 18px; }
 
-            /* ===== FOOTER ===== */
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 15px;
-            }
-            .footer-section h4 {
-                font-size: 0.85rem;
-            }
-            .footer-section p,
-            .footer-section a {
-                font-size: 0.65rem;
-            }
+            .blog-card { padding: 14px; border-radius: 16px; }
+            .blog-card h3 { font-size: 0.9rem; }
+            .blog-card p { font-size: 0.8rem; }
 
-            /* ===== BUTTONS ===== */
-            .btn {
-                padding: 8px 18px;
-                font-size: 0.8rem;
-            }
+            .footer-content { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .footer-section h4 { font-size: 0.8rem; }
+            .footer-section p, .footer-section a { font-size: 0.6rem; }
 
-            /* ===== NOTE TEXT ===== */
-            .note-text {
-                font-size: 0.75rem;
-                padding: 10px;
-            }
+            .btn { padding: 6px 16px; font-size: 0.75rem; }
+            .note-text { font-size: 0.7rem; padding: 8px 12px; }
 
-            /* ===== MOON ===== */
-            body::after {
-                font-size: 2.5rem;
-                top: 80px;
-                right: 15px;
-            }
+            .about-page, .privacy-page, .terms-page { padding: 18px 16px; border-radius: 18px; }
+            .about-page h3, .privacy-page h3, .terms-page h3 { font-size: 1.1rem; }
+            .about-page p, .privacy-page p, .terms-page p { font-size: 0.85rem; }
+            .terms-page li { font-size: 0.85rem; }
+
+            body::after { font-size: 2.5rem; top: 70px; right: 12px; }
         }
 
-        /* ===== VERY SMALL MOBILE (below 400px) ===== */
+        /* ============================================================ */
+        /* ===== RESPONSIVE - VERY SMALL MOBILE ======================== */
+        /* ============================================================ */
         @media (max-width: 399px) {
-            .grid-3cols {
-                grid-template-columns: 1fr 1fr;
-                gap: 8px;
-            }
-            .pricing-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 8px;
-            }
-            .card h3 {
-                font-size: 0.75rem;
-            }
-            .card p {
-                font-size: 0.65rem;
-            }
-            .nav-btn {
-                font-size: 0.45rem;
-                padding: 2px 6px;
-            }
-            .logo {
-                font-size: 0.6rem;
-            }
-            .sidebar a {
-                font-size: 0.55rem;
-                padding: 3px 8px;
-            }
-            .welcome-global .flag-item {
-                font-size: 0.5rem;
-                padding: 2px 6px;
-            }
-            .welcome-global .contact-btns a {
-                font-size: 0.5rem;
-                padding: 3px 8px;
-            }
-            .section-title {
-                font-size: 1rem;
-            }
-            .quran-verse {
-                font-size: 0.85rem;
-                padding: 10px;
-            }
-            .search-box {
-                max-width: 120px;
-            }
-            .search-box input {
-                font-size: 0.6rem;
-            }
+            .grid-3cols { grid-template-columns: 1fr 1fr; gap: 6px; }
+            .pricing-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+            .card h3 { font-size: 0.7rem; }
+            .card p { font-size: 0.65rem; }
+            .nav-btn { font-size: 0.45rem; padding: 2px 5px; }
+            .logo { font-size: 0.6rem; }
+            .sidebar a { font-size: 0.55rem; padding: 3px 7px; }
+            .welcome-global .flag-item { font-size: 0.5rem; padding: 2px 6px; }
+            .welcome-global .contact-btns a { font-size: 0.5rem; padding: 3px 8px; }
+            .section-title { font-size: 1rem; }
+            .quran-verse { font-size: 0.85rem; padding: 8px 12px; }
+            .search-box { max-width: 100px; }
+            .search-box input { font-size: 0.55rem; }
+            .search-results .result-item { font-size: 0.7rem; padding: 6px 10px; }
+            .contact-item { font-size: 0.8rem; }
+            .btn { padding: 5px 12px; font-size: 0.65rem; }
         }
     </style>
 </head>
 <body>
 
     <!-- ============================================================ -->
-    <!-- ===== TOP HEADER ============================================ -->
+    <!-- ===== HEADER ================================================ -->
     <!-- ============================================================ -->
     <header>
         <div class="header-content">
+            <!-- ===== LOGO ===== -->
             <div class="logo">
                 <span class="camel-icon">🐪</span> Dawat-e-Islami | Hafiz AFAQ Attari
             </div>
-            <div class="search-box">
+
+            <!-- ===== SEARCH BOX ===== -->
+            <div class="search-box" style="position:relative;">
                 <span class="search-icon">🔍</span>
-                <input type="text" placeholder="Search courses, blogs...">
+                <input type="text" id="searchInput" placeholder="Search courses, blogs...">
+                <div class="search-results" id="searchResults"></div>
             </div>
+
+            <!-- ===== NAVBAR ===== -->
             <nav>
                 <button class="nav-btn active" data-page="home">🏠 Home</button>
                 <button class="nav-btn" data-page="courses">📚 Courses</button>
@@ -1325,13 +1194,16 @@
     <!-- ============================================================ -->
     <div class="app-container">
 
-        <!-- ===== SIDEBAR ===== -->
+        <!-- ============================================================ -->
+        <!-- ===== SIDEBAR =============================================== -->
+        <!-- ============================================================ -->
         <aside class="sidebar">
             <div class="profile-mini">
                 <img id="sidebarProfileImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232c5a3e'/%3E%3Ccircle cx='50' cy='35' r='15' fill='%23E8B86D'/%3E%3Ccircle cx='50' cy='70' r='20' fill='%23E8B86D'/%3E%3Ctext x='50' y='80' font-size='28' text-anchor='middle' fill='%231B2A4A'%3Eح%3C/text%3E%3C/svg%3E" alt="Profile">
                 <h4>Hafiz AFAQ Attari</h4>
                 <p>🌙 Founder</p>
             </div>
+
             <div class="menu-label">🌟 Menu</div>
             <a href="#" class="active" data-page="home">🏠 Dashboard</a>
             <a href="#" data-page="courses">📚 Courses</a>
@@ -1342,7 +1214,9 @@
             <a href="#" data-page="about">📖 About</a>
         </aside>
 
-        <!-- ===== MAIN CONTENT ===== -->
+        <!-- ============================================================ -->
+        <!-- ===== MAIN CONTENT ========================================= -->
+        <!-- ============================================================ -->
         <main class="main-content">
 
             <!-- ========================================================= -->
@@ -1365,6 +1239,11 @@
                         <span class="flag-item">🇸🇦 Saudi</span>
                         <span class="flag-item">🇮🇳 India</span>
                         <span class="flag-item">🇧🇩 Bangladesh</span>
+                        <span class="flag-item">🇱🇰 Sri Lanka</span>
+                        <span class="flag-item">🇲🇾 Malaysia</span>
+                        <span class="flag-item">🇮🇩 Indonesia</span>
+                        <span class="flag-item">🇿🇦 South Africa</span>
+                        <span class="flag-item">🇳🇬 Nigeria</span>
                         <span class="flag-item">🌍 + More</span>
                     </div>
                     <div class="contact-btns">
@@ -1385,7 +1264,7 @@
                 <div style="margin-bottom:20px;">
                     <div class="grid-3cols">
                         <div class="card"><h3>📚 6+ Courses</h3><p>Madani Qaida, Quran, Tafseer, Masail</p></div>
-                        <div class="card"><h3>🌍 20+ Countries</h3><p>Students from all over the world</p></div>
+                        <div class="card"><h3>🌍 25+ Countries</h3><p>Students from all over the world</p></div>
                         <div class="card"><h3>⭐ 98% Satisfaction</h3><p>Happy students and parents</p></div>
                     </div>
                 </div>
@@ -1394,22 +1273,43 @@
                 <div style="margin-bottom:20px;">
                     <h2 class="section-title">📌 Quick Access</h2>
                     <div class="grid-3cols">
-                        <div class="card"><a href="#" data-page="about"><h3>📖 About Us</h3><p>Learn about our mission</p></a></div>
-                        <div class="card"><a href="#" data-page="courses"><h3>📚 Our Courses</h3><p>View all courses</p></a></div>
-                        <div class="card"><a href="#" data-page="blog"><h3>📝 Islamic Blog</h3><p>Read latest articles</p></a></div>
+                        <div class="card"><a href="#" data-page="about"><h3>📖 About Us</h3><p>Learn about our mission and team</p></a></div>
+                        <div class="card"><a href="#" data-page="courses"><h3>📚 Our Courses</h3><p>View all courses with details</p></a></div>
+                        <div class="card"><a href="#" data-page="blog"><h3>📝 Islamic Blog</h3><p>Read latest articles and posts</p></a></div>
+                        <div class="card"><a href="#" data-page="contact" style="cursor:pointer;"><h3>📋 Register Now</h3><p>Fill the form to enroll in courses</p></a></div>
+                        <div class="card"><a href="#" data-page="privacy"><h3>🔒 Privacy Policy</h3><p>Know how we protect your data</p></a></div>
+                        <div class="card"><a href="#" data-page="terms"><h3>📜 Terms &amp; Conditions</h3><p>Read our terms of service</p></a></div>
                     </div>
                 </div>
 
                 <!-- ===== COURSES SECTION ===== -->
                 <div style="margin-bottom:20px;">
                     <h2 class="section-title">📚 Our Courses</h2>
-                    <div class="grid-3cols">
-                        <div class="card"><h3>📖 Madani Qaida</h3><p>Basic Arabic letters and Tajweed rules.</p></div>
-                        <div class="card"><h3>🕋 Quran with Translation</h3><p>Word-by-word translation.</p></div>
-                        <div class="card"><h3>🧠 Tafseer ul Quran</h3><p>Detailed explanation of verses.</p></div>
-                        <div class="card"><h3>📜 Masail (Fiqh)</h3><p>Daily life rulings per Hanafi Fiqh.</p></div>
-                        <div class="card"><h3>🎙️ Tajweed & Qira'at</h3><p>Perfect recitation with Tajweed.</p></div>
-                        <div class="card"><h3>👶 Kids Program</h3><p>Madani Qaida, Duas, Seerah.</p></div>
+                    <div class="grid-3cols" id="courseList">
+                        <div class="card" data-search="madani qaida basic arabic letters tajweed pronunciation makharij children beginners">
+                            <h3>📖 Madani Qaida</h3>
+                            <p>Basic Arabic letters, Makharij, and Tajweed rules. Best for beginners &amp; children.</p>
+                        </div>
+                        <div class="card" data-search="quran translation word by word urdu english meaning understanding verses">
+                            <h3>🕋 Quran with Translation</h3>
+                            <p>Word-by-word Urdu/English translation, understanding the meaning of each verse.</p>
+                        </div>
+                        <div class="card" data-search="tafseer ul quran detailed explanation verses background context islamic guidance">
+                            <h3>🧠 Tafseer ul Quran</h3>
+                            <p>Detailed explanation of Quranic verses, background, and Islamic guidance.</p>
+                        </div>
+                        <div class="card" data-search="masail fiqh daily life rulings hanafi salah wudu zakat hajj business family">
+                            <h3>📜 Masail (Fiqh)</h3>
+                            <p>Daily life masail according to Hanafi Fiqh: Salah, Wudu, Zakat, Hajj, Business, Family issues.</p>
+                        </div>
+                        <div class="card" data-search="tajweed qiraat recitation rules pronunciation perfect quran">
+                            <h3>🎙️ Tajweed &amp; Qira'at</h3>
+                            <p>Master perfect recitation with practical Tajweed rules and Qira'at.</p>
+                        </div>
+                        <div class="card" data-search="kids program madani qaida duas seerah children islamic studies">
+                            <h3>👶 Kids Program</h3>
+                            <p>Madani Qaida, Duas, Seerah, and basic Aqaid for children.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -1424,46 +1324,7 @@
                         <div class="price-card"><div class="country">🇵🇰 Pakistan</div><p>Qaida: <span class="amount">2,000 PKR</span></p><p>Quran: <span class="amount">8,000 PKR</span></p></div>
                         <div class="price-card"><div class="country">🌍 Other</div><p>Contact us</p><p>All welcome</p></div>
                     </div>
-                    <div class="note-text">🌍 Contact us on WhatsApp for fees in your currency.</div>
-                </div>
-
-                <!-- ===== REGISTRATION FORM ===== -->
-                <div style="margin-bottom:20px;">
-                    <h2 class="section-title">📋 Registration Form</h2>
-                    <div class="contact-form">
-                        <form id="enrollForm">
-                            <div class="form-group">
-                                <label>First Name <span class="required">*</span></label>
-                                <input type="text" required placeholder="Enter your first name">
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name <span class="required">*</span></label>
-                                <input type="text" required placeholder="Enter your last name">
-                            </div>
-                            <div class="form-group">
-                                <label>Phone Number <span class="required">*</span></label>
-                                <input type="tel" required placeholder="e.g., +971505859816">
-                            </div>
-                            <div class="form-group">
-                                <label>Email Address <span class="required">*</span></label>
-                                <input type="email" required placeholder="Enter your email">
-                            </div>
-                            <div class="form-group">
-                                <label>Country <span class="required">*</span></label>
-                                <input type="text" required placeholder="e.g., UK, USA, Pakistan">
-                            </div>
-                            <div class="form-group">
-                                <label>Select Course</label>
-                                <select>
-                                    <option>Madani Qaida</option>
-                                    <option>Quran with Translation & Tafseer</option>
-                                    <option>Masail (Fiqh Course)</option>
-                                    <option>Hifz Program</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-gold" style="width:100%">🚀 Submit Registration</button>
-                        </form>
-                    </div>
+                    <div class="note-text">🌍 Contact us on WhatsApp for fees in your currency. Students from ALL countries welcome!</div>
                 </div>
 
                 <!-- ===== QURAN VERSE ===== -->
@@ -1473,7 +1334,7 @@
                 </div>
 
                 <!-- ===== FREE TRIAL BANNER ===== -->
-                <div style="text-align:center; padding:15px; background:rgba(232,184,109,0.05); border-radius:25px; border:1px solid rgba(232,184,109,0.1);">
+                <div style="text-align:center; padding:15px; background:rgba(232,184,109,0.04); border-radius:25px; border:1px solid var(--border-light);">
                     <p style="font-size:1rem; direction:ltr;">⭐ Free 3-Day Trial | Ijazah Certified | 24/7 Support ⭐</p>
                 </div>
             </div>
@@ -1493,6 +1354,9 @@
                     <h3>🏜️ Global Reach</h3>
                     <p>Students from any country can join our academy. We have successfully taught students from UK, USA, Canada, Australia, UAE, Saudi Arabia, Qatar, Kuwait, Oman, Bahrain, Germany, France, Italy, Spain, Netherlands, Sweden, Norway, Denmark, Switzerland, South Africa, India, Pakistan, Bangladesh, Sri Lanka, Malaysia, Indonesia, Singapore, and many more.</p>
 
+                    <h3>✅ What We Offer</h3>
+                    <p>• Madani Qaida for beginners<br>• Quran recitation with proper Tajweed<br>• Quran translation (Tarjuma) word-by-word<br>• Detailed Tafseer of Quran<br>• Islamic Masail according to Hanafi Fiqh<br>• Hifz (Memorization) program<br>• Arabic language course<br>• Special program for children and sisters</p>
+
                     <div class="quran-verse">
                         " إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ "
                         <div class="verse-reference">📖 Surah Fatir (35:28)</div>
@@ -1506,11 +1370,11 @@
             <div id="page-courses" class="page">
                 <h2 class="section-title">📚 Our Courses</h2>
                 <div class="grid-3cols">
-                    <div class="card"><h3>📖 Madani Qaida</h3><p>Complete basics of Arabic letters, Makharij, and Tajweed rules. Best for beginners & children.</p></div>
+                    <div class="card"><h3>📖 Madani Qaida</h3><p>Complete basics of Arabic letters, Makharij, and Tajweed rules. Best for beginners &amp; children.</p></div>
                     <div class="card"><h3>🕋 Quran with Translation</h3><p>Word-by-word Urdu/English translation, understanding the meaning of each verse.</p></div>
                     <div class="card"><h3>🧠 Tafseer ul Quran</h3><p>Detailed explanation of Quranic verses, background, and Islamic guidance.</p></div>
                     <div class="card"><h3>📜 Masail (Islamic Rulings)</h3><p>Daily life masail according to Hanafi Fiqh: Salah, Wudu, Zakat, Hajj, Business, Family issues.</p></div>
-                    <div class="card"><h3>🎙️ Tajweed & Qira'at</h3><p>Master perfect recitation with practical Tajweed rules.</p></div>
+                    <div class="card"><h3>🎙️ Tajweed &amp; Qira'at</h3><p>Master perfect recitation with practical Tajweed rules.</p></div>
                     <div class="card"><h3>👶 Kids Islamic Program</h3><p>Madani Qaida, Duas, Seerah, and basic Aqaid for children.</p></div>
                 </div>
 
@@ -1544,38 +1408,52 @@
 
                 <!-- ===== EXISTING BLOG POSTS ===== -->
                 <div id="blogPosts">
-                    <div class="blog-card">
+                    <div class="blog-card" data-search="benefits reciting quran daily spiritual worldly prophet muhammad peace blessings">
                         <div class="date">📅 June 16, 2026</div>
                         <h3>🕌 Benefits of Reciting Quran Daily</h3>
                         <p>Discover the spiritual and worldly benefits of regular Quran recitation. The Prophet Muhammad (PBUH) said: "The best of you are those who learn the Quran and teach it."</p>
                         <a href="#" class="read-more">Read More →</a>
                     </div>
 
-                    <div class="blog-card">
+                    <div class="blog-card" data-search="importance tajweed quran recitation rules pronounce correctly">
                         <div class="date">📅 June 15, 2026</div>
                         <h3>📖 Importance of Tajweed in Quran Recitation</h3>
                         <p>Why Tajweed is essential for every Muslim. Learn the rules and how they help you recite the Quran as it was revealed.</p>
                         <a href="#" class="read-more">Read More →</a>
                     </div>
 
-                    <div class="blog-card">
+                    <div class="blog-card" data-search="tafseer understanding quran deeper meanings context verses">
                         <div class="date">📅 June 14, 2026</div>
                         <h3>🧠 Tafseer: Understanding the Quran</h3>
                         <p>Why Tafseer is important for every Muslim. Learn the deeper meanings and context behind the verses.</p>
                         <a href="#" class="read-more">Read More →</a>
                     </div>
 
-                    <div class="blog-card">
+                    <div class="blog-card" data-search="ramadan quran connection recitation blessed month fasting">
                         <div class="date">📅 June 13, 2026</div>
                         <h3>🌙 Ramadan and Quran: A Special Connection</h3>
                         <p>How to maximize your Quranic recitation and understanding during the blessed month of Ramadan.</p>
                         <a href="#" class="read-more">Read More →</a>
                     </div>
+
+                    <div class="blog-card" data-search="dua supplication power prayer islam allah acceptance">
+                        <div class="date">📅 June 12, 2026</div>
+                        <h3>🕋 The Power of Dua in Islam</h3>
+                        <p>Learn about the importance of Dua (supplication) in Islam. How to make dua and when it is accepted. Dua is the essence of worship.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+
+                    <div class="blog-card" data-search="seerah prophet muhammad life teachings example humanity">
+                        <div class="date">📅 June 11, 2026</div>
+                        <h3>📿 The Life of Prophet Muhammad (PBUH)</h3>
+                        <p>Learn about the Seerah of our beloved Prophet Muhammad (PBUH). His life is a perfect example for all of humanity.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
                 </div>
 
                 <!-- ===== ADD NEW BLOG POST FORM ===== -->
-                <div style="margin-top:30px; background:rgba(13,27,42,0.5); border-radius:25px; padding:20px; border:1px solid rgba(232,184,109,0.08);">
-                    <h3 style="color:#FFD700; margin-bottom:15px; direction:ltr; text-align:left;">✏️ Add New Blog Post</h3>
+                <div style="margin-top:25px; background:rgba(13,27,42,0.4); border-radius:22px; padding:20px; border:1px solid var(--border-light);">
+                    <h3 style="color:#FFD700; margin-bottom:14px; direction:ltr; text-align:left; font-weight:600;">✏️ Add New Blog Post</h3>
                     <form id="blogForm">
                         <div class="form-group">
                             <label>Post Title <span class="required">*</span></label>
@@ -1603,18 +1481,20 @@
             <!-- ===================== CONTACT PAGE ======================= -->
             <!-- ========================================================= -->
             <div id="page-contact" class="page">
-                <h2 class="section-title">📞 Contact & Free Trial</h2>
+                <h2 class="section-title">📞 Contact &amp; Free Trial</h2>
                 <div class="contact-container">
                     <div class="contact-info">
                         <h3>Hafiz Muhammad AFAQ Attari</h3>
-                        <div class="contact-item">📞 UAE (Call & WhatsApp): <a href="tel:+971505859816">+971505859816</a></div>
+                        <div class="contact-item">📞 UAE (Call &amp; WhatsApp): <a href="tel:+971505859816">+971505859816</a></div>
                         <div class="contact-item">📞 Pakistan (WhatsApp only): <a href="https://wa.me/923411472338">+923411472338</a></div>
                         <div class="contact-item">📧 Email: <a href="mailto:sardarafaqqds@gmail.com">sardarafaqqds@gmail.com</a></div>
                         <a href="https://wa.me/971505859816" class="btn-whatsapp-uae" style="display:inline-flex; text-decoration:none; padding:10px 25px; border-radius:40px; margin-top:10px;">📲 WhatsApp UAE</a>
                         <a href="https://wa.me/923411472338" class="btn-whatsapp-pk" style="display:inline-flex; text-decoration:none; padding:10px 25px; border-radius:40px; margin-top:10px;">📲 WhatsApp Pakistan</a>
                         <p style="margin-top:15px; text-align:left; direction:ltr;">⭐ Free 3-Day Trial | All Countries Welcome</p>
+                        <p style="text-align:left; direction:ltr; font-size:0.8rem; opacity:0.7;">🌍 Students from ALL countries welcome!</p>
                     </div>
-                    <div class="contact-form">
+                    <div class="contact-form" id="registrationForm">
+                        <h3 style="color:#FFD700; margin-bottom:14px; direction:ltr; text-align:left; font-weight:600;">📋 Registration Form</h3>
                         <form id="contactForm">
                             <div class="form-group">
                                 <label>First Name <span class="required">*</span></label>
@@ -1640,7 +1520,7 @@
                                 <label>Select Course</label>
                                 <select>
                                     <option>Madani Qaida</option>
-                                    <option>Quran with Translation & Tafseer</option>
+                                    <option>Quran with Translation &amp; Tafseer</option>
                                     <option>Masail (Fiqh Course)</option>
                                     <option>Hifz Program</option>
                                 </select>
@@ -1678,7 +1558,7 @@
                     <p>We do not sell, trade, or rent your personal information to third parties. Your information is only shared with your assigned teacher for educational purposes.</p>
 
                     <h3>Children's Privacy</h3>
-                    <p>We take extra care when teaching children. Parents/guardians are always kept informed about their child's progress.</p>
+                    <p>We take extra care when teaching children. Parents/guardians are always kept informed about their child's progress. We do not collect any unnecessary information about children.</p>
 
                     <div class="quran-verse">
                         " وَلَا تَجَسَّسُوا وَلَا يَغْتَب بَّعْضُكُم بَعْضًا "
@@ -1691,9 +1571,9 @@
             <!-- ===================== TERMS PAGE ========================= -->
             <!-- ========================================================= -->
             <div id="page-terms" class="page">
-                <h2 class="section-title">📜 Terms & Conditions</h2>
+                <h2 class="section-title">📜 Terms &amp; Conditions</h2>
                 <div class="terms-page">
-                    <h3>Terms & Conditions</h3>
+                    <h3>Terms &amp; Conditions</h3>
                     <p>By enrolling in our courses, you agree to the following terms and conditions:</p>
                     <ul>
                         <li>Attend classes on time and maintain punctuality</li>
@@ -1724,6 +1604,7 @@
             <div class="footer-section">
                 <h4>🌙 Dawat-e-Islami Online</h4>
                 <p>By Hafiz Muhammad AFAQ Attari</p>
+                <p style="margin-top:4px; font-size:0.6rem; opacity:0.6;">Est. 2026</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
@@ -1737,11 +1618,15 @@
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
-                <p>📞 +971505859816<br>📞 +923411472338<br>📧 sardarafaqqds@gmail.com</p>
+                <p>📞 +971505859816</p>
+                <p>📞 +923411472338</p>
+                <p>📧 sardarafaqqds@gmail.com</p>
             </div>
             <div class="footer-section">
                 <h4>Global Students</h4>
-                <p>🌍 All countries welcome<br>📖 Free trial for everyone</p>
+                <p>🌍 All countries welcome</p>
+                <p>📖 Free trial for everyone</p>
+                <p>⭐ Ijazah Certified</p>
             </div>
         </div>
         <div class="footer-bottom">🌙 © 2026 Dawat-e-Islami Online Academy | Hafiz Muhammad AFAQ Attari | All Countries Welcome</div>
@@ -1760,29 +1645,37 @@
         const pages = document.querySelectorAll('.page');
 
         function showPage(pageId) {
+            // Hide all pages
             pages.forEach(p => p.classList.remove('active'));
+
+            // Show target page
             const target = document.getElementById('page-' + pageId);
             if (target) target.classList.add('active');
 
+            // Update nav buttons
             navBtns.forEach(btn => {
                 btn.classList.remove('active');
                 if (btn.dataset.page === pageId) btn.classList.add('active');
             });
 
+            // Update sidebar links
             sidebarLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.dataset.page === pageId) link.classList.add('active');
             });
 
+            // Smooth scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Nav buttons click
         navBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 showPage(this.dataset.page);
             });
         });
 
+        // Sidebar links click
         sidebarLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1790,6 +1683,7 @@
             });
         });
 
+        // Footer links click
         footerLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1797,11 +1691,95 @@
             });
         });
 
+        // Card links with data-page
         document.querySelectorAll('.card a[data-page]').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 showPage(this.dataset.page);
             });
+        });
+
+        // ============================================================
+        // ===== SEARCH FUNCTIONALITY =================================
+        // ============================================================
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        const allCourses = document.querySelectorAll('#courseList .card');
+        const allBlogs = document.querySelectorAll('#blogPosts .blog-card');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            searchResults.innerHTML = '';
+
+            if (query.length === 0) {
+                searchResults.classList.remove('show');
+                return;
+            }
+
+            let results = [];
+
+            // Search in courses
+            allCourses.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    const title = card.querySelector('h3')?.textContent || 'Course';
+                    results.push({
+                        title: title,
+                        type: '📚 Course',
+                        element: card,
+                        category: 'course'
+                    });
+                }
+            });
+
+            // Search in blogs
+            allBlogs.forEach(blog => {
+                const text = blog.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    const title = blog.querySelector('h3')?.textContent || 'Blog';
+                    results.push({
+                        title: title,
+                        type: '📝 Blog',
+                        element: blog,
+                        category: 'blog'
+                    });
+                }
+            });
+
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="no-result">🔍 No results found for "<strong>' + query + '</strong>"</div>';
+                searchResults.classList.add('show');
+                return;
+            }
+
+            results.forEach(result => {
+                const div = document.createElement('div');
+                div.className = 'result-item';
+                div.innerHTML = `<span class="result-type">${result.type}</span> ${result.title}`;
+                div.addEventListener('click', function() {
+                    // Scroll to the element
+                    result.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    result.element.style.borderColor = '#FFD700';
+                    result.element.style.transition = 'border-color 0.5s, box-shadow 0.5s';
+                    result.element.style.boxShadow = '0 0 30px rgba(255,215,0,0.15)';
+                    setTimeout(() => {
+                        result.element.style.borderColor = '';
+                        result.element.style.boxShadow = '';
+                    }, 2500);
+                    searchResults.classList.remove('show');
+                    searchInput.value = '';
+                });
+                searchResults.appendChild(div);
+            });
+
+            searchResults.classList.add('show');
+        });
+
+        // Close search results on click outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-box')) {
+                searchResults.classList.remove('show');
+            }
         });
 
         // ============================================================
@@ -1839,8 +1817,11 @@
                 });
             }
 
+            const searchText = title.toLowerCase() + ' ' + summary.toLowerCase();
+
             const newPost = document.createElement('div');
             newPost.className = 'blog-card';
+            newPost.setAttribute('data-search', searchText);
             newPost.innerHTML = `
                 <div class="date">${displayDate}</div>
                 <h3>${title}</h3>
@@ -1866,12 +1847,6 @@
             this.reset();
         });
 
-        document.getElementById('enrollForm')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('✅ JazakAllah! Hafiz Muhammad AFAQ Attari will contact you soon on WhatsApp for free trial. Students from ALL countries are welcome!');
-            this.reset();
-        });
-
         // ============================================================
         // ===== PROFILE PICTURE ======================================
         // ============================================================
@@ -1889,7 +1864,7 @@
                         reader.onload = function(ev) {
                             profileImg.src = ev.target.result;
                             localStorage.setItem('userProfileImage', ev.target.result);
-                            alert('✅ Profile picture updated!');
+                            alert('✅ Profile picture updated successfully!');
                         };
                         reader.readAsDataURL(file);
                     }
@@ -1902,6 +1877,15 @@
                 profileImg.src = saved;
             }
         }
+
+        // ============================================================
+        // ===== CONSOLE LOG ==========================================
+        // ============================================================
+        console.log('🌙 Dawat-e-Islami Online Academy loaded successfully!');
+        console.log('📚 Total Courses: ' + allCourses.length);
+        console.log('📝 Total Blogs: ' + allBlogs.length);
+        console.log('⭐ Developed with ❤️ for Ramadan Theme');
     </script>
+
 </body>
 </html>
